@@ -103,7 +103,7 @@
     .buttons {
       visibility: visible;
     }
-      
+
     .oldPrice {
       color: grey;
       text-decoration: line-through $color-CharlestonGreen;
@@ -119,7 +119,7 @@
       .buttons {
         visibility: visible;
       }
-      
+
       &:hover {
         .price > div {
           background-color: $primary;
@@ -131,4 +131,5 @@
       }
     }
   }
+}
 }
