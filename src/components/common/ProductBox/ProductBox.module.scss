@@ -75,4 +75,18 @@
     justify-content: space-between;
     align-items: center;
   }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	
+	.oldPrice {
+	  color: grey;
+	  text-decoration: line-through $text-color;
+	  padding-right: 5px;
+	  font-size: 13px;
+	  font-weight: 400;
+	}
+  }
 }
