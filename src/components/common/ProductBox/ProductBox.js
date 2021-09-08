@@ -16,52 +16,66 @@ const ProductBox = ({
   image,
   stars,
   oldPrice,
-  favoritue,
+  favoritue, git a
   addToFavoritue,
   isStarred
-}) => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      <img src={image} alt={name} />
-      {promo && <div className={styles.sale}>{promo}</div>}
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
+}) => {
+
+  const choseClassName = btnType => {
+    if (btnType === 'favourite' && name === 'Aenean Ru Bristique 1') {
+      return 'active';
+    }
+    if (btnType === 'compare' && name === 'Aenean Ru Bristique 4') {
+      return 'active';
+    }
+    if (name === 'Aenean Ru Bristique 2') return 'active';
+  };
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <img src={image} alt={name} />
+        {promo && <div className={styles.sale}>{promo}</div>}
+        <div className={styles.buttons}>
+          <Button variant='small'>Quick View</Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <h5>{name}</h5>
+        <div className={styles.stars}>
+          <ProductRating id={id} stars={stars} isStarred={isStarred} />
+        </div>
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button
+            className={choseClassName('favourite')}
+            variant={favoritue ? 'favoritue' : 'outline'}
+            onClick={event => {
+              event.preventDefault();
+              return addToFavoritue(id);
+            }}
+          >
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button variant='outline' className={choseClassName('compare')}>
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-    <div className={styles.content}>
-      <h5>{name}</h5>
-      <div className={styles.stars}>
-        <ProductRating id={id} stars={stars} isStarred={isStarred} />
-      </div>
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button
-          variant={favoritue ? 'favoritue' : 'outline'}
-          onClick={event => {
-            event.preventDefault();
-            return addToFavoritue(id);
-          }}
-        >
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
-      </div>
-      <div className={styles.price}>
-        <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   id: PropTypes.string,
