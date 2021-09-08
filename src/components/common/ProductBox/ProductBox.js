@@ -18,7 +18,7 @@ const ProductBox = ({
   oldPrice,
   favoritue,
   addToFavoritue,
-  isStarred
+  isStarred,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -64,7 +64,6 @@ const ProductBox = ({
 );
 
 ProductBox.propTypes = {
-  id: PropTypes.string,
   children: PropTypes.node,
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
