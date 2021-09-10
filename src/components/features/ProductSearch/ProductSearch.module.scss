@@ -12,6 +12,11 @@
     align-items: center;
     position: relative;
 
+    &:hover ul {
+      display: block;
+      // transform: translateY(43%);
+    }
+
     .icon:first-child {
       color: $primary;
       position: absolute;
@@ -25,13 +30,31 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
+    ul {
+      -webkit-appearance: none !important;
+      background-color: transparent !important;
       padding: 5px 30px 5px 35px;
       position: relative;
+      height: 100%;
+      transform: translateY(25%);
+      font-size: 14px;
       z-index: 1;
+
+      li {
+        display: none;
+        background-color: transparent !important;
+        font-size: 14px;
+        font-weight: 300;
+
+        &:hover {
+          background-color: $primary !important;
+        }
+      }
+
+      &:hover li {
+        display: block;
+      }
+
     }
   }
 
