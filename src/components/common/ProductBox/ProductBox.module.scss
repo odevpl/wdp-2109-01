@@ -7,7 +7,7 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    padding: 0;
     background: {
       color: #f4f5f7;
       size: contain;
@@ -31,6 +31,13 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
+    }
+
+    img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -74,5 +81,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	
+	.oldPrice {
+	  color: grey;
+	  text-decoration: line-through $text-color;
+	  padding-right: 5px;
+	  font-size: 13px;
+	  font-weight: 400;
+	}
+
+  &:hover {
+    .price > div {
+      background-color: $primary;
+    }
+    .buttons {
+      visibility: visible;
+    }
+
   }
 }
