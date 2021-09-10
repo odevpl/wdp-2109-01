@@ -14,9 +14,8 @@ import {
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
-const Footer = ({ children }) => (
+const Footer = () => (
   <footer className={styles.root}>
-    {/* <Container className={styles.container} maxWidth='lg'> */}
     <div className={styles.footerMenu}>
       <div className='container'>
         <Container className={styles.container}>
@@ -105,13 +104,13 @@ const Footer = ({ children }) => (
       </div>
     </div>
     <div className={styles.bottomBar}>
-      <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col'></div>
-          <div className={'col text-center ' + styles.copyright}>
+      <Container className={styles.containerTwo}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={12} lg={4} className={styles.empty}></Grid>
+          <Grid item xs={6} md={6} lg={4} className={styles.copyright}>
             <p>©Copyright 2016 Bazar | All Rights Reserved</p>
-          </div>
-          <div className={'col text-right ' + styles.socialMedia}>
+          </Grid>
+          <Grid item xs={6} md={6} lg={4} className={styles.socialMedia}>
             <ul>
               <li>
                 <a href='#'>
@@ -144,11 +143,10 @@ const Footer = ({ children }) => (
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
+          </Grid>
+        </Grid>
+      </Container>
     </div>
-    {/* </Container> */}
   </footer>
 );
 

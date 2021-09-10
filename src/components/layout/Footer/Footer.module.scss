@@ -40,10 +40,17 @@
       }
     }
   }
+
   .container {
     display: flex;
     text-align: center;
+    justify-content: center;
   }
+
+  .containerTwo {
+    text-align: center;
+  }
+
   .images {
     display: flex;
     align-items: center;
@@ -63,7 +70,17 @@
         color: $footer-socials-copyright;
         font-size: 14px;
         line-height: 26px;
+        text-align: left;
       }
+    }
+
+    .gites {
+      border: solid 1px red;
+    }
+
+    .empty {
+      color: rgb(169, 169, 169);
+      // display: none;
     }
 
     .socialMedia {
@@ -71,7 +88,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
-
+        text-align: right;
         li {
           display: inline-block;
           margin-left: 1rem;
