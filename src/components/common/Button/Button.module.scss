@@ -39,3 +39,27 @@
     color: #ffffff;
   }
 }
+
+.white {
+  @extend .main;
+  display: block;
+  font-size: 13px;
+  line-height: 24px;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #2a2a2a;
+  background-color: white;
+}
+
+.long {
+  @extend .main;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 400;
+}
