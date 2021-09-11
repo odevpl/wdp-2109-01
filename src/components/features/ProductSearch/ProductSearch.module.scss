@@ -14,6 +14,7 @@
 
     &:hover ul {
       display: block;
+      height: 37px;
     }
 
     .icon:first-child {
@@ -29,27 +30,23 @@
       z-index: 0;
     }
 
-    .category-list {
-      position: absolute;
-      right: 0;
-      left: 0;
-      z-index: 0;
-    }
-
     ul {
       -webkit-appearance: none !important;
       background-color: transparent !important;
       padding: 5px 30px 5px 35px;
       position: relative;
-      transform: translateY(25%);
+      transform: translateY(9px);
       font-size: 14px;
-      z-index: 1;
+
+      &:hover{
+        transform: translateY(12px);
+      }
 
       li {
         display: none;
         background-color: transparent !important;
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
 
         &:hover {
           background-color: $primary !important;
