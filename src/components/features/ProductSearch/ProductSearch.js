@@ -16,9 +16,6 @@ const ProductSearch = ({ categories }) => {
         <div className='category-list'>
           <ul>
             Select a category
-            <li>One Bed</li>
-            <li>Three Sofas</li>
-            <li>Five Chairs</li>
             {categories.map(item => (
               <li key={item.id}>{item.name}</li>
             ))}
