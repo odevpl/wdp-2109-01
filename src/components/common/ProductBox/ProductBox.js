@@ -8,9 +8,11 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, stars, id, isStarred }) => (
+const ProductBox = ({ name, price, promo, image, oldPrice, stars, id, isStarred }) => (
+
   <div className={styles.root}>
     <div className={styles.photo}>
+      <img src={image} alt={name} />
       {promo && <div className={styles.sale}>{promo}</div>}
       <div className={styles.buttons}>
         <Button variant='small'>Quick View</Button>
@@ -36,6 +38,7 @@ const ProductBox = ({ name, price, promo, stars, id, isStarred }) => (
         </Button>
       </div>
       <div className={styles.price}>
+        <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
         <Button noHover variant='small'>
           $ {price}
         </Button>
@@ -49,7 +52,9 @@ ProductBox.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
+  image: PropTypes.string,
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
 };
