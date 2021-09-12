@@ -18,6 +18,14 @@
   }
 }
 
+.carousel {
+  @extend .main;
+  height: 100px;
+  width: 30px;
+  justify-content: center;
+  padding: 35px 10px;
+}
+
 .small {
   @extend .main;
   font-size: 13px;
@@ -39,3 +47,34 @@
     color: #ffffff;
   }
 }
+
+.greenButton {
+  @extend .main;
+  background-color: forestgreen;
+  color: white;
+  width: 150px;
+  height: 40px;
+}
+
+.category {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: inherit;
+  color: #2a2a2a;
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 3px solid;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+
+  &:not(.noHover):hover {
+    color: $primary !important;
+    background-color:gray;
+    color: #ffffff;
+    text-decoration: none;
+    border-top: 3px solid $primary;
+  }
+}
+
