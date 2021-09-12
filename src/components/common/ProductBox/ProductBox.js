@@ -78,8 +78,8 @@ const ProductBox = ({
 );
 
 ProductBox.propTypes = {
-  children: PropTypes.node,
   id: PropTypes.string.isRequired,
+  children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
