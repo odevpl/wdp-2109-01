@@ -21,7 +21,10 @@ const createActionNameTwo = name => `app/${reducerName}/${name}`;
 
 /* action types */
 export const ADD_TO_FAVORITUE = createActionNameTwo('ADD_TO_FAVORITUE');
+<<<<<<< HEAD
 export const ADD_TO_FAVOURITE = createActionName('ADD_TO_FAVOURITE');
+=======
+>>>>>>> a853190 (Fixing bugs in code)
 
 export const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
 
