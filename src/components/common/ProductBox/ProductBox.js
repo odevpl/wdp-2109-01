@@ -3,23 +3,22 @@ import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
 const ProductBox = ({
   id,
   name,
   price,
   promo,
+  image,
   stars,
   oldPrice,
   favoritue,
   addToFavoritue,
+  isStarred
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -35,15 +34,7 @@ const ProductBox = ({
     <div className={styles.content}>
       <h5>{name}</h5>
       <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
+        <ProductRating id={id} stars={stars} isStarred={isStarred} />
       </div>
     </div>
     <div className={styles.line}></div>
@@ -75,14 +66,16 @@ const ProductBox = ({
 ProductBox.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
-  stars: PropTypes.number,
   favoritue: PropTypes.bool,
   addToFavoritue: PropTypes.func,
   image: PropTypes.string,
+  stars: PropTypes.number,
+  isStarred: PropTypes.bool,
 };
 
 export default ProductBox;
