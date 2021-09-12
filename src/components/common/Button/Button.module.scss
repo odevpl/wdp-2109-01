@@ -42,10 +42,10 @@
 
 .favoritue {
   background-color: #ffffff;
-  color: $primary;
+  color: $color-tigersEye;
 
   &:not(.noHover):hover {
-    background-color: $primary;
+    background-color: $color-tigersEye;
     color: #2a2a2a;
   }
 }

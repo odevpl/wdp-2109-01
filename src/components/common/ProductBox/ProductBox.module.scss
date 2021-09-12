@@ -90,7 +90,7 @@
 	
 	.oldPrice {
 	  color: grey;
-	  text-decoration: line-through $text-color;
+	  text-decoration: line-through $color-CharlestonGreen;
 	  padding-right: 5px;
 	  font-size: 13px;
 	  font-weight: 400;
@@ -98,11 +98,12 @@
 
   &:hover {
     .price > div {
-      background-color: $primary;
+      background-color: $color-tigersEye;
     }
     .buttons {
       visibility: visible;
     }
 
   }
+}
 }
