@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -81,15 +81,13 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
-              {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
-                .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+          </div>
+          <div className='row'>
+            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+                <ProductBox {...item} />
+              </div>
+            ))}
           </div>
         </div>
       </Swipeable>

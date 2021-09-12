@@ -14,6 +14,15 @@ export const SET_STARS = createActionName('SET_STARS');
 /* action creator */
 export const setStars = payload => ({ payload, type: SET_STARS });
 
+const reducerName = 'products';
+const createActionName = name => `app/${reducerName}/${name}`;
+
+/* action types */
+export const ADD_TO_FAVORITUE = createActionName('ADD_TO_FAVORITUE');
+
+/* action creators */
+export const addToFavoritue = payload => ({ payload, type: ADD_TO_FAVORITUE });
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -28,6 +37,13 @@ export default function reducer(statePart = [], action = {}) {
         }
       });
       return newStatePart;
+    case ADD_TO_FAVORITUE: {
+      const id = action.payload;
+      return statePart.map(product =>
+        product.id == id
+          ? { ...product, favoritue: !product.favoritue }
+          : { ...product }
+      );
     }
     default:
       return statePart;

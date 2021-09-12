@@ -8,8 +8,18 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
-const ProductBox = ({ name, price, promo, image, oldPrice, stars, id, isStarred }) => (
-
+const ProductBox = ({
+  id,
+  name,
+  price,
+  promo,
+  image,
+  stars,
+  oldPrice,
+  favoritue,
+  addToFavoritue,
+  isStarred
+}) => (
   <div className={styles.root}>
     <div className={styles.photo}>
       <img src={image} alt={name} />
@@ -30,7 +40,13 @@ const ProductBox = ({ name, price, promo, image, oldPrice, stars, id, isStarred 
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button
+          variant={favoritue ? 'favoritue' : 'outline'}
+          onClick={event => {
+            event.preventDefault();
+            return addToFavoritue(id);
+          }}
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button variant='outline'>
@@ -48,12 +64,15 @@ const ProductBox = ({ name, price, promo, image, oldPrice, stars, id, isStarred 
 );
 
 ProductBox.propTypes = {
+  id: PropTypes.string,
   children: PropTypes.node,
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
+  favoritue: PropTypes.bool,
+  addToFavoritue: PropTypes.func,
   image: PropTypes.string,
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
