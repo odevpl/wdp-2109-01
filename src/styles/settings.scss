@@ -1,19 +1,86 @@
 $base-padding: 24px;
 
 // GLOBAL COLORS
+
+// names taken from https://www.color-name.com/
+// should you change/add colors, use website above for standardized naming convention
+
+$color-tigersEye: #D58E32;
+$color-CharlestonGreen: #2a2a2a;
+$color-jet: #363636;
+$color-PhilippineSilver: #b6b6b6;
+$color-ChineseWhite: #e1e1e1;
 $color-bestWhite: #fffdfa;
+$color-white: #fff;
+$color-black: #000;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// GLOBAL NAMES
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+// button
+$button-text-color: $color-white;
+$button-background-color: $color-CharlestonGreen;
+$button-background-color--hov: $color-tigersEye;
+$button-outline-color: $color-CharlestonGreen;
 
-$primary: #d58e32;
+// feature box
+$featureBox-border-color: $color-PhilippineSilver;
+$featureBox-content: $color-tigersEye;
+$featureBox-icon-color: $color-CharlestonGreen;
+$featureBox-icon-background: $color-white;
+$featureBox-activeIcon-color: $color-white;
+$featureBox-activeIcon-background: $color-tigersEye;
+$featureBox-activeIcon-text: $color-tigersEye;
 
-$text-color: #2a2a2a;
+// product box
+$productBox-background: $color-white;
+$productBox-border: $color-ChineseWhite;
+$productBox-photo-background: $color-PhilippineSilver;
+$productBox-sale-background: $color-CharlestonGreen;
+$productBox-sale-text: $color-white;
+$productBox-itemName: $color-tigersEye;
+$productBox-starRating: $color-CharlestonGreen;
+$productBox-longLine: $color-CharlestonGreen;
+$productBox-shortLine: $color-tigersEye;
 
-$form-border-color: #292929;
+// new furniture
+$newFuriniture-mainUnderline: $color-ChineseWhite;
+$newFuriniture-sectionUnderline: $color-tigersEye;
+$newFuriniture-furnitureMenu: $color-CharlestonGreen;
+$newFuriniture-activeUnderline: $color-tigersEye;
+$newFuriniture-dotsBackground: $color-white;
+$newFuriniture-dotsInactive: $color-ChineseWhite;
+$newFuriniture-dotsActive: $color-tigersEye;
 
 // product search
+$productSearch-form-main: $color-CharlestonGreen;
+$productSearch-form-icon: $color-tigersEye;
 $productSearch-list-bg--hover: $color-bestWhite;
+
+// company claim
+$companyClaim-background: $color-jet;
+$companyClaim-phone: $color-ChineseWhite;
+$companyClaim-cartIcon: $color-white;
+$companyClaim-cardBackground: $color-tigersEye;
+$companyClaim-cardCounter: $color-ChineseWhite;
+
+// footer
+$footer-background: $color-jet;
+$footer-categories: $color-white;
+$footer-subcategories: $color-PhilippineSilver;
+$footer-subcategories--hover: $color-white;
+$footer-socials-background: $color-CharlestonGreen;
+$footer-socials-copyright: $color-PhilippineSilver;
+$footer-socials-icons: $color-PhilippineSilver;
+$footer-socials-icons--hover: $color-tigersEye;
+
+// menu bar
+$menuBar-background: $color-white;
+$menuBar-background--active: $color-tigersEye;
+$menuBar-text: $color-CharlestonGreen;
+$menuBar-text--active: $color-white;
+$menuBar-boxShadow: $color-black;
+
+// top bar
+$topBar-background: $color-CharlestonGreen;
+$topBar-text: $color-white;
+$topBar-text--hover: $color-tigersEye;
