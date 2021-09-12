@@ -56,12 +56,11 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
-  &.active {
+  &:hover {
+    cursor: pointer;
+
     .iconWrapper {
       color: #ffffff;
 
