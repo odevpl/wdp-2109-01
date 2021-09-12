@@ -7,8 +7,6 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 
 const ProductSearch = ({ categories }) => {
-  console.log('categories:', categories);
-
   return (
     <form action='' className={styles.root}>
       <div className={styles.category}>
