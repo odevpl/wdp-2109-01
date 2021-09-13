@@ -17,7 +17,13 @@
     text-decoration: none;
   }
 }
-
+.close{
+  color: $color-tigersEye;
+  font-size: 18px;
+  :hover{
+    color: $color-jet;
+  }
+}
 .small {
   @extend .main;
   font-size: 13px;
@@ -26,7 +32,7 @@
   font-weight: 400;
 }
 
-.outline, .favoritue {
+.outline, .favoritue, .compare {
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -40,7 +46,7 @@
   }
 }
 
-.favoritue {
+.favoritue, .compare {
   background-color: #ffffff;
   color: $color-tigersEye;
 

@@ -18,7 +18,10 @@ const ProductBox = ({
   oldPrice,
   favoritue,
   addToFavoritue,
-  isStarred
+  isStarred,
+  compare,
+  addToCompare,
+  numberOfProductsToCompare,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -49,7 +52,18 @@ const ProductBox = ({
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button
+          variant={compare ? 'compare' : 'outline'}
+          onClick={event => {
+            if (numberOfProductsToCompare >= 4) {
+              event.preventDefault();
+              alert('You can only add four products to compare!');
+            } else {
+              event.preventDefault();
+              return addToCompare(id);
+            }
+          }}
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -72,7 +86,10 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   favoritue: PropTypes.bool,
+  compare: PropTypes.bool,
   addToFavoritue: PropTypes.func,
+  addToCompare: PropTypes.func,
+  numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
   stars: PropTypes.number,
   isStarred: PropTypes.bool,

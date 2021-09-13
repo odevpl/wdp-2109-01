@@ -5,6 +5,8 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getProductsToCompare = ({ products }) =>
+  products.filter(item => item.compare === true);
 /* action name creator */
 const createActionName = name => `products/rating/${name}`;
 
@@ -17,9 +19,15 @@ export const setStars = payload => ({ payload, type: SET_STARS });
 /* action types */
 export const ADD_TO_FAVORITUE = createActionName('ADD_TO_FAVORITUE');
 
+export const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
+
+export const REMOVE_FROM_COMPARE = createActionName('REMOVE_FROM_COMPARE');
 /* action creators */
 export const addToFavoritue = payload => ({ payload, type: ADD_TO_FAVORITUE });
 
+export const addToCompare = payload => ({ payload, type: ADD_TO_COMPARE });
+
+export const removeFromCompare = payload => ({ payload, type: REMOVE_FROM_COMPARE });
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -41,6 +49,20 @@ export default function reducer(statePart = [], action = {}) {
         product.id === id
           ? { ...product, favoritue: !product.favoritue }
           : { ...product }
+      );
+    }
+    case ADD_TO_COMPARE: {
+      const id = action.payload;
+      return statePart.map(product =>
+        product.id == id && product.compare == false
+          ? { ...product, compare: !product.compare }
+          : { ...product }
+      );
+    }
+    case REMOVE_FROM_COMPARE: {
+      const id = action.payload;
+      return statePart.map(product =>
+        product.id == id ? { ...product, compare: false } : { ...product }
       );
     }
     default:
