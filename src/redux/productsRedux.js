@@ -16,9 +16,6 @@ export const SET_STARS = createActionName('SET_STARS');
 /* action creator */
 export const setStars = payload => ({ payload, type: SET_STARS });
 
-const reducerName = 'products';
-const createActionNameTwo = name => `app/${reducerName}/${name}`;
-
 /* action types */
 export const ADD_TO_FAVOURITE = createActionName('ADD_TO_FAVOURITE');
 
