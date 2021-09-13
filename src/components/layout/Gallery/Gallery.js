@@ -16,11 +16,7 @@ class Gallery extends React.Component {
 
             <div className={'col-6 ${styles.rightWrapper}'}>
               <div className={styles.imageWrapper}>
-                <img
-                  src={
-                    'https://www.pexels.com/pl-pl/zdjecie/pomaranczowa-skorzana-sofa-2-osobowa-przy-scianie-1866149/'
-                  }
-                />
+                <img src='../../images/imagesGallery/chair-1.jpg' alt='' />
                 <div className={styles.priceTitle}>
                   FROM<span>$50.80</span>
                 </div>
@@ -38,7 +34,21 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  children: PropTypes.string,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      category: PropTypes.string,
+      price: PropTypes.number,
+      stars: PropTypes.number,
+      promo: PropTypes.string,
+      newFurniture: PropTypes.bool,
+    })
+  ),
+};
+
+Gallery.defaultProps = {
+  products: [],
 };
 
 export default Gallery;

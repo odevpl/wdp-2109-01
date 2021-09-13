@@ -15,6 +15,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import ProductImgBox from './../ProductImgBox/ProductImgBox';
 
 const ProductSlider = ({ stars, products }) => {
+  const [product] = useState(6);
   const activePage = useState(0);
 
   return (
@@ -49,9 +50,7 @@ const ProductSlider = ({ stars, products }) => {
       <div className={styles.mainWrapper}>
         <div className={styles.imageWrapper}>
           <img
-            src={
-              'https://www.pexels.com/pl-pl/zdjecie/jasny-kreatywny-sciana-zolty-6794964/'
-            }
+            src={'https://www.pexels.com/pl-pl/zdjecie/bialy-fotel-i-otomana-220749/'}
           />
         </div>
 
@@ -107,17 +106,19 @@ const ProductSlider = ({ stars, products }) => {
         </div>
       </div>
 
-      <div className='container'>
-        <div className='row justify-content-between'>
+      <div className='container slider'>
+        <div className={'row justify-content-between' + styles.products}>
           <div className={`col-1 ${styles.buttonWrapper}`}>
             <Button className={styles.button} variant='carousel'>
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
           <div className='col-10'>
-            <div className={`row justify-content-between ${styles.imageBox}`}>
-              <ProductImgBox />
-            </div>
+            {products.slice(activePage * 6, (activePage + 1) * 6).map(item => (
+              <div key={item.id} className='col-2'>
+                <ProductImgBox {...item} />
+              </div>
+            ))}
           </div>
           <div className={`col-1 ${styles.buttonWrapper}`}>
             <Button className={styles.button} variant='carousel'>
