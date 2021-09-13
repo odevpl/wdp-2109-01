@@ -40,6 +40,11 @@
   }
 }
 
+.promotedOutline {
+  @extend .outline;
+  margin-right: 10px;
+}
+
 .white {
   @extend .main;
   display: block;

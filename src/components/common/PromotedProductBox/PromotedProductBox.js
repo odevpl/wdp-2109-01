@@ -7,6 +7,7 @@ import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
@@ -59,14 +60,14 @@ const PromotedProductBox = ({ name, price, promo, stars, image, oldPrice }) => (
     </div>
     <div className={styles.line}></div>
     <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline'>
+      <div>
+        <Button variant='promotedOutline'>
+          <FontAwesomeIcon icon={faEye}>Watch</FontAwesomeIcon>
+        </Button>
+        <Button variant='promotedOutline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline'>
+        <Button variant='promotedOutline'>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
