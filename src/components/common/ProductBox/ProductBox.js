@@ -22,12 +22,12 @@ const ProductBox = ({
 }) => {
   const choseClassName = btnType => {
     if (btnType === 'favourite' && name === 'Aenean Ru Bristique 1') {
-      return 'active';
+      return 'favoritue';
     }
     if (btnType === 'compare' && name === 'Aenean Ru Bristique 4') {
-      return 'active';
+      return 'favoritue';
     }
-    if (name === 'Aenean Ru Bristique 2') return 'active';
+    if (name === 'Aenean Ru Bristique 2') return 'favoritue';
   };
 
   return (

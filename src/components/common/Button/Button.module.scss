@@ -41,17 +41,12 @@
 }
 
 .favoritue {
-  background-color: #ffffff;
-  color: $color-tigersEye;
+  background-color: $color-tigersEye;
+  border: 1px solid $color-tigersEye;
+  color: #ffffff;
 
   &:not(.noHover):hover {
     background-color: $color-tigersEye;
     color: #2a2a2a;
-  }
-
-  &.active {
-    background-color: $primary;
-    border: 1px solid $primary;
-    color: #ffffff;
   }
 }
