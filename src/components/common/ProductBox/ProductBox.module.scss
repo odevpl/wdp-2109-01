@@ -81,10 +81,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .button {
-      background-color: yellow;
-    }
   }
 
   .price {
@@ -93,20 +89,11 @@
     align-items: center;
 
     .oldPrice {
-      color: grey;
-      text-decoration: line-through $color-CharlestonGreen;
+      color: $productBox-oldPrice;
+      text-decoration: line-through $productBox-longLine;
       padding-right: 5px;
       font-size: 13px;
       font-weight: 400;
-    }
-
-    &:hover {
-      .price > div {
-        background-color: $color-tigersEye;
-      }
-      .buttons {
-        visibility: visible;
-      }
     }
   }
 }
