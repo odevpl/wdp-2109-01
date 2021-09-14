@@ -87,7 +87,7 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-                <Fade left big>
+                <Fade>
                   <ProductBox {...item} />
                 </Fade>
               </div>
