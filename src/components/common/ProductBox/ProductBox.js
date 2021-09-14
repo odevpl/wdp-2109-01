@@ -16,8 +16,8 @@ const ProductBox = ({
   image,
   stars,
   oldPrice,
-  favoritue,
-  addToFavoritue,
+  favourite,
+  addToFavourite,
   isStarred,
   compare,
   addToCompare,
@@ -44,13 +44,13 @@ const ProductBox = ({
     <div className={styles.actions}>
       <div className={styles.outlines}>
         <Button
-          variant={favoritue ? 'favoritue' : 'outline'}
+          variant={favourite ? 'favourite' : 'outline'}
           onClick={event => {
             event.preventDefault();
-            return addToFavoritue(id);
+            return addToFavourite(id);
           }}
         >
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          <FontAwesomeIcon icon={faHeart}>Favourite</FontAwesomeIcon>
         </Button>
         <Button
           variant={compare ? 'compare' : 'outline'}
@@ -85,9 +85,9 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
-  favoritue: PropTypes.bool,
+  favourite: PropTypes.bool,
   compare: PropTypes.bool,
-  addToFavoritue: PropTypes.func,
+  addToFavourite: PropTypes.func,
   addToCompare: PropTypes.func,
   numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
