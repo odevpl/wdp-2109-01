@@ -18,8 +18,8 @@ const ProductBox = ({
   promo,
   stars,
   oldPrice,
-  favoritue,
-  addToFavoritue,
+  favourite,
+  addTofavourite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -49,10 +49,10 @@ const ProductBox = ({
     <div className={styles.actions}>
       <div className={styles.outlines}>
         <Button
-          variant={favoritue ? 'favoritue' : 'outline'}
+          variant={favourite ? 'favourite' : 'outline'}
           onClick={event => {
             event.preventDefault();
-            return addToFavoritue(id);
+            return addTofavourite(id);
           }}
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
@@ -79,8 +79,8 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
-  favoritue: PropTypes.bool,
-  addToFavoritue: PropTypes.func,
+  favourite: PropTypes.bool,
+  addTofavourite: PropTypes.func,
 };
 
 export default ProductBox;

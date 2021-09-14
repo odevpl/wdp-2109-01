@@ -10,19 +10,19 @@ const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
-export const ADD_TO_FAVORITUE = createActionName('ADD_TO_FAVORITUE');
+export const ADD_TO_favourite = createActionName('ADD_TO_favourite');
 
 /* action creators */
-export const addToFavoritue = payload => ({ payload, type: ADD_TO_FAVORITUE });
+export const addTofavourite = payload => ({ payload, type: ADD_TO_favourite });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-    case ADD_TO_FAVORITUE: {
+    case ADD_TO_favourite: {
       const id = action.payload;
       return statePart.map(product =>
         product.id == id
-          ? { ...product, favoritue: !product.favoritue }
+          ? { ...product, favourite: !product.favourite }
           : { ...product }
       );
     }
