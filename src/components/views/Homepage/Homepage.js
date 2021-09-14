@@ -23,6 +23,7 @@ const Homepage = () => (
     <Feedback />
     <ProductCompare />
     <ChatBot />
+
   </div>
 );
 

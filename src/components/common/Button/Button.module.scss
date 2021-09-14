@@ -14,6 +14,7 @@
     text-decoration: none;
   }
 }
+<<<<<<< HEAD
 .close {
   color: $color-tigersEye;
   font-size: 18px;
@@ -21,12 +22,17 @@
     color: $color-jet;
   }
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 259ae63 (Add component Gallery problems with photos)
 
 .carousel {
   @extend .main;
   height: 100px;
   width: 30px;
   justify-content: center;
+<<<<<<< HEAD
   padding: 28px 10px;
 }
 
@@ -36,6 +42,12 @@
   padding: 42px 10px;
 }
 
+=======
+  padding: 35px 10px;
+}
+
+>>>>>>> 1f68d30 (Add component Gallery problems with photos)
+>>>>>>> 259ae63 (Add component Gallery problems with photos)
 .small {
   @extend .main;
   font-size: 13px;
@@ -70,6 +82,7 @@
   }
 }
 
+<<<<<<< HEAD
 .favourite, .compare {
   background-color: $button-fav-background;
   color: $button-fav-color;
@@ -77,6 +90,44 @@
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
+=======
+.favoritue {
+  background-color: $color-white;
+  color: $color-tigersEye;
+
+  &:not(.noHover):hover {
+    background-color: $color-tigersEye;
+    color: $color-jet;
+  }
+}
+
+.greenButton {
+  background-color: green;
+  color: $color-white;
+  width: 150px;
+  height: 40px;
+}
+
+.category {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: inherit;
+  color: $color-jet;
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 3px solid;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+
+  &:not(.noHover):hover {
+    color: $color-tigersEye !important;
+    background-color: $color-PhilippineSilver;
+    color: $color-white;
+    text-decoration: none;
+    border-top: 3px solid $color-tigersEye;
+>>>>>>> 1f68d30 (Add component Gallery problems with photos)
   }
 }
 .favoritue {
