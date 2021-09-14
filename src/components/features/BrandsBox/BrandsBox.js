@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Brand.module.scss';
+import styles from '../BrandsBox/BrandsBox.module.scss';
 
-const Brand = ({ name, image }) => {
+const BrandsBox = ({ name, image }) => {
   return (
     <div className={styles.photoBrands}>
       <img src={image} alt={name} />
@@ -10,9 +10,9 @@ const Brand = ({ name, image }) => {
   );
 };
 
-Brand.propTypes = {
+BrandsBox.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
 };
 
-export default Brand;
+export default BrandsBox;

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './BrandsBox.module.scss';
-import Button from './../../common/Button/Button';
+import styles from './Brands.module.scss';
+import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Brand from '../Brands/Brand';
+import BrandsBox from '../../features/BrandsBox/BrandsBox';
 
-const BrandsBox = ({ brands }) => {
+const Brands = ({ brands }) => {
   const [brand] = useState(6);
   const [activePage, setActivePage] = useState(0);
 
@@ -38,7 +38,7 @@ const BrandsBox = ({ brands }) => {
           <div className={'col-10' + styles.photoBrands}>
             {brands.slice(activePage * 6, (activePage + 1) * 6).map(item => (
               <div key={item.id} className='col-2'>
-                <Brand {...item} />
+                <BrandsBox {...item} />
               </div>
             ))}
           </div>
@@ -57,7 +57,7 @@ const BrandsBox = ({ brands }) => {
   );
 };
 
-BrandsBox.propTypes = {
+Brands.propTypes = {
   brands: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -67,8 +67,8 @@ BrandsBox.propTypes = {
   ),
 };
 
-BrandsBox.defaultProps = {
+Brands.defaultProps = {
   brands: [],
 };
 
-export default BrandsBox;
+export default Brands;
