@@ -16,11 +16,10 @@ const ProductBox = ({
   image,
   stars,
   oldPrice,
-  favoritue, git a
+  favoritue,
   addToFavoritue,
-  isStarred
+  isStarred,
 }) => {
-
   const choseClassName = btnType => {
     if (btnType === 'favourite' && name === 'Aenean Ru Bristique 1') {
       return 'active';
@@ -78,7 +77,6 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
-  id: PropTypes.string,
   children: PropTypes.node,
   id: PropTypes.string.isRequired,
   name: PropTypes.string,
