@@ -15,7 +15,8 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import ProductImgBoxSlider from './../ProductImgBoxSlider/ProductImgBoxSlider';
 
 const ProductSlider = ({ stars, products }) => {
-  const activePage = useState(0);
+  const [activePage] = useState(0);
+  const [product] = useState(6);
 
   return (
     <div className={styles.root}>
@@ -48,10 +49,7 @@ const ProductSlider = ({ stars, products }) => {
 
       <div className={styles.mainWrapper}>
         <div className={styles.imageWrapper}>
-          <img
-            src={'https://www.pexels.com/pl-pl/zdjecie/bialy-fotel-i-otomana-220749/'}
-            alt='image 1'
-          />
+          <img src={''} alt='image 1' />
         </div>
 
         <div className={styles.smallMenuWrapper}>
@@ -113,12 +111,14 @@ const ProductSlider = ({ stars, products }) => {
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
-          <div className={'col-10' + styles.products}>
-            {products.slice(activePage * 6, (activePage + 1) * 6).map(item => (
-              <div key={item.id} className='col-2'>
-                <ProductImgBoxSlider {...item} />
-              </div>
-            ))}
+          <div className={'col-10 boxSlider' + styles.products}>
+            {products
+              .slice(activePage * product, (activePage + 1) * product)
+              .map(item => (
+                <div key={item.id} className='col-2'>
+                  <ProductImgBoxSlider {...item} />
+                </div>
+              ))}
           </div>
           <div className={`col-1 ${styles.buttonWrapper}`}>
             <Button className={styles.button} variant='carousel'>

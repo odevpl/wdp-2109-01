@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import Button from './../../common/Button/Button';
 import ProductSlider from '../../common/ProductSlider/ProductSliderContainer';
+import bedroom_bed from '../../common/images/imagesGallery/bedroom_bed.jpg';
 
 class Gallery extends React.Component {
   render() {
@@ -16,13 +17,13 @@ class Gallery extends React.Component {
 
             <div className={'col-6 ${styles.rightWrapper}'}>
               <div className={styles.imageWrapper}>
-                <img src='../../images/imagesGallery/chair-1.jpg' alt='' />
+                <img src={bedroom_bed} width='120' height='200' />
                 <div className={styles.priceTitle}>
                   FROM<span>$50.80</span>
                 </div>
                 <div className={styles.priceSubtitle}>Bedroom bed</div>
                 <div className={styles.greenButton}>
-                  <Button variant='bigGreenButton'>SHOP NOW</Button>
+                  <Button variant='greenButton'>SHOP NOW</Button>
                 </div>
               </div>
             </div>
