@@ -15,10 +15,10 @@ export const SET_STARS = createActionName('SET_STARS');
 export const setStars = payload => ({ payload, type: SET_STARS });
 
 /* action types */
-export const ADD_TO_FAVORITUE = createActionName('ADD_TO_FAVORITUE');
+export const ADD_TO_favourite = createActionName('ADD_TO_favourite');
 
 /* action creators */
-export const addToFavoritue = payload => ({ payload, type: ADD_TO_FAVORITUE });
+export const addTofavourite = payload => ({ payload, type: ADD_TO_favourite });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -35,11 +35,11 @@ export default function reducer(statePart = [], action = {}) {
       });
       return newStatePart;
     }
-    case ADD_TO_FAVORITUE: {
+    case ADD_TO_favourite: {
       const id = action.payload;
       return statePart.map(product =>
         product.id === id
-          ? { ...product, favoritue: !product.favoritue }
+          ? { ...product, favourite: !product.favourite }
           : { ...product }
       );
     }

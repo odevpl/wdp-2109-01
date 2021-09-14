@@ -16,7 +16,6 @@
     .icon {
       position: relative;
       z-index: 9;
-      transition: $actionDuration;
     }
 
     &::before {
@@ -87,7 +86,7 @@
       color: $featureBox-activeIcon-color;
 
       .icon {
-        animation: $featureBox-animationType $actionDuration;
+        animation: $hover-animationType $actionDuration;
         font-size: 1.1rem;
       }
 

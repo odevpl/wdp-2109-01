@@ -1,7 +1,14 @@
 $base-padding: 24px;
-$actionDuration: 250ms;
 
-// GLOBAL COLORS
+// HOVER VARIABLES
+$actionDuration: 250ms;
+// two types of icon movement are available: shake, rotate
+$hover-animationType: shake;
+
+// !!!!!!!!!!!!!!
+// GLOBAL COLORS - DO NOT USE BELOW VARIABLES IN THE CODE - FOLLOW PATTERN IN GLOBAL NAMES SECTION
+// !!!!!!!!!!!!!!
+
 // names taken from https://www.color-name.com/
 // should you change/add colors, use website above for standardized naming convention
 
@@ -20,6 +27,8 @@ $button-text-color: $color-white;
 $button-background-color: $color-CharlestonGreen;
 $button-background-color--hov: $color-tigersEye;
 $button-outline-color: $color-CharlestonGreen;
+$button-fav-background: $color-tigersEye;
+$button-fav-color: $color-CharlestonGreen;
 
 // feature box
 $featureBox-border-color: $color-PhilippineSilver;
@@ -29,8 +38,6 @@ $featureBox-icon-background: $color-white;
 $featureBox-activeIcon-color: $color-white;
 $featureBox-activeIcon-background: $color-tigersEye;
 $featureBox-activeIcon-text: $color-tigersEye;
-//in Feature Box two types of icon movement are available, define it below: shake, rotate
-$featureBox-animationType: shake;
 
 // product box
 $productBox-background: $color-white;
@@ -67,7 +74,7 @@ $companyClaim-cardCounter: $color-ChineseWhite;
 $footer-background: $color-jet;
 $footer-categories: $color-white;
 $footer-subcategories: $color-PhilippineSilver;
-$footer-subcategories--hover: $color-white;
+$footer-subcategories--hover: $color-tigersEye;
 $footer-socials-background: $color-CharlestonGreen;
 $footer-socials-copyright: $color-PhilippineSilver;
 $footer-socials-icons: $color-PhilippineSilver;
@@ -82,10 +89,10 @@ $menuBar-boxShadow: $color-black;
 
 // top bar
 $topBar-background: $color-CharlestonGreen;
-$topBar-text: $color-white;
+$topBar-text: $color-ChineseWhite;
 $topBar-text--hover: $color-tigersEye;
 
-// keyframes definitions
+// keyframes definitions - DO NOT EDIT
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
