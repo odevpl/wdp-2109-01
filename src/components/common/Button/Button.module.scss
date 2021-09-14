@@ -14,7 +14,6 @@
     text-decoration: none;
   }
 }
-<<<<<<< HEAD
 .close {
   color: $color-tigersEye;
   font-size: 18px;
@@ -22,7 +21,6 @@
     color: $color-jet;
   }
 }
-=======
 
 .carousel {
   @extend .main;
@@ -32,7 +30,6 @@
   padding: 35px 10px;
 }
 
->>>>>>> 1f68d30 (Add component Gallery problems with photos)
 .small {
   @extend .main;
   font-size: 13px;
@@ -59,7 +56,6 @@
   }
 }
 
-<<<<<<< HEAD
 .favourite, .compare {
   background-color: $button-fav-background;
   color: $button-fav-color;
@@ -67,7 +63,7 @@
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
-=======
+
 .favoritue {
   background-color: $color-white;
   color: $color-tigersEye;
@@ -104,7 +100,6 @@
     color: $color-white;
     text-decoration: none;
     border-top: 3px solid $color-tigersEye;
->>>>>>> 1f68d30 (Add component Gallery problems with photos)
   }
 }
 
