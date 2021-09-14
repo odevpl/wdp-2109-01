@@ -82,12 +82,12 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	
+
 	.oldPrice {
 	  color: grey;
 	  text-decoration: line-through $color-CharlestonGreen;
@@ -104,6 +104,15 @@
       visibility: visible;
     }
 
+    &:hover {
+      .price > div {
+        background-color: $color-tigersEye;
+      }
+      .buttons {
+        visibility: visible;
+      }
+
+    }
   }
 }
 }
