@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductSlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from './../Button/Button';
+import Button from '../../common/Button/Button';
 import {
   faStar,
   faEye,
@@ -12,9 +12,11 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import ProductImgBoxSlider from './../ProductImgBoxSlider/ProductImgBoxSlider';
+import ProductSliderBox from '../../common/ProductSliderBox/ProductSliderBox';
+import chair from '../../common/images/imagesGallery/chair.jpg';
+import ProductRating from '../ProductRating/ProductRatingContainer';
 
-const ProductSlider = ({ stars, products }) => {
+const ProductSlider = ({ products }) => {
   const [activePage] = useState(0);
   const [product] = useState(6);
 
@@ -49,7 +51,7 @@ const ProductSlider = ({ stars, products }) => {
 
       <div className={styles.mainWrapper}>
         <div className={styles.imageWrapper}>
-          <img src={''} alt='image 1' />
+          <img src={chair} />
         </div>
 
         <div className={styles.smallMenuWrapper}>
@@ -58,7 +60,7 @@ const ProductSlider = ({ stars, products }) => {
               <Button variant='outline'>
                 <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
               </Button>
-              <div className={styles.tooltip}>Favorite</div>
+              <div className={styles.tooltip}>Favourite</div>
             </div>
 
             <div className={styles.tooltipHover}>
@@ -86,16 +88,9 @@ const ProductSlider = ({ stars, products }) => {
 
         <div className={styles.content}>
           <h5>Aenean Ru Bristique</h5>
+
           <div className={styles.stars}>
-            {[1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
-                {i <= stars ? (
-                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                )}
-              </a>
-            ))}
+            <ProductRating id={0} stars={2} />
           </div>
         </div>
         <div className={styles.priceCircle}>
@@ -104,23 +99,25 @@ const ProductSlider = ({ stars, products }) => {
         </div>
       </div>
 
-      <div className='container slider'>
+      <div className='container'>
         <div className='row justify-content-between'>
-          <div className={`col-1 ${styles.buttonWrapper}`}>
+          <div className={`col-1`}>
             <Button className={styles.button} variant='carousel'>
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
-          <div className={'col-10 boxSlider' + styles.products}>
-            {products
-              .slice(activePage * product, (activePage + 1) * product)
-              .map(item => (
-                <div key={item.id} className='col-2'>
-                  <ProductImgBoxSlider {...item} />
-                </div>
-              ))}
+          <div className='col-10'>
+            <div className='row justify-content-between'>
+              {products
+                .slice(activePage * product, (activePage + 1) * product)
+                .map(item => (
+                  <div key={item.id} className='col-2'>
+                    <ProductSliderBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
-          <div className={`col-1 ${styles.buttonWrapper}`}>
+          <div className={`col-1`}>
             <Button className={styles.button} variant='carousel'>
               <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
             </Button>
@@ -132,7 +129,6 @@ const ProductSlider = ({ stars, products }) => {
 };
 
 ProductSlider.propTypes = {
-  stars: PropTypes.number,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
