@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import Button from './../../common/Button/Button';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d6cb5b (Add styles for Gallery)
 import ProductSlider from '../../features/ProductSlider/ProductSliderContainer';
 import bedroom_bed from '../../common/images/imagesGallery/bedroom_bed.jpg';
 =======
@@ -22,10 +25,14 @@ class Gallery extends React.Component {
             <div className={'col-6 ${styles.rightWrapper}'}>
               <div className={styles.imageWrapper}>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src={bedroom_bed} width='120' height='180' />
 =======
                 <img src='../../images/imagesGallery/chair-1.jpg' alt='' />
 >>>>>>> 259ae63 (Add component Gallery problems with photos)
+=======
+                <img src={bedroom_bed} width='120' height='180' />
+>>>>>>> 4d6cb5b (Add styles for Gallery)
                 <div className={styles.priceTitle}>
                   FROM<span>$50.80</span>
                 </div>
