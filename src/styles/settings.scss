@@ -1,6 +1,7 @@
 $base-padding: 24px;
 
 // GLOBAL COLORS
+
 // names taken from https://www.color-name.com/
 // should you change/add colors, use website above for standardized naming convention
 
@@ -9,6 +10,7 @@ $color-CharlestonGreen: #2a2a2a;
 $color-jet: #363636;
 $color-PhilippineSilver: #b6b6b6;
 $color-ChineseWhite: #e1e1e1;
+$color-bestWhite: #fffdfa;
 $color-white: #fff;
 $color-black: #000;
 
@@ -52,6 +54,7 @@ $newFuriniture-dotsActive: $color-tigersEye;
 // product search
 $productSearch-form-main: $color-CharlestonGreen;
 $productSearch-form-icon: $color-tigersEye;
+$productSearch-list-bg--hover: $color-bestWhite;
 
 // company claim
 $companyClaim-background: $color-jet;
