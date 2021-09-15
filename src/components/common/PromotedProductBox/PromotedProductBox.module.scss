@@ -1,15 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $productBox-background;
-  border: 1px solid $productBox-border;
-  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  margin: 0;
 
   .photo {
     position: relative;
     padding: 0;
     background: {
-      color: $productBox-photo-background;
+      color: #f4f5f7;
       size: contain;
       position: center;
       repeat: no-repeat;
@@ -17,24 +17,72 @@
     overflow: hidden;
     align-items: flex-end;
 
+    &:hover {
+      .buttons {
+        opacity: 0.9;
+        transition: 0.5s ease;
+      }
+      .timeBar { 
+        opacity: 0.9;
+        transition: 0.5s ease;
+      }
+    }
+
     .sale {
       position: absolute;
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: $productBox-sale-background;
+      background-color: #292929;
       border-radius: 50%;
-      color: $productBox-sale-text;
+      color: #ffffff;
       padding: 30px 15px 5px 15px;
     }
 
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-      visibility: hidden;
+    .timeBar {
+      position: absolute;
+      padding: 0 30px;
+      top: 175px;
+      height: 60px;
+      width: 100%;
+      z-index: 90;
+      background-color: transparent;
+      opacity: 0;
+    
+     .timeBarItem {
+      display: block;
+      margin: 0;
+      padding: 3px 0 0;
+      height: 60px;
+      text-align: center;
+      color: white;
+      border-radius: 50%;
+      background-color: $footer-claim-bg;
+       
+        .number {
+          margin: 7px 0 0;
+          font-size: 1.6rem;
+          line-height: 1;
+        }
+        
+        .unit {
+          font-size: 0.7rem;
+        }
+      }
     }
 
-    img {
+    .buttons {
+      position: absolute;
+      top: 50px;
+      height: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+      padding: 30px 15px 5px 15px;
+      opacity: 0;
+    }
+
+   img {
       height: 300px;
       width: 100%;
       object-fit: cover;
@@ -46,7 +94,7 @@
     padding: 20px;
 
     h5 {
-      color: $productBox-itemName;
+      color: $primary;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -55,14 +103,14 @@
     .stars {
       a {
         text-decoration: none;
-        color: $productBox-starRating;
+        color: rgb(42, 42, 42);
       }
     }
   }
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid $productBox-longLine;
+    border-bottom: 1px solid #2a2a2a;
     position: relative;
 
     &::before {
@@ -71,7 +119,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $productBox-shortLine;
+      border-bottom: 4px solid $primary;
       transform: translateX(-50%);
     }
   }
@@ -87,10 +135,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+	
 	.oldPrice {
 	  color: grey;
-	  text-decoration: line-through $color-CharlestonGreen;
+	  text-decoration: line-through $text-color;
 	  padding-right: 5px;
 	  font-size: 13px;
 	  font-weight: 400;
@@ -98,37 +146,13 @@
 
   &:hover {
     .price > div {
-      background-color: $color-tigersEye;
+      background-color: $primary;
     }
     .buttons {
       visibility: visible;
     }
-      
-    .oldPrice {
-      color: grey;
-      text-decoration: line-through $color-CharlestonGreen;
-      padding-right: 5px;
-      font-size: 13px;
-      font-weight: 400;
-    }
 
-    &:hover {
-      .price > div {
-        background-color: $color-tigersEye;
-      }
-      .buttons {
-        visibility: visible;
-      }
-      
-      &:hover {
-        .price > div {
-          background-color: $primary;
-        }
-        .buttons {
-          visibility: visible;
-        }
-
-      }
-    }
   }
+}
+
 }
