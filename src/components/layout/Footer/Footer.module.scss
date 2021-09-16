@@ -21,6 +21,7 @@
             font-size: 14px;
             line-height: 30px;
             color: $footer-subcategories;
+            text-decoration: none;
 
             &:hover {
               color: $footer-subcategories--hover;
@@ -96,9 +97,9 @@
           a {
             color: $footer-socials-icons;
             text-decoration: none;
-
-            &:hover {
+            svg:hover {
               color: $footer-socials-icons--hover;
+              animation: $hover-animationType $actionDuration;
             }
           }
         }

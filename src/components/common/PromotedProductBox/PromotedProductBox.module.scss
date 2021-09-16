@@ -22,7 +22,7 @@
         opacity: 0.9;
         transition: 0.5s ease;
       }
-      .timeBar { 
+      .timeBar {
         opacity: 0.9;
         transition: 0.5s ease;
       }
@@ -48,7 +48,7 @@
       z-index: 90;
       background-color: transparent;
       opacity: 0;
-    
+
      .timeBarItem {
       display: block;
       margin: 0;
@@ -57,14 +57,14 @@
       text-align: center;
       color: white;
       border-radius: 50%;
-      background-color: $footer-claim-bg;
-       
+      background-color: $color-CharlestonGreen;
+
         .number {
           margin: 7px 0 0;
           font-size: 1.6rem;
           line-height: 1;
         }
-        
+
         .unit {
           font-size: 0.7rem;
         }
@@ -94,7 +94,7 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
+      color: $color-tigersEye;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -119,7 +119,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $color-tigersEye;
       transform: translateX(-50%);
     }
   }
@@ -135,10 +135,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-	
+
 	.oldPrice {
 	  color: grey;
-	  text-decoration: line-through $text-color;
+	  text-decoration: line-through $color-CharlestonGreen;
 	  padding-right: 5px;
 	  font-size: 13px;
 	  font-weight: 400;
@@ -146,7 +146,7 @@
 
   &:hover {
     .price > div {
-      background-color: $primary;
+      background-color: $color-tigersEye;
     }
     .buttons {
       visibility: visible;

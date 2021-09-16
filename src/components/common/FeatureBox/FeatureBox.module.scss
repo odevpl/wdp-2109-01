@@ -52,6 +52,23 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
+    transition: $actionDuration;
+
+    h5, p {
+      position: relative;
+    }
+
+    h5::after, p::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: $featureBox-activeIcon-background;
+      transition: width $actionDuration ease-in-out;
+    }
 
     h5 {
       font-weight: 600;
@@ -62,8 +79,17 @@
   &:hover {
     cursor: pointer;
 
+    h5::after, &:hover p::after {
+      width: 33%;
+    }
+
     .iconWrapper {
       color: $featureBox-activeIcon-color;
+
+      .icon {
+        animation: $hover-animationType $actionDuration;
+        font-size: 1.1rem;
+      }
 
       &::after {
         background-color: $featureBox-activeIcon-background;

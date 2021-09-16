@@ -39,6 +39,10 @@
       width: 100%;
       object-fit: cover;
     }
+
+    &:hover .buttons {
+      visibility: visible;
+    }
   }
 
   .content {
@@ -105,8 +109,8 @@
     }
 
     .oldPrice {
-      color: grey;
-      text-decoration: line-through $color-CharlestonGreen;
+      color: $productBox-oldPrice;
+      text-decoration: line-through $productBox-longLine;
       padding-right: 5px;
       font-size: 13px;
       font-weight: 400;
