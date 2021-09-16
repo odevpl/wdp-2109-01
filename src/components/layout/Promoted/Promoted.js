@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './Promoted.module.scss';
 import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductBoxContainer';
 import Button from '../../common/Button/Button';
 import initialState from '../../../redux/initialState';
+import Fade from 'react-reveal/Fade';
 
 class Promoted extends React.Component {
   state = {
@@ -16,7 +18,12 @@ class Promoted extends React.Component {
   }
 
   render() {
-    const { pagesCount, activePage } = this.state;
+    const { activePage } = this.state;
+    const { promotions } = this.props;
+    const testos = [promotions[1]];
+    /* eslint no-console: ["error", { allow: ["log"] }] */
+    console.log(testos);
+    const pagesCount = Math.ceil(promotions.length);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -62,34 +69,42 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
-                {/* <div className='col col-lg-1'>
-                      <img src={promi.image}
-                        alt='fgdfg' />
-                    </div> */}
-                <PromotedProductBox {...initialState.products[15]} />
-              </div>
 
-              <div className={`col-12 col-lg-8 ${styles.promotionWrapperRight}`}>
+                {promotions.slice(activePage, activePage + 1).map(prom => (
+                  <div key={prom.id}>
+                    <Fade>
+                      <PromotedProductBox {...prom} />
+                    </Fade>
+                  </div>
+                ))}
+              </div>
+              <div className={`col-8 ${styles.promotionWrapperRight}`}>
                 <div className={styles.imgWrapper}>
                   <img src={initialState.products[20].image} alt={123} />
                 </div>
-                <div className={styles.shadowWrapper}></div>
-                <div className={styles.shadowTitle}>
-                  INDOOR <span>FURNITURE</span>
-                  <div className={styles.shadowSubtitle}>
-                    SAVE UP TO 50% OF ALL FURNITURE
+
+                <div className={`col-12 col-lg-8 ${styles.promotionWrapperRight}`}>
+                  <div className={styles.imgWrapper}>
+                    <img src={initialState.products[20].image} alt={123} />
                   </div>
-                </div>
-                <div className={styles.mainButton}>
-                  <Button variant='white'>SHOP NOW</Button>
-                </div>
-                <div className={styles.buttonsWrapper}>
-                  <div className='row'>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button variant='long'>{'<'}</Button>
+                  <div className={styles.shadowWrapper}></div>
+                  <div className={styles.shadowTitle}>
+                    INDOOR <span>FURNITURE</span>
+                    <div className={styles.shadowSubtitle}>
+                      SAVE UP TO 50% OF ALL FURNITURE
                     </div>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button variant='long'>{'>'}</Button>
+                  </div>
+                  <div className={styles.mainButton}>
+                    <Button variant='white'>SHOP NOW</Button>
+                  </div>
+                  <div className={styles.buttonsWrapper}>
+                    <div className='row'>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button variant='long'>{'<'}</Button>
+                      </div>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button variant='long'>{'>'}</Button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,5 +116,13 @@ class Promoted extends React.Component {
     );
   }
 }
+
+Promoted.propTypes = {
+  promotions: PropTypes.node,
+};
+
+Promoted.defaultProps = {
+  promotions: [],
+};
 
 export default Promoted;
