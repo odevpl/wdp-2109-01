@@ -19,11 +19,14 @@ class Promoted extends React.Component {
 
   render() {
     const { activePage } = this.state;
-    const { promotions } = this.props;
-    const testos = [promotions[1]];
+    const promoProducts = [
+      { ...initialState.products[5] },
+      { ...initialState.products[10] },
+      { ...initialState.products[17] },
+    ];
     /* eslint no-console: ["error", { allow: ["log"] }] */
-    console.log(testos);
-    const pagesCount = Math.ceil(promotions.length);
+    // console.log(promoProducts);
+    const pagesCount = Math.ceil(promoProducts.length);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -70,7 +73,7 @@ class Promoted extends React.Component {
                   </div>
                 </div>
 
-                {promotions.slice(activePage, activePage + 1).map(prom => (
+                {promoProducts.slice(activePage, activePage + 1).map(prom => (
                   <div key={prom.id}>
                     <Fade>
                       <PromotedProductBox {...prom} />

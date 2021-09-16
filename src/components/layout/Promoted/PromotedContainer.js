@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAll } from '../../../redux/promoRedux';
+import { getAll } from '../../../redux/productsRedux';
 
 import Promoted from './Promoted';
 
