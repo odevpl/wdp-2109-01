@@ -11,7 +11,7 @@ const ProductSearch = ({ categories }) => {
     <form action='' className={styles.root}>
       <div className={styles.category}>
         <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-        <div className='category-list'>
+        <div>
           <ul>
             Select a category
             {categories.map(item => (
