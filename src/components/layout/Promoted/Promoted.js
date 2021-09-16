@@ -62,6 +62,10 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
+                {/* <div className='col col-lg-1'>
+                      <img src={promi.image}
+                        alt='fgdfg' />
+                    </div> */}
                 <PromotedProductBox {...initialState.products[15]} />
               </div>
 
