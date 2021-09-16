@@ -1,9 +1,9 @@
 import React from 'react';
+import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './Promoted.module.scss';
 import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductBoxContainer';
 import Button from '../../common/Button/Button';
 import initialState from '../../../redux/initialState';
-import Swipeable from '../../common/Swipeable/Swipeable';
 
 class Promoted extends React.Component {
   state = {
