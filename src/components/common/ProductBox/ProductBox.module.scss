@@ -118,17 +118,8 @@
       }
       .buttons {
         visibility: visible;
-      }
-      
-      &:hover {
-        .price > div {
-          background-color: $primary;
-        }
-        .buttons {
-          visibility: visible;
-        }
-
-      }
+      }    
     }
   }
+}
 }
