@@ -17,7 +17,13 @@
     text-decoration: none;
   }
 }
-
+.close{
+  color: $color-tigersEye;
+  font-size: 18px;
+  :hover{
+    color: $color-jet;
+  }
+}
 .small {
   @extend .main;
   font-size: 13px;
@@ -26,7 +32,8 @@
   font-weight: 400;
 }
 
-.outline, .favourite {
+.outline, .favoritue, .compare {
+
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -44,12 +51,42 @@
   }
 }
 
-.favourite {
+.favoritue, .compare {
   background-color: $button-fav-background;
   color: $button-fav-color;
+
 
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
   }
+}
+
+.promotedOutline {
+  @extend .outline;
+  margin-right: 10px;
+}
+
+.white {
+  @extend .main;
+  display: block;
+  font-size: 13px;
+  line-height: 24px;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #2a2a2a;
+  background-color: white;
+}
+
+.long {
+  @extend .main;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 400;
 }
