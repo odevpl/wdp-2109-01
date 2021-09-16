@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ProductBox from './ProductBox';
 import {
   getAll,
-  addToFavoritue,
+  addToFavourite,
   addToCompare,
   getProductsToCompare,
 } from '../../../redux/productsRedux.js';
@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, props) => {
   const { id } = props;
   return {
-    addToFavoritue: id => dispatch(addToFavoritue(id)),
+    addToFavourite: id => dispatch(addToFavourite(id)),
     addToCompare: id => dispatch(addToCompare(id)),
   };
 };
