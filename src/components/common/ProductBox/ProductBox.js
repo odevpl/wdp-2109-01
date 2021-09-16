@@ -17,7 +17,7 @@ const ProductBox = ({
   stars,
   oldPrice,
   favourite,
-  addToFavourite,
+  addTofavourite,
   isStarred,
 }) => (
   <div className={styles.root}>
@@ -44,7 +44,7 @@ const ProductBox = ({
           variant={favourite ? 'favourite' : 'outline'}
           onClick={event => {
             event.preventDefault();
-            return addToFavourite(id);
+            return addTofavourite(id);
           }}
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
@@ -71,7 +71,7 @@ ProductBox.propTypes = {
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   favourite: PropTypes.bool,
-  addToFavourite: PropTypes.func,
+  addTofavourite: PropTypes.func,
   image: PropTypes.string,
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
