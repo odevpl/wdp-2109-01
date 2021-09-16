@@ -50,7 +50,7 @@ const ProductBox = ({
             return addToFavourite(id);
           }}
         >
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          <FontAwesomeIcon icon={faHeart}>Favourite</FontAwesomeIcon>
         </Button>
         <Button
           variant={compare ? 'compare' : 'outline'}
