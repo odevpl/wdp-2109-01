@@ -40,6 +40,10 @@
   font-size: 13px;
   line-height: 22px;
 
+  &:active {
+    animation: $hover-animationType $actionDuration;
+  }
+
   &:not(.noHover):hover {
     background-color: $button-outline-color;
     color: $button-text-color;
@@ -47,12 +51,12 @@
 }
 
 .favourite, .compare {
-  background-color: #ffffff;
-  color: $color-tigersEye;
+  background-color: $button-fav-background;
+  color: $button-fav-color;
 
   &:not(.noHover):hover {
-    background-color: $color-tigersEye;
-    color: #2a2a2a;
+    background-color: $button-background-color;
+    color: $button-background-color--hov;
   }
 }
 
