@@ -4,8 +4,8 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './Promoted.module.scss';
 import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductBoxContainer';
 import Button from '../../common/Button/Button';
-import initialState from '../../../redux/initialState';
 import Fade from 'react-reveal/Fade';
+import Carousel from 'react-material-ui-carousel';
 
 class Promoted extends React.Component {
   state = {
@@ -24,22 +24,21 @@ class Promoted extends React.Component {
   }
 
   render() {
-    const { pagesCount, activePageSmall, activePageBig } = this.state;
+    const { activePageSmall, activePageBig, pagesCount } = this.state;
+    const { promotions } = this.props;
 
     const promoProducts = [
-      { ...initialState.products[5] },
-      { ...initialState.products[10] },
-      { ...initialState.products[17] },
+      { ...promotions[5] },
+      { ...promotions[10] },
+      { ...promotions[17] },
     ];
     const promoProductsTwo = [
-      { ...initialState.products[2] },
-      { ...initialState.products[8] },
-      { ...initialState.products[11] },
+      { ...promotions[2] },
+      { ...promotions[24] },
+      { ...promotions[11] },
     ];
-    /* eslint no-console: ["error", { allow: ["log"] }] */
-    // console.log(promoProducts);
-    // const pagesCount = Math.ceil(promoProducts.length);
 
+    /* Slider small actions */
     const rightAction = () => {
       const newPage = activePageSmall - 1;
       if (newPage >= 0) {
@@ -68,8 +67,10 @@ class Promoted extends React.Component {
         </li>
       );
     }
+
     const leftPage = activePageBig - 1;
     const rightPage = activePageBig + 1;
+
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
@@ -86,18 +87,24 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
-                {promoProducts.slice(activePageSmall, activePageSmall + 1).map(prom => (
-                  <div key={prom.id}>
-                    <Fade>
-                      <PromotedProductBox {...prom} />
-                    </Fade>
-                  </div>
-                ))}
+                <Carousel autoPlay='true' interval='2000' animation='fade'>
+                  {promoProducts
+                    .slice(activePageSmall, activePageSmall + 1)
+                    .map(prom => (
+                      <div key={prom.id}>
+                        <Fade>
+                          <PromotedProductBox {...prom} />
+                        </Fade>
+                      </div>
+                    ))}
+                </Carousel>
               </div>
               <div className={`col-8 ${styles.promotionWrapperRight}`}>
                 {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
                   <div key={prom.id} className={styles.imgWrapper}>
-                    <img src={prom.image} alt={123} />
+                    <Fade>
+                      <img src={prom.image} alt={123} />
+                    </Fade>
                   </div>
                 ))}
                 <div className={styles.shadowWrapper}></div>
@@ -108,13 +115,11 @@ class Promoted extends React.Component {
                   </div>
                 </div>
                 <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                  {promoProductsTwo
-                    .slice(activePageBig, activePageBig + 1)
-                    .map(prom => (
-                      <div key={prom.id} className={styles.imgWrapper}>
-                        <img src={prom.image} alt={123} />
-                      </div>
-                    ))}
+                  {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
+                    <div key={prom.id} className={styles.imgWrapper}>
+                      <img src={prom.image} alt={123} />
+                    </div>
+                  ))}
                   <div className={styles.shadowWrapper}></div>
                   <div className={styles.shadowTitle}>
                     INDOOR <span>FURNITURE</span>
@@ -122,30 +127,46 @@ class Promoted extends React.Component {
                       SAVE UP TO 50% OF ALL FURNITURE
                     </div>
                   </div>
-                  <div className={styles.mainButton}>
-                    <Button variant='white'>SHOP NOW</Button>
-                  </div>
-                  <div className={styles.buttonsWrapper}>
-                    <div className='row'>
-                      <div className={`col-6 ${styles.button}`}>
-                        <Button
-                          variant='long'
-                          onClick={e =>
-                            e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
-                          }
-                        >
-                          {'<'}
-                        </Button>
+                  <div className={`col-8 ${styles.promotionWrapperRight}`}>
+                    {promoProductsTwo
+                      .slice(activePageBig, activePageBig + 1)
+                      .map(prom => (
+                        <div key={prom.id} className={styles.imgWrapper}>
+                          <img src={prom.image} alt={123} />
+                        </div>
+                      ))}
+                    <div className={styles.shadowWrapper}></div>
+                    <div className={styles.shadowTitle}>
+                      INDOOR <span>FURNITURE</span>
+                      <div className={styles.shadowSubtitle}>
+                        SAVE UP TO 50% OF ALL FURNITURE
                       </div>
-                      <div className={`col-6 ${styles.button}`}>
-                        <Button
-                          variant='long'
-                          onClick={e =>
-                            e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
-                          }
-                        >
-                          {'>'}
-                        </Button>
+                    </div>
+                    <div className={styles.mainButton}>
+                      <Button variant='white'>SHOP NOW</Button>
+                    </div>
+                    <div className={styles.buttonsWrapper}>
+                      <div className='row'>
+                        <div className={`col-6 ${styles.button}`}>
+                          <Button
+                            variant='long'
+                            onClick={e =>
+                              e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
+                            }
+                          >
+                            {'<'}
+                          </Button>
+                        </div>
+                        <div className={`col-6 ${styles.button}`}>
+                          <Button
+                            variant='long'
+                            onClick={e =>
+                              e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
+                            }
+                          >
+                            {'>'}
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -160,7 +181,22 @@ class Promoted extends React.Component {
 }
 
 Promoted.propTypes = {
-  promotions: PropTypes.node,
+  promotions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      category: PropTypes.string,
+      price: PropTypes.number,
+      stars: PropTypes.number,
+      isStarred: PropTypes.bool,
+      oldPrice: PropTypes.number,
+      promo: PropTypes.string,
+      newFurniture: PropTypes.bool,
+      favoritue: PropTypes.bool,
+      image: PropTypes.string,
+      compare: PropTypes.bool,
+    })
+  ),
 };
 
 Promoted.defaultProps = {
