@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
+import { Link } from 'react-router-dom';
 
 const TopBar = () => (
   <div className={styles.root}>
@@ -38,9 +39,11 @@ const TopBar = () => (
             </li>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
+                <FontAwesomeIcon className={styles.icon} icon={faLock} />
+                <Link to='/register'>Register</Link>
               </a>
             </li>
+
             <li>
               <a href='#'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
