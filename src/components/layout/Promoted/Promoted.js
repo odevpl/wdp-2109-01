@@ -9,20 +9,22 @@ import Fade from 'react-reveal/Fade';
 
 class Promoted extends React.Component {
   state = {
-    sliderSMactivePage: 1,
-    sliderBGactivePage: 1,
+    activePageSmall: 1,
+    activePageBig: 1,
     pagesCount: 3,
   };
 
   handlePageChangeSliderSM(newPage) {
-    this.setState({ sliderSMactivePage: newPage });
+    this.setState({ activePageSmall: newPage });
   }
   handlePageChangeSliderBG(newPage) {
-    this.setState({ sliderBGactivePage: newPage });
+    if (newPage >= 0 && newPage < this.state.pagesCount) {
+      this.setState({ activePageBig: newPage });
+    }
   }
 
   render() {
-    const { sliderSMactivePage, sliderBGactivePage } = this.state;
+    const { pagesCount, activePageSmall, activePageBig } = this.state;
 
     const promoProducts = [
       { ...initialState.products[5] },
@@ -36,19 +38,19 @@ class Promoted extends React.Component {
     ];
     /* eslint no-console: ["error", { allow: ["log"] }] */
     // console.log(promoProducts);
-    const pagesCount = Math.ceil(promoProducts.length);
+    // const pagesCount = Math.ceil(promoProducts.length);
 
     const rightAction = () => {
-      const newPage = sliderSMactivePage - 1;
+      const newPage = activePageSmall - 1;
       if (newPage >= 0) {
-        this.setState({ sliderSMactivePage: newPage });
+        this.setState({ activePageSmall: newPage });
       }
     };
 
     const leftAction = () => {
-      const newPage = sliderSMactivePage + 1;
+      const newPage = activePageSmall + 1;
       if (newPage < pagesCount) {
-        this.setState({ sliderSMactivePage: newPage });
+        this.setState({ activePageSmall: newPage });
       }
     };
 
@@ -59,15 +61,15 @@ class Promoted extends React.Component {
           {/* eslint-disable-next-line */}
           <a
             onClick={() => this.handlePageChangeSliderSM(i)}
-            className={i === sliderSMactivePage && styles.active}
+            className={i === activePageSmall && styles.active}
           >
             page {i}
           </a>
         </li>
       );
     }
-    const leftPage = sliderBGactivePage - 1;
-    const rightPage = sliderBGactivePage + 1;
+    const leftPage = activePageBig - 1;
+    const rightPage = activePageBig + 1;
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
@@ -84,24 +86,20 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
-                {promoProducts
-                  .slice(sliderSMactivePage, sliderSMactivePage + 1)
-                  .map(prom => (
-                    <div key={prom.id}>
-                      <Fade>
-                        <PromotedProductBox {...prom} />
-                      </Fade>
-                    </div>
-                  ))}
+                {promoProducts.slice(activePageSmall, activePageSmall + 1).map(prom => (
+                  <div key={prom.id}>
+                    <Fade>
+                      <PromotedProductBox {...prom} />
+                    </Fade>
+                  </div>
+                ))}
               </div>
               <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                {promoProductsTwo
-                  .slice(sliderBGactivePage, sliderBGactivePage + 1)
-                  .map(prom => (
-                    <div key={prom.id} className={styles.imgWrapper}>
-                      <img src={prom.image} alt={123} />
-                    </div>
-                  ))}
+                {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
+                  <div key={prom.id} className={styles.imgWrapper}>
+                    <img src={prom.image} alt={123} />
+                  </div>
+                ))}
                 <div className={styles.shadowWrapper}></div>
                 <div className={styles.shadowTitle}>
                   INDOOR <span>FURNITURE</span>
@@ -109,30 +107,46 @@ class Promoted extends React.Component {
                     SAVE UP TO 50% OF ALL FURNITURE
                   </div>
                 </div>
-                <div className={styles.mainButton}>
-                  <Button variant='white'>SHOP NOW</Button>
-                </div>
-                <div className={styles.buttonsWrapper}>
-                  <div className='row'>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button
-                        variant='long'
-                        onClick={e =>
-                          e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
-                        }
-                      >
-                        {'<'}
-                      </Button>
+                <div className={`col-8 ${styles.promotionWrapperRight}`}>
+                  {promoProductsTwo
+                    .slice(activePageBig, activePageBig + 1)
+                    .map(prom => (
+                      <div key={prom.id} className={styles.imgWrapper}>
+                        <img src={prom.image} alt={123} />
+                      </div>
+                    ))}
+                  <div className={styles.shadowWrapper}></div>
+                  <div className={styles.shadowTitle}>
+                    INDOOR <span>FURNITURE</span>
+                    <div className={styles.shadowSubtitle}>
+                      SAVE UP TO 50% OF ALL FURNITURE
                     </div>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button
-                        variant='long'
-                        onClick={e =>
-                          e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
-                        }
-                      >
-                        {'>'}
-                      </Button>
+                  </div>
+                  <div className={styles.mainButton}>
+                    <Button variant='white'>SHOP NOW</Button>
+                  </div>
+                  <div className={styles.buttonsWrapper}>
+                    <div className='row'>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button
+                          variant='long'
+                          onClick={e =>
+                            e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
+                          }
+                        >
+                          {'<'}
+                        </Button>
+                      </div>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button
+                          variant='long'
+                          onClick={e =>
+                            e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
+                          }
+                        >
+                          {'>'}
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
