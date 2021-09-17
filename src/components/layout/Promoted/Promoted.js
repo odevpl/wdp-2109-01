@@ -5,7 +5,6 @@ import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductB
 import Button from '../../common/Button/Button';
 import Fade from 'react-reveal/Fade';
 import Carousel from 'react-material-ui-carousel';
-import Swipeable from '../../common/Swipeable/Swipeable';
 
 class Promoted extends React.Component {
   state = {
@@ -39,25 +38,11 @@ class Promoted extends React.Component {
     ];
     const promoProductsTwo = [
       { ...promotions[2] },
-      { ...promotions[8] },
+      { ...promotions[24] },
       { ...promotions[11] },
     ];
 
     /* Slider small actions */
-    // const rightActionCarousel = () => {
-    //   const newPage = activePageSmall - 1;
-    //   if (newPage >= 0) {
-    //     this.setState({ activePageSmall: newPage });
-    //   }
-    // };
-
-    // const leftActionCarousel = () => {
-    //   const newPage = activePageSmall + 1;
-    //   if (newPage < pagesCount) {
-    //     this.setState({ activePageSmall: newPage });
-    //   }
-    // };
-
     const rightAction = () => {
       const newPage = activePage - 1;
       if (newPage >= 0) {
@@ -91,68 +76,92 @@ class Promoted extends React.Component {
     const rightPage = activePageBig + 1;
 
     return (
-      <Swipeable leftAction={leftAction} rightAction={rightAction}>
-        <section className={styles.root}>
-          <div className='container'>
-            <div className='row'>
-              <div
-                className={`d-none d-md-block col-12 col-lg-4 ${styles.promotionWrapperLeft}`}
-              >
-                <div className={styles.panelBar}>
-                  <Carousel
-                    classes={{ indicatorIcon: 'MyCustomButton' }}
-                    autoPlay={true}
-                    interval='3000'
-                    animation='fade'
-                    navButtonsProps={{
-                      style: {
-                        display: 'none',
-                        fontSize: 20,
-                      },
-                    }}
-                    activeIndicatorIconButtonProps={{
-                      style: {
-                        color: '#D58E32',
-                      },
-                    }}
-                    indicatorIconButtonProps={{
+      // <Swipeable leftAction={leftAction} rightAction={rightAction}>
+      <section className={styles.root}>
+        <div className='container'>
+          <div className='row'>
+            <div
+              className={`d-none d-md-block col-12 col-lg-4 ${styles.promotionWrapperLeft}`}
+            >
+              <div className={styles.panelBar}>
+                <Carousel
+                  classes={{ indicatorIcon: 'MyCustomButton' }}
+                  autoPlay={true}
+                  interval='3000'
+                  animation='fade'
+                  navButtonsProps={{
+                    style: {
+                      display: 'none',
+                      fontSize: 20,
+                    },
+                  }}
+                  activeIndicatorIconButtonProps={{
+                    style: {
+                      color: '#D58E32',
+                    },
+                  }}
+                  indicatorIconButtonProps={{
+                    '& .hover': {
+                      color: '#D58E32',
+                    },
+                    indicatorIcon: {
+                      fontSize: '20px',
+                    },
+                    style: {
+                      color: '#e1e1e1',
+                      fontSize: 20,
                       '& .hover': {
                         color: '#D58E32',
                       },
-                      indicatorIcon: {
-                        fontSize: '20px',
-                      },
-                      style: {
-                        color: '#e1e1e1',
-                        fontSize: 20,
-                        '& .hover': {
-                          color: '#D58E32',
-                        },
-                      },
-                    }}
-                    indicatorContainerProps={{
-                      style: {
-                        position: 'absolute',
-                        top: -2,
-                        textAlign: 'right',
-                        paddingRight: 20,
-                        fontSize: 20,
-                      },
-                    }}
-                  >
-                    {promoProducts.map(prom => (
-                      <PromotedProductBox key={prom.id} {...prom} />
-                    ))}
-                  </Carousel>
+                    },
+                  }}
+                  indicatorContainerProps={{
+                    style: {
+                      position: 'absolute',
+                      top: -2,
+                      textAlign: 'right',
+                      paddingRight: 20,
+                      fontSize: 20,
+                    },
+                  }}
+                >
+                  {promoProducts.map(prom => (
+                    <PromotedProductBox key={prom.id} {...prom} />
+                  ))}
+                </Carousel>
+              </div>
+              <Carousel autoPlay='true' interval='2000' animation='fade'>
+                {promoProducts
+                  .slice(activePageSmall, activePageSmall + 1)
+                  .map(prom => (
+                    <div key={prom.id}>
+                      <Fade>
+                        <PromotedProductBox {...prom} />
+                      </Fade>
+                    </div>
+                  ))}
+              </Carousel>
+            </div>
+
+            <div className={`col-8 ${styles.promotionWrapperRight}`}>
+              {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
+                <div key={prom.id} className={styles.imgWrapper}>
+                  <Fade>
+                    <img src={prom.image} alt={123} />
+                  </Fade>
+                </div>
+              ))}
+              <div className={styles.shadowWrapper}></div>
+              <div className={styles.shadowTitle}>
+                INDOOR <span>FURNITURE</span>
+                <div className={styles.shadowSubtitle}>
+                  SAVE UP TO 50% OF ALL FURNITURE
                 </div>
               </div>
-
               <div className={`col-8 ${styles.promotionWrapperRight}`}>
                 {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
                   <div key={prom.id} className={styles.imgWrapper}>
-                    <Fade>
-                      <img src={prom.image} alt={123} />
-                    </Fade>
+                    <img src={prom.image} alt={123} />
                   </div>
                 ))}
                 <div className={styles.shadowWrapper}></div>
@@ -162,38 +171,55 @@ class Promoted extends React.Component {
                     SAVE UP TO 50% OF ALL FURNITURE
                   </div>
                 </div>
-                <div className={styles.mainButton}>
-                  <Button variant='white'>SHOP NOW</Button>
-                </div>
-                <div className={styles.buttonsWrapper}>
-                  <div className='row'>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button
-                        variant='long'
-                        onClick={e =>
-                          e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
-                        }
-                      >
-                        {'<'}
-                      </Button>
+                <div className={`col-8 ${styles.promotionWrapperRight}`}>
+                  {promoProductsTwo
+                    .slice(activePageBig, activePageBig + 1)
+                    .map(prom => (
+                      <div key={prom.id} className={styles.imgWrapper}>
+                        <img src={prom.image} alt={123} />
+                      </div>
+                    ))}
+                  <div className={styles.shadowWrapper}></div>
+                  <div className={styles.shadowTitle}>
+                    INDOOR <span>FURNITURE</span>
+                    <div className={styles.shadowSubtitle}>
+                      SAVE UP TO 50% OF ALL FURNITURE
                     </div>
-                    <div className={`col-6 ${styles.button}`}>
-                      <Button
-                        variant='long'
-                        onClick={e =>
-                          e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
-                        }
-                      >
-                        {'>'}
-                      </Button>
+                  </div>
+                  <div className={styles.mainButton}>
+                    <Button variant='white'>SHOP NOW</Button>
+                  </div>
+                  <div className={styles.buttonsWrapper}>
+                    <div className='row'>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button
+                          variant='long'
+                          onClick={e =>
+                            e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
+                          }
+                        >
+                          {'<'}
+                        </Button>
+                      </div>
+                      <div className={`col-6 ${styles.button}`}>
+                        <Button
+                          variant='long'
+                          onClick={e =>
+                            e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
+                          }
+                        >
+                          {'>'}
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </Swipeable>
+        </div>
+      </section>
+      // </Swipeable>
     );
   }
 }
