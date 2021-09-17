@@ -9,17 +9,21 @@ import Fade from 'react-reveal/Fade';
 
 class Promoted extends React.Component {
   state = {
-    sliderXSactivePage: 1,
-    activePage: 1,
+    sliderSMactivePage: 1,
+    sliderBGactivePage: 1,
     pagesCount: 3,
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+  handlePageChangeSliderSM(newPage) {
+    this.setState({ sliderSMactivePage: newPage });
+  }
+  handlePageChangeSliderBG(newPage) {
+    this.setState({ sliderBGactivePage: newPage });
   }
 
   render() {
-    const { activePage } = this.state;
+    const { sliderSMactivePage, sliderBGactivePage } = this.state;
+
     const promoProducts = [
       { ...initialState.products[5] },
       { ...initialState.products[10] },
@@ -35,34 +39,35 @@ class Promoted extends React.Component {
     const pagesCount = Math.ceil(promoProducts.length);
 
     const rightAction = () => {
-      const newPage = activePage - 1;
+      const newPage = sliderSMactivePage - 1;
       if (newPage >= 0) {
-        this.setState({ activePage: newPage });
+        this.setState({ sliderSMactivePage: newPage });
       }
     };
 
     const leftAction = () => {
-      const newPage = activePage + 1;
+      const newPage = sliderSMactivePage + 1;
       if (newPage < pagesCount) {
-        this.setState({ activePage: newPage });
+        this.setState({ sliderSMactivePage: newPage });
       }
     };
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li key={i}>
-          <button
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage ? styles.active : ''}
+        <li>
+          {/* eslint-disable-next-line */}
+          <a
+            onClick={() => this.handlePageChangeSliderSM(i)}
+            className={i === sliderSMactivePage && styles.active}
           >
             page {i}
-          </button>
+          </a>
         </li>
       );
     }
-    const leftPage = activePage - 1;
-    const rightPage = activePage + 1;
+    const leftPage = sliderBGactivePage - 1;
+    const rightPage = sliderBGactivePage + 1;
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
@@ -79,20 +84,24 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
-                {promoProducts.slice(activePage, activePage + 1).map(prom => (
-                  <div key={prom.id}>
-                    <Fade>
-                      <PromotedProductBox {...prom} />
-                    </Fade>
-                  </div>
-                ))}
+                {promoProducts
+                  .slice(sliderSMactivePage, sliderSMactivePage + 1)
+                  .map(prom => (
+                    <div key={prom.id}>
+                      <Fade>
+                        <PromotedProductBox {...prom} />
+                      </Fade>
+                    </div>
+                  ))}
               </div>
               <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                {promoProductsTwo.slice(activePage, activePage + 1).map(prom => (
-                  <div key={prom.id} className={styles.imgWrapper}>
-                    <img src={prom.image} alt={123} />
-                  </div>
-                ))}
+                {promoProductsTwo
+                  .slice(sliderBGactivePage, sliderBGactivePage + 1)
+                  .map(prom => (
+                    <div key={prom.id} className={styles.imgWrapper}>
+                      <img src={prom.image} alt={123} />
+                    </div>
+                  ))}
                 <div className={styles.shadowWrapper}></div>
                 <div className={styles.shadowTitle}>
                   INDOOR <span>FURNITURE</span>
@@ -109,7 +118,7 @@ class Promoted extends React.Component {
                       <Button
                         variant='long'
                         onClick={e =>
-                          e.preventDefault() & this.handlePageChange(leftPage)
+                          e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
                         }
                       >
                         {'<'}
@@ -119,7 +128,7 @@ class Promoted extends React.Component {
                       <Button
                         variant='long'
                         onClick={e =>
-                          e.preventDefault() & this.handlePageChange(rightPage)
+                          e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
                         }
                       >
                         {'>'}
