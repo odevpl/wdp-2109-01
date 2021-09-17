@@ -9,6 +9,7 @@ import Fade from 'react-reveal/Fade';
 
 class Promoted extends React.Component {
   state = {
+    sliderXSactivePage: 1,
     activePage: 1,
     pagesCount: 3,
   };
@@ -23,6 +24,11 @@ class Promoted extends React.Component {
       { ...initialState.products[5] },
       { ...initialState.products[10] },
       { ...initialState.products[17] },
+    ];
+    const promoProductsTwo = [
+      { ...initialState.products[2] },
+      { ...initialState.products[8] },
+      { ...initialState.products[11] },
     ];
     /* eslint no-console: ["error", { allow: ["log"] }] */
     // console.log(promoProducts);
@@ -55,7 +61,8 @@ class Promoted extends React.Component {
         </li>
       );
     }
-
+    const leftPage = activePage - 1;
+    const rightPage = activePage + 1;
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
@@ -72,7 +79,6 @@ class Promoted extends React.Component {
                     </div>
                   </div>
                 </div>
-
                 {promoProducts.slice(activePage, activePage + 1).map(prom => (
                   <div key={prom.id}>
                     <Fade>
@@ -82,32 +88,42 @@ class Promoted extends React.Component {
                 ))}
               </div>
               <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                <div className={styles.imgWrapper}>
-                  <img src={initialState.products[20].image} alt={123} />
+                {promoProductsTwo.slice(activePage, activePage + 1).map(prom => (
+                  <div key={prom.id} className={styles.imgWrapper}>
+                    <img src={prom.image} alt={123} />
+                  </div>
+                ))}
+                <div className={styles.shadowWrapper}></div>
+                <div className={styles.shadowTitle}>
+                  INDOOR <span>FURNITURE</span>
+                  <div className={styles.shadowSubtitle}>
+                    SAVE UP TO 50% OF ALL FURNITURE
+                  </div>
                 </div>
-
-                <div className={`col-12 col-lg-8 ${styles.promotionWrapperRight}`}>
-                  <div className={styles.imgWrapper}>
-                    <img src={initialState.products[20].image} alt={123} />
-                  </div>
-                  <div className={styles.shadowWrapper}></div>
-                  <div className={styles.shadowTitle}>
-                    INDOOR <span>FURNITURE</span>
-                    <div className={styles.shadowSubtitle}>
-                      SAVE UP TO 50% OF ALL FURNITURE
+                <div className={styles.mainButton}>
+                  <Button variant='white'>SHOP NOW</Button>
+                </div>
+                <div className={styles.buttonsWrapper}>
+                  <div className='row'>
+                    <div className={`col-6 ${styles.button}`}>
+                      <Button
+                        variant='long'
+                        onClick={e =>
+                          e.preventDefault() & this.handlePageChange(leftPage)
+                        }
+                      >
+                        {'<'}
+                      </Button>
                     </div>
-                  </div>
-                  <div className={styles.mainButton}>
-                    <Button variant='white'>SHOP NOW</Button>
-                  </div>
-                  <div className={styles.buttonsWrapper}>
-                    <div className='row'>
-                      <div className={`col-6 ${styles.button}`}>
-                        <Button variant='long'>{'<'}</Button>
-                      </div>
-                      <div className={`col-6 ${styles.button}`}>
-                        <Button variant='long'>{'>'}</Button>
-                      </div>
+                    <div className={`col-6 ${styles.button}`}>
+                      <Button
+                        variant='long'
+                        onClick={e =>
+                          e.preventDefault() & this.handlePageChange(rightPage)
+                        }
+                      >
+                        {'>'}
+                      </Button>
                     </div>
                   </div>
                 </div>
