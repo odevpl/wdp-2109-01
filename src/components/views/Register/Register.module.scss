@@ -81,7 +81,7 @@
         width: 26px;
         left: 4px;
         bottom: 4px;
-        background-color: $color-black;
+        background-color: $menuBar-boxShadow;
         transition: .4s;
       }
 
@@ -110,7 +110,7 @@
         margin-right: 10px;
       }
       .darkBox {
-        color: black;
+        color: $menuBar-boxShadow;
       }
       .lightBox {
         color: $featureBox-border-color;
