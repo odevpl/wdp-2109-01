@@ -21,33 +21,33 @@ const MenuBar = ({ children }) => {
           <div className={'col ' + styles.menu + (view ? ' ' + styles.visibility : '')}>
             <ul>
               <li>
-                <a href='#' className={styles.active}>
+                <button href='#' className={styles.active}>
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>Furniture</a>
+                <button>Furniture</button>
               </li>
               <li>
-                <a href='#'>Chair</a>
+                <button>Chair</button>
               </li>
               <li>
-                <a href='#'>Table</a>
+                <button>Table</button>
               </li>
               <li>
-                <a href='#'>Sofa</a>
+                <button>Sofa</button>
               </li>
               <li>
-                <a href='#'>Bedroom</a>
+                <button>Bedroom</button>
               </li>
               <li>
-                <a href='#'>Blog</a>
+                <button>Blog</button>
               </li>
             </ul>
           </div>
-          <a href='#' className={styles.dropdown} onClick={() => setview(!view)}>
+          <button href='#' className={styles.dropdown} onClick={() => setview(!view)}>
             <FontAwesomeIcon icon={faBars} />
-          </a>
+          </button>
         </div>
       </div>
     </div>
