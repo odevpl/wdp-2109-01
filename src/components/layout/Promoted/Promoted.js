@@ -33,9 +33,11 @@ class Promoted extends React.Component {
 
     return (
       <section className={styles.root}>
-        <div className='container'>
+        <div className='container-lg'>
           <div className={'row'}>
-            <div className={`col-4 ${styles.promotionWrapperLeft}`}>
+            <div
+              className={`col-lg-4 d-none d-lg-block ${styles.promotionWrapperLeft}`}
+            >
               <div className={styles.panelBar}>
                 <div className='row justify-content-between'>
                   <div className={`col-5 ${styles.title}`}>HOT DEALS</div>
@@ -47,7 +49,7 @@ class Promoted extends React.Component {
               <PromotedProductBox {...initialState.products[15]} />
             </div>
 
-            <div className={`col-8 ${styles.promotionWrapperRight}`}>
+            <div className={`col-12 col-lg-8 ${styles.promotionWrapperRight}`}>
               <div className={styles.imgWrapper}>
                 <img src={initialState.products[20].image} alt={123} />
               </div>
