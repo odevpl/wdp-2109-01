@@ -14,7 +14,7 @@
     text-decoration: none;
   }
 }
-<<<<<<< HEAD
+
 .close {
   color: $color-tigersEye;
   font-size: 18px;
@@ -23,9 +23,13 @@
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 259ae63 (Add component Gallery problems with photos)
+=======
+
+>>>>>>> 3b5a042 (Add slider functionality)
 
 .carousel {
   @extend .main;
@@ -37,6 +41,7 @@
   padding: 28px 10px;
 }
 
+<<<<<<< HEAD
 .bigCarousel {
   @extend .main, .carousel;
   align-items: center;
@@ -52,6 +57,8 @@
 
 >>>>>>> 1f68d30 (Add component Gallery problems with photos)
 >>>>>>> 259ae63 (Add component Gallery problems with photos)
+=======
+>>>>>>> 3b5a042 (Add slider functionality)
 .small {
   @extend .main;
   font-size: 13px;
@@ -60,6 +67,12 @@
   font-weight: 400;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+.outline, .favourite, .compare, .quantity, .trash {
+=======
+>>>>>>> 3b5a042 (Add slider functionality)
 .medium {
   @extend .main;
   font-size: 13px;
@@ -67,8 +80,14 @@
   padding: 8px 30px;
   font-weight: 500;
 }
+<<<<<<< HEAD
 .outline, .favoritue, .favourite, .compare, .quantity, .trash {
 
+=======
+
+.outline, .favoritue {
+>>>>>>> 56c7d6a (Add slider functionality)
+>>>>>>> 3b5a042 (Add slider functionality)
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;

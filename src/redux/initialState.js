@@ -55,8 +55,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 40,
-      stars: 2,
+
       quantity: 1,
+      stars: 5,
+      isStarred: true,
       promo: 'sale',
       newFurniture: true,
       favourite: true,
@@ -72,8 +74,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: null,
-      stars: 2,
+
       quantity: 1,
+      stars: 5,
+      isStarred: true,
       promo: 'sale',
       newFurniture: true,
       favourite: false,

@@ -23,7 +23,15 @@ const Homepage = () => (
     <Feedback />
     <ProductCompare />
     <ChatBot />
+<<<<<<< HEAD
+=======
+    <Gallery />
+    <LatestBlog />
+<<<<<<< HEAD
+>>>>>>> 5337061 (Add slider functionality)
 
+=======
+>>>>>>> 3b5a042 (Add slider functionality)
   </div>
 );
 
