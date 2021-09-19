@@ -1,8 +1,5 @@
 @import "../../../styles/settings.scss";
 
-// .root {
-// }
-
 .main {
   background-color: $button-background-color;
   color: $button-text-color;
@@ -32,7 +29,7 @@
   font-weight: 400;
 }
 
-.outline, .favourite, .compare {
+.outline, .favourite, .compare, .quantity, .trash {
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -92,4 +89,12 @@
 .register {
   background-color: $button-background-color;
   color: $button-fav-color;
+}
+
+.quantity, .trash{
+ border: none;
+   &:not(.noHover):hover {
+    background-color: $color-white;
+    color: $color-tigersEye;
+  }
 }

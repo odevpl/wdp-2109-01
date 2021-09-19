@@ -1,0 +1,69 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 5rem 0;
+  &:hover {
+  a {
+    text-decoration: none;
+   }
+ }
+
+ table{
+  width: 100%; 
+  margin-bottom: 20px;
+ }
+ thead, tbody{
+   font-size: 13px;
+   color: $color-CharlestonGreen;
+   font-weight: 500;
+   letter-spacing: 1px;
+ }
+ th, tr > td:not(:first-child){
+  text-align: center;
+} 
+  th,td{
+   padding: 10px;
+  }
+  tr{
+    border-bottom: 1px solid grey;
+  }
+  .photo {
+    height: 200px;
+	width: 90%;
+  }
+  img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   padding-top: 5px;
+  }
+  input{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid $button-outline-color;
+    color: $button-outline-color;
+    line-height: 22px;
+	width: 35px;
+	text-align: center; 
+  }
+  .checkout, .cartSummary{
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
+  }
+  
+  .cartSummary, h5{
+    text-transform: uppercase;
+    color: $color-CharlestonGreen;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  h5{
+   margin-bottom: 50px;
+   padding-left: 10px;
+ }
+}
+.container {
+   margin: 0 auto;
+   width: 100%;
+ }

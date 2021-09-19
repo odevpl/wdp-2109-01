@@ -42,16 +42,18 @@
           margin: 0 0.5rem;
           font-weight: 600;
 
-          a {
+          button {
             color: $newFuriniture-furnitureMenu;
+            background-color: transparent;
+            border: none;
             position: relative;
-            text-decoration: none;
             font-size: 18px;
             display: block;
 
             &.active,
             &:hover {
               cursor: pointer;
+              color: $newFuriniture-sectionUnderline;
               &::before {
                 content: "";
                 position: absolute;
@@ -82,17 +84,20 @@
           display: inline-block;
           margin-left: 0.5rem;
 
-          a {
+          button {
             display: block;
             width: 13px;
             height: 13px;
             border-radius: 6px;
             background-color: $newFuriniture-dotsInactive;
-            font-size: 0;
+            border: none;
+            color: $newFuriniture-dotsInactive;
+            font-size: 13px;
 
             &.active,
             &:hover {
               background-color: $newFuriniture-dotsActive;
+              cursor: pointer;
             }
           }
         }
