@@ -37,12 +37,13 @@ const TopBar = () => (
               </button>
             </li>
             <li>
-              <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} />
-                <Link to='/register'>Register</Link>
-              </a>
+              <button type='button'>
+                <Link to='/register'>
+                  <FontAwesomeIcon className={styles.icon} icon={faLock} />
+                  Register
+                </Link>
+              </button>
             </li>
-
             <li>
               <button type='button'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
