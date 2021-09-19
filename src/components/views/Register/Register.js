@@ -78,7 +78,7 @@ const Register = () => (
           <div className={styles.lightBox}>
             <label className={styles.checkbox}>
               <input type='checkbox'></input>
-              Akceptuję warunki <a href='#'>regulaminu</a>*
+              Akceptuję warunki <Link to='/'>regulaminu</Link>*
             </label>
           </div>
           <div className={styles.lightBox}>
@@ -91,10 +91,10 @@ const Register = () => (
 
         <div className='row no-gutters justify-content-between'>
           <Link to='/'>
-            <a className={styles.backButton}>
+            <button type='button' className={styles.backButton}>
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
               <span>Wróć</span>
-            </a>
+            </button>
           </Link>
           <Link to='/'>
             <button>Zarejestruj się</button>
