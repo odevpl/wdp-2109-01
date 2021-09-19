@@ -19,11 +19,11 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, tileNumber } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / tileNumber);
 
     const rightAction = () => {
       const newPage = activePage - 1;
@@ -82,11 +82,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * tileNumber, (activePage + 1) * tileNumber)
+              .map(item => (
+                <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </Swipeable>
@@ -113,6 +115,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  tileNumber: PropTypes.number,
 };
 
 NewFurniture.defaultProps = {
