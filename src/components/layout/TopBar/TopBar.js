@@ -1,10 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
+import { Link } from 'react-router-dom';
 
 const TopBar = () => (
   <div className={styles.root}>
@@ -37,10 +37,12 @@ const TopBar = () => (
               </button>
             </li>
             <li>
-              <button type='button'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
-              </button>
+              <a href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faLock} />
+                <Link to='/register'>Register</Link>
+              </a>
             </li>
+
             <li>
               <button type='button'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
@@ -52,7 +54,5 @@ const TopBar = () => (
     </div>
   </div>
 );
-
-// TopBar.propTypes = {};
 
 export default TopBar;

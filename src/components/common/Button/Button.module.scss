@@ -1,8 +1,5 @@
 @import "../../../styles/settings.scss";
 
-// .root {
-// }
-
 .main {
   background-color: $button-background-color;
   color: $button-text-color;
@@ -17,7 +14,7 @@
     text-decoration: none;
   }
 }
-.close{
+.close {
   color: $color-tigersEye;
   font-size: 18px;
   :hover{
@@ -87,6 +84,11 @@
   margin: 0;
   padding: 5px 0;
   font-weight: 400;
+}
+
+.register {
+  background-color: $button-background-color;
+  color: $button-fav-color;
 }
 
 .quantity, .trash{
