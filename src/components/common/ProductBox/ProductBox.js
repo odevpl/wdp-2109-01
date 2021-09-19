@@ -33,6 +33,14 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
+
+  const checkStars = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) {
+      return (stars = retrievedStorage.stars);
+    } else return stars;
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -64,7 +72,7 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={stars} isStarred={isStarred} />
+          <ProductRating id={id} stars={checkStars()} isStarred={isStarred} />
         </div>
       </div>
       <div className={styles.line}></div>

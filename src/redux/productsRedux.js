@@ -36,6 +36,7 @@ export default function reducer(statePart = [], action = {}) {
         if (product.id === action.payload.id) {
           product.stars = action.payload.i;
           product.isStarred = true;
+          localStorage.setItem(`${product.id}`, JSON.stringify(product));
           return product;
         } else {
           return product;
