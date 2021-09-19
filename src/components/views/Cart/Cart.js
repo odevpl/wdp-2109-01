@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
-import { NavLink } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom';
 import styles from './Cart.module.scss';
 import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -56,9 +56,9 @@ const Cart = ({ products }) => {
         </table>
         <div className={styles.cartSummary}>Total: $90</div>
         <div className={styles.checkout}>
-          <NavLink exact to={'/'} activeClassName='active'>
-            <button variant='small'>PROCEED TO CHECKOUT</button>
-          </NavLink>
+          {/* <NavLink exact to={'/'} activeClassName='active'> */}
+          <button variant='small'>PROCEED TO CHECKOUT</button>
+          {/* </NavLink> */}
         </div>
       </Container>
     </div>
