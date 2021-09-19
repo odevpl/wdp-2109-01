@@ -25,16 +25,16 @@ const Footer = () => (
                 <h6>Information</h6>
                 <ul>
                   <li>
-                    <a href='#'>About us</a>
+                    <button>About us</button>
                   </li>
                   <li>
-                    <a href='#'>Policy</a>
+                    <button>Policy</button>
                   </li>
                   <li>
-                    <a href='#'>Conditions</a>
+                    <button>Conditions</button>
                   </li>
                   <li>
-                    <a href='#'>Online support</a>
+                    <button>Online support</button>
                   </li>
                 </ul>
               </div>
@@ -44,16 +44,16 @@ const Footer = () => (
                 <h6>My account</h6>
                 <ul>
                   <li>
-                    <a href='#'>Login</a>
+                    <button>Login</button>
                   </li>
                   <li>
-                    <a href='#'>My cart</a>
+                    <button>My cart</button>
                   </li>
                   <li>
-                    <a href='#'>Wishlist</a>
+                    <button>Wishlist</button>
                   </li>
                   <li>
-                    <a href='#'>Checkout</a>
+                    <button>Checkout</button>
                   </li>
                 </ul>
               </div>
@@ -63,16 +63,16 @@ const Footer = () => (
                 <h6>Information</h6>
                 <ul>
                   <li>
-                    <a href='#'>Specials</a>
+                    <button>Specials</button>
                   </li>
                   <li>
-                    <a href='#'>New products</a>
+                    <button>New products</button>
                   </li>
                   <li>
-                    <a href='#'>Best Sellers</a>
+                    <button>Best Sellers</button>
                   </li>
                   <li>
-                    <a href='#'>Out Stores</a>
+                    <button>Out Stores</button>
                   </li>
                 </ul>
               </div>
@@ -82,16 +82,16 @@ const Footer = () => (
                 <h6>Orders</h6>
                 <ul>
                   <li>
-                    <a href='#'>Payment options</a>
+                    <button>Payment options</button>
                   </li>
                   <li>
-                    <a href='#'>Shipping and delivery</a>
+                    <button>Shipping and delivery</button>
                   </li>
                   <li>
-                    <a href='#'>Returns</a>
+                    <button>Returns</button>
                   </li>
                   <li>
-                    <a href='#'>Shipping</a>
+                    <button>Shipping</button>
                   </li>
                 </ul>
               </div>
@@ -113,34 +113,34 @@ const Footer = () => (
           <Grid item xs={6} md={6} lg={4} className={styles.socialMedia}>
             <ul>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faTwitter}>Twitter</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faFacebookF}>Facebook</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faLinkedinIn}>LinkedIn</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
               <li>
-                <a href='#'>
+                <button>
                   <FontAwesomeIcon icon={faPinterestP}>Pinterest</FontAwesomeIcon>
-                </a>
+                </button>
               </li>
             </ul>
           </Grid>
