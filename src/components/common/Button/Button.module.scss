@@ -40,6 +40,10 @@
   font-size: 13px;
   line-height: 22px;
 
+  &:active {
+    animation: $hover-animationType $actionDuration;
+  }
+
   &:not(.noHover):hover {
     background-color: $button-outline-color;
     color: $button-text-color;
@@ -47,11 +51,40 @@
 }
 
 .favourite, .compare {
-  background-color: #ffffff;
-  color: $color-tigersEye;
+  background-color: $button-fav-background;
+  color: $button-fav-color;
 
   &:not(.noHover):hover {
-    background-color: $color-tigersEye;
-    color: #2a2a2a;
+    background-color: $button-background-color;
+    color: $button-background-color--hov;
   }
+}
+
+.promotedOutline {
+  @extend .outline;
+  margin-right: 10px;
+}
+
+.white {
+  @extend .main;
+  display: block;
+  font-size: 13px;
+  line-height: 24px;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #2a2a2a;
+  background-color: white;
+}
+
+.long {
+  @extend .main;
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  line-height: 24px;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 400;
 }

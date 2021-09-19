@@ -16,7 +16,11 @@ export const SET_STARS = createActionName('SET_STARS');
 /* action creator */
 export const setStars = payload => ({ payload, type: SET_STARS });
 
+const reducerName = 'products';
+const createActionNameTwo = name => `app/${reducerName}/${name}`;
+
 /* action types */
+export const ADD_TO_FAVORITUE = createActionNameTwo('ADD_TO_FAVORITUE');
 export const ADD_TO_FAVOURITE = createActionName('ADD_TO_FAVOURITE');
 
 export const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
@@ -54,7 +58,7 @@ export default function reducer(statePart = [], action = {}) {
     case ADD_TO_COMPARE: {
       const id = action.payload;
       return statePart.map(product =>
-        product.id == id && product.compare == false
+        product.id === id && product.compare === false
           ? { ...product, compare: !product.compare }
           : { ...product }
       );
@@ -62,7 +66,7 @@ export default function reducer(statePart = [], action = {}) {
     case REMOVE_FROM_COMPARE: {
       const id = action.payload;
       return statePart.map(product =>
-        product.id == id ? { ...product, compare: false } : { ...product }
+        product.id === id ? { ...product, compare: false } : { ...product }
       );
     }
     default:

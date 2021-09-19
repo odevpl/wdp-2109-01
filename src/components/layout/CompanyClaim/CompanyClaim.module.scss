@@ -14,6 +14,27 @@
       line-height: 42px;
       color: $companyClaim-phone;
       font-weight: 500;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 25%;
+        top: 100%;
+        transform: translateX(-25%);
+        width: 0;
+        height: 2px;
+        background-color: $companyClaim-cardBackground;
+        transition: width $actionDuration ease-in-out;
+      }
+
+      &:hover::after {
+        width: 33%;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
 
       .icon {
         font-size: 32px;
@@ -21,6 +42,9 @@
         vertical-align: middle;
         margin-top: -3px;
         margin-right: 0.8rem;
+        &:hover {
+          animation: $hover-animationType $actionDuration;
+        }
       }
     }
   }
@@ -68,7 +92,7 @@
 
       &:hover {
         .cartIcon {
-          background-color: lighten($companyClaim-cardBackground, 10%);
+          animation: $hover-animationType $actionDuration;
         }
       }
     }

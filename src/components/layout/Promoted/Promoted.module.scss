@@ -1,0 +1,157 @@
+@import "../../../styles/settings.scss";
+
+.root {
+
+  .wrapper {
+    border: 2px dotted red;
+  }
+
+  .promotionWrapperLeft {
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    height: 505px;
+  }
+
+  .panelBar {
+    position: relative;
+    height: 45px;
+    margin-bottom: -1px;
+    width: 100%;
+    z-index: 90;
+    background-color: $color-CharlestonGreen;
+
+    .title {
+      margin: 10px 0 0 15px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .dots {
+        position: relative;
+        text-align: end;
+        margin-right: 15px;
+
+        ul {
+          margin: 0;
+          padding-left: 15px;
+          list-style: none;
+
+          li {
+            display: inline-block;
+            margin-left: 0.5rem;
+
+            a {
+              display: block;
+              width: 13px;
+              height: 13px;
+              border-radius: 6px;
+              background-color: #e1e1e1;
+              font-size: 0;
+
+              &.active,
+              &:hover {
+                background-color: $color-tigersEye;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  .promotionWrapperRight {
+    position: relative;
+    padding: 0;
+    max-height: 502px;
+
+    .imgWrapper {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .shadowWrapper {
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      top: 100px;
+      opacity: 0.5;
+      z-index: 0;
+      background-color: $color-CharlestonGreen;
+    }
+
+    .shadowTitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 150px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 3rem;
+      opacity: 1;
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .shadowSubtitle {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 60px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+    }
+
+    .buttonsWrapper {
+      position: absolute;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      bottom: 0px;
+      opacity: 0.5;
+      z-index: 90;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+      overflow: hidden;
+
+      .button {
+        background-color: #2a2a2a;
+        margin: 0;
+        padding: 0;
+
+        .buttonChild {
+          margin: 0;
+          padding: 0;
+          height: 30px;
+        }
+      }
+    }
+
+    .mainButton {
+      position: absolute;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+      bottom: 175px;
+      opacity: 0.5;
+      z-index: 100;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 1;
+    }
+  }
+}

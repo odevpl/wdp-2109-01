@@ -1,6 +1,14 @@
 $base-padding: 24px;
 
-// GLOBAL COLORS
+// HOVER VARIABLES
+$actionDuration: 250ms;
+// two types of icon movement are available: shake, rotate
+$hover-animationType: shake;
+
+// !!!!!!!!!!!!!!
+// GLOBAL COLORS - DO NOT USE BELOW VARIABLES IN THE CODE - FOLLOW PATTERN IN GLOBAL NAMES SECTION
+// !!!!!!!!!!!!!!
+
 // names taken from https://www.color-name.com/
 // should you change/add colors, use website above for standardized naming convention
 
@@ -9,8 +17,14 @@ $color-CharlestonGreen: #2a2a2a;
 $color-jet: #363636;
 $color-PhilippineSilver: #b6b6b6;
 $color-ChineseWhite: #e1e1e1;
+$color-bestWhite: #fffdfa;
 $color-white: #fff;
 $color-black: #000;
+$primary: #d58e32;
+
+$text-color: #2a2a2a;
+
+$form-border-color: #292929;
 
 // GLOBAL NAMES
 
@@ -19,10 +33,12 @@ $button-text-color: $color-white;
 $button-background-color: $color-CharlestonGreen;
 $button-background-color--hov: $color-tigersEye;
 $button-outline-color: $color-CharlestonGreen;
+$button-fav-background: $color-tigersEye;
+$button-fav-color: $color-CharlestonGreen;
 
 // feature box
 $featureBox-border-color: $color-PhilippineSilver;
-$featureBox-content: $color-tigersEye;
+$featureBox-content: $color-CharlestonGreen;
 $featureBox-icon-color: $color-CharlestonGreen;
 $featureBox-icon-background: $color-white;
 $featureBox-activeIcon-color: $color-white;
@@ -39,6 +55,7 @@ $productBox-itemName: $color-tigersEye;
 $productBox-starRating: $color-CharlestonGreen;
 $productBox-longLine: $color-CharlestonGreen;
 $productBox-shortLine: $color-tigersEye;
+$productBox-oldPrice: $color-PhilippineSilver;
 
 // new furniture
 $newFuriniture-mainUnderline: $color-ChineseWhite;
@@ -52,6 +69,7 @@ $newFuriniture-dotsActive: $color-tigersEye;
 // product search
 $productSearch-form-main: $color-CharlestonGreen;
 $productSearch-form-icon: $color-tigersEye;
+$productSearch-list-bg--hover: $color-bestWhite;
 
 // company claim
 $companyClaim-background: $color-jet;
@@ -64,11 +82,12 @@ $companyClaim-cardCounter: $color-ChineseWhite;
 $footer-background: $color-jet;
 $footer-categories: $color-white;
 $footer-subcategories: $color-PhilippineSilver;
-$footer-subcategories--hover: $color-white;
+$footer-subcategories--hover: $color-tigersEye;
 $footer-socials-background: $color-CharlestonGreen;
 $footer-socials-copyright: $color-PhilippineSilver;
 $footer-socials-icons: $color-PhilippineSilver;
 $footer-socials-icons--hover: $color-tigersEye;
+$footer-claim-bg: $color-CharlestonGreen;
 
 // menu bar
 $menuBar-background: $color-white;
@@ -79,5 +98,26 @@ $menuBar-boxShadow: $color-black;
 
 // top bar
 $topBar-background: $color-CharlestonGreen;
-$topBar-text: $color-white;
+$topBar-text: $color-ChineseWhite;
 $topBar-text--hover: $color-tigersEye;
+
+// keyframes definitions - DO NOT EDIT
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -6,6 +6,32 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  feedbacks: [
+    {
+      id: 'quote-1',
+      clientName: 'John Smith',
+      clientText:
+        'Vestibulum eu ante non enim malesuada vestibulum quis ac nisl. Nullam eget lacus iaculis, blandit augue in, pulvinar ipsum. Curabitur quis ligula tempus, tristique sapien pulvinar, dictum enim. Etiam tempor mollis tellus, id interdum ipsum condimentum id.',
+      clientImage:
+        'https://i.pinimg.com/originals/75/8b/70/758b70c854cfc2bd1c3a0fbc903fb7bb.png',
+    },
+    {
+      id: 'quote-2',
+      clientName: 'Mary Shelley',
+      clientText:
+        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque quis tellus est. Sed sapien mi. Mauris diam quam, consequat vitae neque in, pretium efficitur mauris. Donec vulputate consectetur ipsum non dictum. Aenean enim dui.',
+      clientImage:
+        'https://i.pinimg.com/originals/75/8b/70/758b70c854cfc2bd1c3a0fbc903fb7bb.png',
+    },
+    {
+      id: 'quote-3',
+      clientName: 'Jane Doe',
+      clientText:
+        'Etiam accumsan dui a lacus pulvinar gravida. Duis eu congue urna. Pellentesque facilisis justo vitae enim viverra dictum. Proin non lacus. Phasellus in blandit leo, a maximus magna. Phasellus cursus eros sit amet lacus fermentum ultrices. Etiam eget sapien at erat.',
+      clientImage:
+        'https://i.pinimg.com/originals/75/8b/70/758b70c854cfc2bd1c3a0fbc903fb7bb.png',
+    },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -20,9 +46,9 @@ const initialState = {
       favourite: true,
       image:
         'https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      compare: false,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum pharetra metus, id tristique massa pulvinar ut.',
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -52,9 +78,9 @@ const initialState = {
       favourite: false,
       image:
         'https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      compare: false,
       description:
         'Aliquam suscipit, erat non dictum venenatis, metus ante molestie nunc, et vehicula dolor metus id nunc.',
+      compare: true,
     },
     {
       id: 'aenean-ru-bristique-4',

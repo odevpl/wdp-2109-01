@@ -21,6 +21,7 @@
             font-size: 14px;
             line-height: 30px;
             color: $footer-subcategories;
+            text-decoration: none;
 
             &:hover {
               color: $footer-subcategories--hover;
@@ -41,6 +42,22 @@
     }
   }
 
+  .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .containerTwo {
+    text-align: center;
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .bottomBar {
     background-color: $footer-socials-background;
 
@@ -54,7 +71,17 @@
         color: $footer-socials-copyright;
         font-size: 14px;
         line-height: 26px;
+        text-align: left;
       }
+    }
+
+    .gites {
+      border: solid 1px red;
+    }
+
+    .empty {
+      color: rgb(169, 169, 169);
+      // display: none;
     }
 
     .socialMedia {
@@ -62,7 +89,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
-
+        text-align: right;
         li {
           display: inline-block;
           margin-left: 1rem;
@@ -70,9 +97,9 @@
           a {
             color: $footer-socials-icons;
             text-decoration: none;
-
-            &:hover {
+            svg:hover {
               color: $footer-socials-icons--hover;
+              animation: $hover-animationType $actionDuration;
             }
           }
         }

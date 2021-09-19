@@ -12,6 +12,11 @@
     align-items: center;
     position: relative;
 
+    &:hover ul {
+      display: block;
+      height: 37px;
+    }
+
     .icon:first-child {
       color: $productSearch-form-icon;
       position: absolute;
@@ -25,13 +30,33 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
+    ul {
+      -webkit-appearance: none !important;
+      background-color: transparent !important;
       padding: 5px 30px 5px 35px;
       position: relative;
-      z-index: 1;
+      transform: translateY(9px);
+      font-size: 14px;
+
+      &:hover{
+        transform: translateY(12px);
+      }
+
+      li {
+        display: none;
+        background-color: $productSearch-list-bg--hover !important;
+        font-size: 14px;
+        font-weight: 400;
+
+        &:hover {
+          background-color: $color-tigersEye !important;
+        }
+      }
+
+      &:hover li {
+        display: block;
+      }
+
     }
   }
 
