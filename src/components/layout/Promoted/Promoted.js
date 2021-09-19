@@ -84,9 +84,63 @@ class Promoted extends React.Component {
               className={`d-none d-md-block col-12 col-lg-4 ${styles.promotionWrapperLeft}`}
             >
               <div className={styles.panelBar}>
+                {/* <div className='row justify-content-center'> */}
+                {/* <div className={`${styles.title}`}>
+                  <h5>HOT DEALS</h5> */}
+                {/* <div className={`${styles.dots}`}>
+                    <ul>{dots}</ul>
+                  </div> */}
+                {/* <div className="Carousel-indicators-2">
+                    <button className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3
+                      MuiIconButton-sizeSmall" tabIndex="0" type="button" aria-label="carousel indicator 1" style={{ color: '#e1e1e1' }}>
+                      <span className="MuiIconButton-label">
+                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4"
+                          focusable="false" viewBox="0 0 24 24" aria-hidden="true" style={{
+                            fontSize: 20,
+                          }}>
+                          <circle cx="12" cy="12" r="8"></circle>
+                        </svg>
+                      </span>
+                      <span className="MuiTouchRipple-root">
+                      </span>
+                    </button>
+                    <button className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3  Carousel-active-5  MuiIconButton-sizeSmall"
+                      tabIndex="0" type="button" aria-label="carousel indicator 2" style={{
+                        color: '#D58E32',
+                        fontSize: 18,
+                      }}>
+                      <span className="MuiIconButton-label">
+                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4"
+                          focusable="false" viewBox="0 0 24 24" aria-hidden="true" style={{
+                            fontSize: 20,
+                          }}>
+                          <circle cx="12" cy="12" r="8">
+                          </circle>
+                        </svg>
+                      </span>
+                      <span
+                        className="MuiTouchRipple-root">
+                      </span>
+                    </button>
+                    <button
+                      className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3  MuiIconButton-sizeSmall"
+                      tabIndex="0" type="button" aria-label="carousel indicator 3" style={{ color: '#e1e1e1' }}>
+                      <span className="MuiIconButton-label">
+                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4" focusable="false" viewBox="0 0 24 24"
+                          aria-hidden="true" style={{
+                            fontSize: 20,
+                          }}>
+                          <circle cx="12" cy="12" r="8">
+                          </circle>
+                        </svg>
+                      </span>
+                      <span className="MuiTouchRipple-root">
+                      </span>
+                    </button>
+                  </div> */}
+                {/* </div> */}
                 <Carousel
-                  classes={{ indicatorIcon: 'MyCustomButton' }}
-                  autoPlay={true}
+                  autoPlay={false}
                   interval='3000'
                   animation='fade'
                   navButtonsProps={{
@@ -117,11 +171,7 @@ class Promoted extends React.Component {
                   }}
                   indicatorContainerProps={{
                     style: {
-                      position: 'absolute',
-                      top: -2,
-                      textAlign: 'right',
-                      paddingRight: 20,
-                      fontSize: 20,
+                      color: '#e1e1e1',
                     },
                   }}
                 >
