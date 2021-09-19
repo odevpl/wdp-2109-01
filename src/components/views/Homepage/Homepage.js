@@ -9,7 +9,6 @@ import Promoted from '../../layout/Promoted/PromotedContainer';
 import Deals from '../../layout/Deals/Deals';
 import ChatBot from '../../features/ChatBot/ChatBot';
 import Gallery from '../../layout/Gallery/GalleryContainer';
-import LatestBlog from '../../features/LatestBlog/LatestBlogContainer';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -26,12 +25,15 @@ const Homepage = () => (
 <<<<<<< HEAD
 =======
     <Gallery />
+<<<<<<< HEAD
     <LatestBlog />
 <<<<<<< HEAD
 >>>>>>> 5337061 (Add slider functionality)
 
 =======
 >>>>>>> 3b5a042 (Add slider functionality)
+=======
+>>>>>>> 9d349f5 (Add small slider correct)
   </div>
 );
 
