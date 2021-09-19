@@ -20,7 +20,7 @@ class ProductSlider extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'featured',
-    fade: 'in',
+    fade: 'incategory',
     activeProduct: '',
     visibleProducts: 6, // the amount of visible product (small images) in slider. This to be changed for narrow window size.
   };
@@ -41,29 +41,38 @@ class ProductSlider extends React.Component {
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activePage: 0 });
-    this.setState({ activeCategory: newCategory });
-    this.handleFadeChange('in');
-  }
-
-  handleActiveProductZero(categoryProducts, categoryChange) {
-    if (categoryChange) this.state.activeProduct = '';
-    if (categoryProducts.length && this.state.activeProduct === '') {
-      this.state.activeProduct = categoryProducts[0].id;
-    }
+    const { categoryProducts, categories, firstElementId } = this.getCategoryProducts(
+      newCategory
+    );
+    this.setState({
+      activeCategory: newCategory,
+      activePage: 0,
+      activeProduct: firstElementId,
+    });
+    this.handleFadeChange('in', 'category');
   }
 
   handleProductChange(newProduct) {
     this.setState({ activeProduct: newProduct });
-    console.log(newProduct, this.state.activeProduct);
+    this.handleFadeChange('in', 'product');
   }
 
-  handleFadeChange(newFade) {
-    this.setState({ fade: newFade });
-    if (newFade === 'out') this.render();
+  handleFadeChange(newFade, fromWho) {
+    this.setState({ fade: newFade + fromWho });
   }
-  getFade() {
-    return this.state.fade === 'in' ? styles.fadeIn : styles.fadeOut;
+  getFade(fromWho) {
+    switch (this.state.fade) {
+      case 'inproduct':
+        return fromWho === 'img' ? styles.fadeIn : styles.fadeIn;
+      case 'outproduct':
+        return fromWho === 'img' ? styles.fadeOut : styles.fadeIn;
+      case 'incategory':
+        return fromWho === 'img' ? styles.fadeIn : styles.fadeIn;
+      case 'outcategory':
+        return fromWho === 'img' ? styles.fadeOut : styles.fadeOut;
+      default:
+        break;
+    }
   }
 
   getCategoryProducts(requestedCategory) {
@@ -102,14 +111,16 @@ class ProductSlider extends React.Component {
           categoryProducts.push(product);
         }
     }
-    return { categoryProducts, categories };
+    const firstElementId = categoryProducts.length ? categoryProducts[0].id : '';
+    return { categoryProducts, categories, firstElementId };
   }
 
   render() {
-    const { categoryProducts, categories } = this.getCategoryProducts(
+    const { categoryProducts, categories, firstElementId } = this.getCategoryProducts(
       this.state.activeCategory
     );
-    this.handleActiveProductZero(categoryProducts);
+    if (firstElementId !== '' && this.state.activeProduct === '')
+      this.state.activeProduct = firstElementId;
 
     const pagesCount =
       Math.ceil(categoryProducts.length / this.state.visibleProducts) - 1;
@@ -137,16 +148,10 @@ class ProductSlider extends React.Component {
                   }
                   onClick={event => {
                     event.preventDefault();
-                    this.handleFadeChange('out');
-                    setTimeout(() => {
-                      this.handleActiveProductZero(
-                        this.getCategoryProducts(item.id),
-                        true
-                      );
-                    }, 1000);
+                    this.handleFadeChange('out', 'category');
                     setTimeout(() => {
                       this.handleCategoryChange(item.id);
-                    }, 1000);
+                    }, 700);
                   }}
                 >
                   {item.name}
@@ -157,7 +162,7 @@ class ProductSlider extends React.Component {
         </div>
 
         <div className={styles.mainWrapper}>
-          <div className={styles.imageWrapper + ' ' + this.getFade()}>
+          <div className={styles.imageWrapper + ' ' + this.getFade('img')}>
             <img
               src={
                 this.state.activeProduct !== ''
@@ -200,7 +205,7 @@ class ProductSlider extends React.Component {
             </div>
           </div>
 
-          <div className={styles.content + ' ' + this.getFade()}>
+          <div className={styles.content + ' ' + this.getFade('img')}>
             <h5>
               {this.state.activeProduct !== ''
                 ? categoryProducts.find(item => item.id === this.state.activeProduct)
@@ -228,7 +233,7 @@ class ProductSlider extends React.Component {
             </div>
           </div>
 
-          <div className={styles.priceCircle + ' ' + this.getFade()}>
+          <div className={styles.priceCircle + ' ' + this.getFade('img')}>
             <div className={styles.priceLow}>
               {'$' +
                 (this.state.activeProduct !== ''
@@ -274,7 +279,10 @@ class ProductSlider extends React.Component {
                         variant=''
                         onClick={event => {
                           event.preventDefault();
-                          this.handleProductChange(item.id);
+                          this.handleFadeChange('out', 'product');
+                          setTimeout(() => {
+                            this.handleProductChange(item.id);
+                          }, 700);
                         }}
                       >
                         <ProductSliderBox {...item} />
