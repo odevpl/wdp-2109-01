@@ -71,7 +71,8 @@
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
-
+  }
+}
 .favoritue {
   background-color: $color-white;
   color: $color-tigersEye;
