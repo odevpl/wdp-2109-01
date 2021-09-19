@@ -80,12 +80,12 @@ class Promoted extends React.Component {
               {/* <Swipeable leftAction={leftAction} rightAction={rightAction}> */}
               <div className={styles.panelBar}>
                 {/* <div className='row justify-content-center'> */}
-                <div className={`${styles.title}`}>
-                  <h5>HOT DEALS</h5>
-                  <div className={`${styles.dots}`}>
+                {/* <div className={`${styles.title}`}>
+                  <h5>HOT DEALS</h5> */}
+                {/* <div className={`${styles.dots}`}>
                     <ul>{dots}</ul>
-                  </div>
-                  {/* <div className="Carousel-indicators-2">
+                  </div> */}
+                {/* <div className="Carousel-indicators-2">
                     <button className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3
                       MuiIconButton-sizeSmall" tabIndex="0" type="button" aria-label="carousel indicator 1" style={{ color: '#e1e1e1' }}>
                       <span className="MuiIconButton-label">
@@ -133,9 +133,9 @@ class Promoted extends React.Component {
                       </span>
                     </button>
                   </div> */}
-                </div>
+                {/* </div> */}
                 <Carousel
-                  autoPlay={true}
+                  autoPlay={false}
                   interval='3000'
                   animation='fade'
                   navButtonsProps={{
@@ -150,8 +150,15 @@ class Promoted extends React.Component {
                   }}
                   indicatorIconButtonProps={{
                     style: {
-                      // display: 'none',
-                      // color: 'red',
+                      color: '#e1e1e1',
+                    },
+                  }}
+                  indicatorContainerProps={{
+                    style: {
+                      position: 'absolute',
+                      top: 1,
+                      textAlign: 'right',
+                      paddingRight: 20,
                     },
                   }}
                 >
