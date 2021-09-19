@@ -1,10 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-
-  .wrapper {
-    border: 2px dotted red;
-  }
+  padding: 5rem 0;
 
   .promotionWrapperLeft {
     position: relative;
@@ -20,11 +17,11 @@
     margin-bottom: -1px;
     width: 100%;
     z-index: 90;
-    background-color: $color-CharlestonGreen;
+    background-color: $promoted-panelBar;
 
     .title {
       margin: 10px 0 0 15px;
-      color: white;
+      color: $promoted-titleBar;
       font-weight: 600;
     }
 
@@ -85,7 +82,7 @@
       top: 100px;
       opacity: 0.5;
       z-index: 0;
-      background-color: $color-CharlestonGreen;
+      background-color: $promoted-shadowWrapper;
     }
 
     .shadowTitle {
@@ -95,7 +92,7 @@
       top: 150px;
       opacity: 0.5;
       z-index: 90;
-      color: white;
+      color: $promoted-shadowTitle;
       font-size: 3rem;
       opacity: 1;
       span {
@@ -110,7 +107,7 @@
       top: 60px;
       opacity: 0.5;
       z-index: 90;
-      color: white;
+      color: $promoted-shadowSubtitle;
       font-size: 1.3rem;
       opacity: 1;
     }
@@ -124,13 +121,13 @@
       bottom: 0px;
       opacity: 0.5;
       z-index: 90;
-      color: white;
+      color: $promoted-buttonsWrapper;
       font-size: 1.3rem;
       opacity: 1;
       overflow: hidden;
 
       .button {
-        background-color: #2a2a2a;
+        background-color: $promoted-button;
         margin: 0;
         padding: 0;
 
@@ -150,7 +147,7 @@
       bottom: 175px;
       opacity: 0.5;
       z-index: 100;
-      color: white;
+      color: $promoted-mainButton;
       font-size: 1.3rem;
       opacity: 1;
     }

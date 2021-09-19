@@ -1,15 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $promotedProductBox-background;
+  border: 1px solid $promotedProductBox-border;
   margin: 0;
 
   .photo {
     position: relative;
     padding: 0;
     background: {
-      color: #f4f5f7;
+      color: $promotedProductBox-photo-background;
       size: contain;
       position: center;
       repeat: no-repeat;
@@ -33,9 +33,9 @@
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #292929;
+      background-color: $promotedProductBox-sale-background;
       border-radius: 50%;
-      color: #ffffff;
+      color: $promotedProductBox-sale-text;
       padding: 30px 15px 5px 15px;
     }
 
@@ -55,9 +55,9 @@
       padding: 3px 0 0;
       height: 60px;
       text-align: center;
-      color: white;
+      color: $promotedProductBox-timeBarItem;
       border-radius: 50%;
-      background-color: $color-CharlestonGreen;
+      background-color: $promotedProductBox-timeBarItemBack;
 
         .number {
           margin: 7px 0 0;
@@ -77,7 +77,7 @@
       height: 50px;
       left: 50%;
       transform: translateX(-50%);
-      color: #ffffff;
+      color: $promotedProductBox-buttons;
       padding: 30px 15px 5px 15px;
       opacity: 0;
     }
@@ -94,15 +94,16 @@
     padding: 20px;
 
     h5 {
-      color: $color-tigersEye;
+      color: $promotedProductBox-itemName;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
     }
 
     .stars {
-      button {
-        color: rgb(42, 42, 42);
+      a {
+        text-decoration: none;
+        color: $promotedProductBox-stars;
         background-color: transparent;
         border: none;
       }
@@ -111,7 +112,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $promotedProductBox-longLine;
     position: relative;
 
     &::before {
@@ -120,7 +121,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $color-tigersEye;
+      border-bottom: 4px solid $promotedProductBox-shortLine;
       transform: translateX(-50%);
     }
   }
@@ -139,7 +140,7 @@
 
 	.oldPrice {
 	  color: grey;
-	  text-decoration: line-through $color-CharlestonGreen;
+	  text-decoration: line-through $promotedProductBox-oldPricetext;
 	  padding-right: 5px;
 	  font-size: 13px;
 	  font-weight: 400;
@@ -147,7 +148,7 @@
 
   &:hover {
     .price > div {
-      background-color: $color-tigersEye;
+      background-color: $promotedProductBox-backgroundHover;
     }
     .buttons {
       visibility: visible;
