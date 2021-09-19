@@ -17,9 +17,9 @@ const CompanyClaim = ({ cartCount }) => (
           </p>
         </div>
         <div className='col text-center'>
-          <a href='#'>
+          <span>
             <img src='/images/logo.png' alt='Bazar' />
-          </a>
+          </span>
         </div>
         <div className={`col text-right ${styles.cart}`}>
           <NavLink exact to={'/cart'} activeClassName='active'>

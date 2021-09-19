@@ -34,18 +34,17 @@
         }
       }
 
-      a {
+      button {
         color: $menuBar-text;
         text-transform: uppercase;
         font-size: 12px;
         padding: 1rem;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
+        border: none;
         border-top: 4px solid $menuBar-background;
         font-weight: 500;
         letter-spacing: 1px;
         transition: $actionDuration;
+        background-color: transparent;
 
         &:hover,
         &.active {
@@ -70,7 +69,7 @@
   .root {
     .wrapper {
       .menu {
-        a {
+        button {
           padding: 10px;
         }
       }
@@ -109,7 +108,7 @@
           margin: 0;
         }
 
-        a {
+        button {
           padding: 1rem;
         }
       }
@@ -132,12 +131,11 @@
         form {
           width: 469px;
         }
-    a {
+    button {
       color: $menuBar-text;
       text-transform: uppercase;
       font-size: 12px;
       padding: 1rem;
-      text-decoration: none;
       display: flex;
       align-items: center;
       border-top: 4px solid $menuBar-background;
@@ -175,7 +173,7 @@
           li {
             z-index: 1;
 
-            a {
+            button {
               width: 100%;
             }
           }
@@ -213,6 +211,8 @@
         order: 2;
         z-index: 9;
         padding-top: 10px;
+        border: none;
+        background-color: transparent;
       }
     }
   }

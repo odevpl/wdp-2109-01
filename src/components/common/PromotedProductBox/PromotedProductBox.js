@@ -48,13 +48,13 @@ const PromotedProductBox = ({ name, price, promo, stars, image, oldPrice }) => (
       <h5>{name}</h5>
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
+          <button key={i}>
             {i <= stars ? (
               <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
             ) : (
               <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
             )}
-          </a>
+          </button>
         ))}
       </div>
     </div>
