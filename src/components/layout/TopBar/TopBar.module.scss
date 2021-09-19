@@ -12,13 +12,17 @@
       display: inline-block;
       line-height: 55px;
 
-      a {
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline;
+        margin: 0;
+        padding: 0;
         color: $topBar-text;
         font-size: 13px;
-
         &:hover {
           color: $topBar-text--hover;
-          text-decoration: none;
         }
       }
     }
@@ -42,7 +46,7 @@
 }
 
 @media (max-width: 767px) {
-  .topMenu ul li a {
+  .topMenu ul li button {
     visibility: hidden;
     font-size: 0px;
 

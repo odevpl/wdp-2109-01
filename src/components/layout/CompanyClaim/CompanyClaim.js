@@ -17,17 +17,17 @@ const CompanyClaim = ({ cartCount }) => (
           </p>
         </div>
         <div className='col text-center'>
-          <a href='#'>
+          <span>
             <img src='/images/logo.png' alt='Bazar' />
-          </a>
+          </span>
         </div>
         <div className={`col text-right ${styles.cart}`}>
-          <a href='#' className={styles.cartBox}>
+          <button className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
             <div className={styles.cartCounter}>{cartCount}</div>
-          </a>
+          </button>
           <div className={styles.phoneNumber}>
             <p>
               <FontAwesomeIcon className={styles.icon} icon={faMobileAlt} /> 2300 - 3560

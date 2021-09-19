@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
   products: getProductsToCompare(state),
 });
 
-const mapDispatchToProps = (dispatch, props) => {
-  const { id } = props;
+const mapDispatchToProps = (dispatch /* props */) => {
+  //const { id } = props;
   return {
     removeFromCompare: id => dispatch(removeFromCompare(id)),
   };
