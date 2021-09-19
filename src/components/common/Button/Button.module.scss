@@ -32,7 +32,7 @@
   font-weight: 400;
 }
 
-.outline, .favourite, .compare {
+.outline, .favourite, .compare, .quantity, .trash {
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -87,4 +87,12 @@
   margin: 0;
   padding: 5px 0;
   font-weight: 400;
+}
+
+.quantity, .trash{
+ border: none;
+   &:not(.noHover):hover {
+    background-color: $color-white;
+    color: $color-tigersEye;
+  }
 }
