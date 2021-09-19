@@ -33,7 +33,6 @@ export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case SET_STARS: {
       const newStatePart = statePart.map(product => {
-        //console.log('payload: ', action.payload);
         if (product.id === action.payload.id) {
           if (product.stars === action.payload.i && product.isStarred) {
             localStorage.removeItem(product.id);
