@@ -41,6 +41,12 @@ const ProductBox = ({
     } else return stars;
   };
 
+  const checkStarred = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) return true;
+    else return false;
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -72,7 +78,7 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={checkStars()} isStarred={isStarred} />
+          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
       </div>
       <div className={styles.line}></div>
