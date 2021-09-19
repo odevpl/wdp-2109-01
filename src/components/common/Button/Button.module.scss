@@ -38,7 +38,15 @@
   font-weight: 400;
 }
 
-.outline, .favourite, .compare, .quantity, .trash {
+.medium {
+  @extend .main;
+  font-size: 13px;
+  line-height: 26px;
+  padding: 8px 30px;
+  font-weight: 500;
+}
+.outline, .favoritue, .favourite, .compare, .quantity, .trash {
+
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
