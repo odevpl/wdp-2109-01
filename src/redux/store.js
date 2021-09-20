@@ -5,7 +5,7 @@ import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import feedbacksReducer from './feedbacksRedux';
-import sizeReducer from './sizeRedux';
+import sizeReducer from './deviceRedux';
 
 // define reducers
 const reducers = {
