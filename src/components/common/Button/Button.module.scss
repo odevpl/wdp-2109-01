@@ -98,3 +98,38 @@
     color: $color-tigersEye;
   }
 }
+
+.carousel {
+  @extend .main;
+  height: 100px;
+  width: 30px;
+  justify-content: center;
+  padding: 28px 10px;
+}
+
+.greenButton {
+  background-color: green;
+  color: $button-text-color;
+  width: 150px;
+  height: 40px;
+}
+.category {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: inherit;
+  color: $color-jet;
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 3px solid;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  &:not(.noHover):hover {
+    color: $color-tigersEye !important;
+    background-color: $color-PhilippineSilver;
+    color: $color-white;
+    text-decoration: none;
+    border-top: 3px solid $color-tigersEye;
+  }
+}

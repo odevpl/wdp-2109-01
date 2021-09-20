@@ -1,0 +1,77 @@
+@import "../../../styles/settings.scss";
+.root {
+  .leftWrapper {
+    position: relative;
+    padding: 0;
+    height: 800px;
+    width: 700px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .rightWrapper {
+    position: relative;
+    padding: 0;
+    height: 600px;
+    width: 700px;
+  }
+
+  .imageWrapper {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    padding: 0;
+    object-fit: cover;
+    margin-top: 5px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .priceTitle {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    font-weight: 700;
+    margin-left: 60px;
+    margin-top: -560px;
+    font-size: 25px;
+    padding: 0;
+    span {
+      color:green;
+      font-size: 50px;
+      font-weight: 600;
+      padding-left: 15px;
+    }
+  }
+
+  .priceSubtitle {
+    position: absolute;
+    margin-left: 60px;
+    margin-top: -500px;
+    font-size: 55px;
+    color: $color-tigersEye;
+    font-weight: 600;
+  }
+
+  .greenButton {
+    position: absolute;
+    padding: 12px 0 0 35px;
+    width: 180px;
+    height: 50px;
+    margin-top: -420px;
+    margin-left: 60px;
+    background-color: green;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 5px;
+
+    :hover {
+      color: $color-tigersEye;
+      text-decoration: none;
+    }
+  }
+}
