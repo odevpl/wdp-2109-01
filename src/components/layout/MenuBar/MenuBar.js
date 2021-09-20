@@ -46,9 +46,9 @@ const MenuBar = ({ children }) => {
               </li>
             </ul>
           </div>
-          <button href='#' className={styles.dropdown} onClick={() => setview(!view)}>
+          <a href='#' className={styles.dropdown} onClick={() => setview(!view)}>
             <FontAwesomeIcon icon={faBars} />
-          </button>
+          </a>
         </div>
       </div>
     </div>
