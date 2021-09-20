@@ -45,7 +45,7 @@ const ProductBox = ({
     if (retrievedStorage !== null) return true;
     else return false;
   };
-  
+
   const handleAddToCart = (name, price, image) => {
     const cartPayload = {
       name: name,
