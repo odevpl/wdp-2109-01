@@ -7,27 +7,6 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 const Register = () => (
   <div className={styles.root}>
     <div className={styles.container}>
-      <div className='row no-gutters justify-content-between'>
-        <span>
-          <div
-            className={'row no-gutters justify-content-left col-6' + styles.inputBorder}
-          >
-            <input name='account' type='radio' value='fine' id='yes_account' />
-            <label htmlFor='yes_account' />
-            <h3>Mam konto</h3>
-          </div>
-        </span>
-        <span>
-          <div
-            className={'row no-gutters justify-content-left col-6' + styles.inputBorder}
-          >
-            <input name='account' type='radio' value='miserable' id='no_account' />
-            <label htmlFor='no_account' />
-            <h3>Nie mam konta</h3>
-          </div>
-        </span>
-      </div>
-
       <form className={styles.formWrapper}>
         <h4>Podaj dane do rejestracji</h4>
 

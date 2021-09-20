@@ -7,21 +7,14 @@
  
   .container {
     border: 5px solid $menuBar-boxShadow;
-    padding: 50px 80px;
-    h3 {
-      margin-top: -6px;
-      padding-left: 10px;
-      padding-right: 40px;
-      font-size: 18px;
-    }
+    padding: 50px 80px ;
   }
 
   .formWrapper {
     display: flex;
     flex-direction: column;
     h4 {
-      padding-top: 25px;
-      padding-bottom: 10px;
+      padding-bottom: 30px;
     }
 
     .fields {
