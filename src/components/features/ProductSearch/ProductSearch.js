@@ -11,25 +11,27 @@ import { Link } from 'react-router-dom';
 const ProductSearch = ({ categories }) => {
   return (
     <form action='' className={styles.root}>
-      <div className={styles.category}>
-        <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-        <div>
-          <ul>
-            Select <span className={styles.span}>a category</span>
-            {categories.map(item => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
+      <div className={styles.productSearch}>
+        <div className={styles.category}>
+          <FontAwesomeIcon className={styles.icon} icon={faListUl} />
+          <div>
+            <ul>
+              Select a category
+              {categories.map(item => (
+                <li key={item.id}>{item.name}</li>
+              ))}
+            </ul>
+          </div>
+          <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
         </div>
-        <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-      </div>
-      <div className={styles.searchField}>
-        <input placeholder='Search products...' type='text' />
-        <Link exact to={'/search'}>
-          <button>
-            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-          </button>
-        </Link>
+        <div className={styles.searchField}>
+          <input placeholder='Search products...' type='text' />
+          <Link exact to={'/search'}>
+            <button>
+              <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+            </button>
+          </Link>
+        </div>
       </div>
     </form>
   );

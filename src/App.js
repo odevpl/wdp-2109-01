@@ -12,12 +12,9 @@ import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPageContainer';
 import Register from './components/views/Register/Register';
 import Cart from './components/views/Cart/CartContainer';
-<<<<<<< HEAD
 import BlogArchive from './components/layout/BlogArchive/BlogArchive';
 import Login from './components/views/Login/Login';
-=======
 import Search from './components/views/Search/Search';
->>>>>>> 49ec0c5 (Add subpage Search - basic code)
 
 const App = () => (
   <Provider store={store}>
@@ -30,11 +27,8 @@ const App = () => (
           <Route exact path={'/register'} component={Register} />
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/cart'} component={Cart} />
-<<<<<<< HEAD
           <Route exact path={'/blog'} component={BlogArchive} />
-=======
           <Route exact path={'/search'} component={Search} />
->>>>>>> 49ec0c5 (Add subpage Search - basic code)
         </Switch>
       </MainLayoutContainer>
     </BrowserRouter>
