@@ -19,9 +19,9 @@ const Register = () => {
     } else if (
       password === confirmPassword &&
       firstName.length >= 3 &&
-      firstName.length <= 20 &&
+      firstName.length <= 30 &&
       lastName.length >= 3 &&
-      lastName.length <= 40 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length >= 3 &&
       confirmPassword.length >= 3
@@ -30,9 +30,9 @@ const Register = () => {
     } else if (
       password === confirmPassword &&
       firstName.length < 3 &&
-      firstName.length <= 20 &&
+      firstName.length <= 30 &&
       lastName.length >= 3 &&
-      lastName.length <= 40 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length >= 3 &&
       confirmPassword.length >= 3
@@ -45,9 +45,9 @@ const Register = () => {
     } else if (
       password === confirmPassword &&
       firstName.length >= 3 &&
-      firstName.length <= 20 &&
+      firstName.length <= 30 &&
       lastName.length < 3 &&
-      lastName.length <= 40 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length >= 3 &&
       confirmPassword.length >= 3
@@ -60,9 +60,9 @@ const Register = () => {
     } else if (
       password === confirmPassword &&
       firstName.length >= 3 &&
-      firstName.length <= 20 &&
+      firstName.length <= 30 &&
       lastName.length >= 3 &&
-      lastName.length <= 40 &&
+      lastName.length <= 30 &&
       !email.includes('@') &&
       password.length >= 3 &&
       confirmPassword.length >= 3
@@ -74,9 +74,9 @@ const Register = () => {
       return false;
     } else if (
       firstName.length >= 3 &&
-      firstName.length <= 20 &&
+      firstName.length <= 30 &&
       lastName.length >= 3 &&
-      lastName.length <= 40 &&
+      lastName.length <= 30 &&
       email.includes('@') &&
       password.length < 3
     ) {
@@ -133,7 +133,7 @@ const Register = () => {
                 placeholder='Imię...'
                 id='first_name'
                 minLength='3'
-                maxLength='20'
+                maxLength='30'
               ></input>
             </div>
             <div>
@@ -144,7 +144,7 @@ const Register = () => {
                 placeholder='Nazwisko...'
                 id='last_name'
                 minLength='3'
-                maxLength='20'
+                maxLength='30'
               ></input>
             </div>
             <div>
