@@ -49,6 +49,7 @@
       .icon {
         margin-bottom: 13px;
         margin-left: 5px;
+        color: $chatBot-window-icon;
       }
     }
     .message {
@@ -84,13 +85,13 @@
       border: 2px solid $chatBot-iconBox-border;
       cursor: pointer;
       border-left: none;
-      border-radius: 5px;
+    //  border-radius: 5px;
     }
 
     .iconBox:hover {
       background-color: $chatBot-iconBox--hover;
       border: 1px solid $chatBot-iconBox--hover;
-      border-radius: 5px;
+      //border-radius: 5px;
     }
 
     textarea {
@@ -98,7 +99,7 @@
       resize: none;
       font-size: 11px;
       border: 2px solid $chatBot-texarea;
-      border-radius: 5px;
+      //border-radius: 5px;
     }
 
     textarea:focus {
