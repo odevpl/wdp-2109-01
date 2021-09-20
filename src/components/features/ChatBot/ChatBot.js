@@ -2,11 +2,7 @@ import React from 'react';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './ChatBot.module.scss';
-import {
-  faQuestionCircle,
-  faRobot,
-  faPaperPlane,
-} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 
 class ChatBot extends React.Component {
   state = {
@@ -31,7 +27,7 @@ class ChatBot extends React.Component {
         <div className={this.state.visible === true ? styles.show : styles.hide}>
           <div className={styles.window}>
             <div className={styles.background}>
-              <FontAwesomeIcon icon={faRobot} className={styles.icon} />
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />
               <div className={styles.message}>
                 <p>How can I help you?</p>
               </div>
@@ -39,15 +35,15 @@ class ChatBot extends React.Component {
           </div>
           <div className={styles.chat}>
             <form>
-              <textarea></textarea>
+              <textarea placeholder='Enter your text here.'></textarea>
               <div className={styles.iconBox}>
-                <FontAwesomeIcon icon={faPaperPlane} />
+                <FontAwesomeIcon icon={faShare} />
               </div>
             </form>
           </div>
         </div>
         <Button variant='outline' className={styles.button} onClick={this.handleClick}>
-          <FontAwesomeIcon icon={faQuestionCircle} /> If you need help, write me!
+          <FontAwesomeIcon icon={faComment} /> Do you need help? Write it.
         </Button>
       </div>
     );

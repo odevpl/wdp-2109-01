@@ -2,10 +2,10 @@
 
 .root {
   width: 215px;
-  margin-left: 15px;
+  margin-left: 23px;
   position: fixed;
-  top: 65%;
-  z-index: 5;
+  top: 61%;
+  z-index: 99;
 
   .hide {
     visibility: hidden;
@@ -17,13 +17,15 @@
 
   .button {
     width: 100%;
-    background-color: gray;
-    color: black;
+    background-color: $chatBot-button-background;
+    color: $chatBot-button-color;
     border: none;
+    border-radius: 5px;
+    line-height: 42px;
   }
 
   .button:hover {
-    background-color: orange;
+    background-color: $chatBot-button--hover;
   }
 
   a:hover {
@@ -31,8 +33,10 @@
   }
 
   .window {
-    border: 1px solid gray;
+    border: 3px solid $chatBot-window;
     border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     .background {
       width: 100%;
@@ -40,7 +44,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: flex-end;
-      background-color: white;
+      background-color: $chatBot-window-background;
 
       .icon {
         margin-bottom: 13px;
@@ -48,19 +52,20 @@
       }
     }
     .message {
-      height: 30px;
+      height: 20px;
       width: 140px;
-      border-radius: 30%;
-      background-color: yellow;
+      border-radius: 3%;
+      background-color: $chatBot-window-message;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: 5px;
-      margin-bottom: 5px;
+      margin-left: 15px;
+      margin-bottom: 10px;
 
       p {
         margin: 0;
         font-size: 11px;
+        color: white;
       }
     }
   }
@@ -71,29 +76,33 @@
     }
 
     .iconBox {
-      width: 42px;
+      width: 45px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: orange;
-      border: 1px solid black;
+      background-color: $chatBot-iconBox-background;
+      border: 2px solid $chatBot-iconBox-border;
       cursor: pointer;
       border-left: none;
+      border-radius: 5px;
     }
 
     .iconBox:hover {
-      background-color: red;
+      background-color: $chatBot-iconBox--hover;
+      border: 1px solid $chatBot-iconBox--hover;
+      border-radius: 5px;
     }
 
     textarea {
       width: 80%;
       resize: none;
       font-size: 11px;
-      border: 1px solid black;
+      border: 2px solid $chatBot-texarea;
+      border-radius: 5px;
     }
 
     textarea:focus {
-      background-color: yellow;
+      background-color: $chatBot-texarea--focus;
     }
   }
 }
