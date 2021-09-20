@@ -49,7 +49,7 @@ export const SET_STARS = createActionName('SET_STARS');
 export const setStars = payload => ({ payload, type: SET_STARS });
 
 /* action types */
-export const ADD_TO_FAVOURITE = createActionNameTwo('ADD_TO_FAVOURITE');
+export const ADD_TO_FAVOURITE = createActionName('ADD_TO_FAVOURITE');
 
 export const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
 

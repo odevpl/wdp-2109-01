@@ -5,6 +5,7 @@ import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductB
 import Button from '../../common/Button/Button';
 import Fade from 'react-reveal/Fade';
 import Carousel from 'react-material-ui-carousel';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 class Promoted extends React.Component {
   state = {
@@ -139,7 +140,14 @@ class Promoted extends React.Component {
                     </button>
                   </div> */}
                 {/* </div> */}
+                {/* <ThemeProvider theme={theme}> */}
                 <Carousel
+                  sx={{
+                    color: 'red',
+                    '& .Carousel-indicatorIcon-4': {
+                      display: 'none',
+                    },
+                  }}
                   autoPlay={false}
                   interval='3000'
                   animation='fade'
@@ -152,12 +160,10 @@ class Promoted extends React.Component {
                   activeIndicatorIconButtonProps={{
                     style: {
                       color: '#D58E32',
+                      fontSize: 20,
                     },
                   }}
                   indicatorIconButtonProps={{
-                    '& .hover': {
-                      color: '#D58E32',
-                    },
                     indicatorIcon: {
                       fontSize: '20px',
                     },
@@ -171,7 +177,11 @@ class Promoted extends React.Component {
                   }}
                   indicatorContainerProps={{
                     style: {
-                      color: '#e1e1e1',
+                      position: 'absolute',
+                      top: -2,
+                      textAlign: 'right',
+                      paddingRight: 20,
+                      fontSize: 20,
                     },
                   }}
                 >
@@ -179,6 +189,8 @@ class Promoted extends React.Component {
                     <PromotedProductBox key={prom.id} {...prom} />
                   ))}
                 </Carousel>
+                {/* </ThemeProvider> */}
+                {/* </div> */}
               </div>
               <Carousel autoPlay='true' interval='2000' animation='fade'>
                 {promoProducts
