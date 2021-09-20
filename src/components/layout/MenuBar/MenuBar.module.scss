@@ -14,7 +14,7 @@
       transition: $actionDuration;
 
       &:hover {
-        color: $menuBar-background--active
+        color: $menuBar-background--active;
       }
     }
 
@@ -34,7 +34,7 @@
         }
       }
 
-      button {
+      a {
         color: $menuBar-text;
         text-transform: uppercase;
         font-size: 12px;
@@ -131,26 +131,26 @@
         form {
           width: 469px;
         }
-    button {
-      color: $menuBar-text;
-      text-transform: uppercase;
-      font-size: 12px;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      border-top: 4px solid $menuBar-background;
-      font-weight: 500;
-      letter-spacing: 1px;
+        button {
+          color: $menuBar-text;
+          text-transform: uppercase;
+          font-size: 12px;
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          border-top: 4px solid $menuBar-background;
+          font-weight: 500;
+          letter-spacing: 1px;
 
-      &:hover,
-      &.active {
-        background-color: $menuBar-background--active;
-        color: $menuBar-text--active;
-        border-color: $menuBar-background--active;
+          &:hover,
+          &.active {
+            background-color: $menuBar-background--active;
+            color: $menuBar-text--active;
+            border-color: $menuBar-background--active;
+          }
+        }
       }
     }
-  }
-}
   }
 }
 
@@ -223,10 +223,10 @@
     .wrapper {
       .search {
         max-width: 50%;
-      &.active {
-        border-color: $menuBar-text;
+        &.active {
+          border-color: $menuBar-text;
+        }
       }
     }
   }
-}
 }

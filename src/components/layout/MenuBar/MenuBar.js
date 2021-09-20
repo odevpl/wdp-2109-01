@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MenuBar.module.scss';
+import { Link } from 'react-router-dom';
 
 const MenuBar = ({ children }) => {
   const [view, setview] = useState(false);
@@ -21,33 +22,33 @@ const MenuBar = ({ children }) => {
           <div className={'col ' + styles.menu + (view ? ' ' + styles.visibility : '')}>
             <ul>
               <li>
-                <button href='#' className={styles.active}>
+                <Link to={'/'} className={styles.active}>
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button>Furniture</button>
+                <Link to={'/shop/furniture'}>Furniture</Link>
               </li>
               <li>
-                <button>Chair</button>
+                <Link to={'/shop/chair'}>Chair</Link>
               </li>
               <li>
-                <button>Table</button>
+                <Link to={'/shop/table'}>Table</Link>
               </li>
               <li>
-                <button>Sofa</button>
+                <Link to={'/shop/sofa'}>Sofa</Link>
               </li>
               <li>
-                <button>Bedroom</button>
+                <Link to={'/shop/bedroom'}>Bedroom</Link>
               </li>
               <li>
-                <button>Blog</button>
+                <Link to={'/blog'}>Blog</Link>
               </li>
             </ul>
           </div>
-          <button href='#' className={styles.dropdown} onClick={() => setview(!view)}>
+          <a href='#' className={styles.dropdown} onClick={() => setview(!view)}>
             <FontAwesomeIcon icon={faBars} />
-          </button>
+          </a>
         </div>
       </div>
     </div>
