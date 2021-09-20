@@ -5,6 +5,7 @@ import PromotedProductBox from '../../common/PromotedProductBox/PromotedProductB
 import Button from '../../common/Button/Button';
 import Fade from 'react-reveal/Fade';
 import Carousel from 'react-material-ui-carousel';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // import reducer from '../../../redux/productsRedux';
 
@@ -134,31 +135,48 @@ class Promoted extends React.Component {
                     </button>
                   </div> */}
                 {/* </div> */}
+                {/* <ThemeProvider theme={theme}> */}
                 <Carousel
+                  sx={{
+                    color: 'red',
+                    '& .Carousel-indicatorIcon-4': {
+                      display: 'none',
+                    },
+                  }}
                   autoPlay={false}
                   interval='3000'
                   animation='fade'
                   navButtonsProps={{
                     style: {
                       display: 'none',
+                      fontSize: 20,
                     },
                   }}
                   activeIndicatorIconButtonProps={{
                     style: {
                       color: '#D58E32',
+                      fontSize: 20,
                     },
                   }}
                   indicatorIconButtonProps={{
+                    indicatorIcon: {
+                      fontSize: '20px',
+                    },
                     style: {
                       color: '#e1e1e1',
+                      fontSize: 20,
+                      '& .hover': {
+                        color: '#D58E32',
+                      },
                     },
                   }}
                   indicatorContainerProps={{
                     style: {
                       position: 'absolute',
-                      top: 1,
+                      top: -2,
                       textAlign: 'right',
                       paddingRight: 20,
+                      fontSize: 20,
                     },
                   }}
                 >
@@ -166,6 +184,7 @@ class Promoted extends React.Component {
                     <PromotedProductBox key={prom.id} {...prom} />
                   ))}
                 </Carousel>
+                {/* </ThemeProvider> */}
                 {/* </div> */}
               </div>
 
