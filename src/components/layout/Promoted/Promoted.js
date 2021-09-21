@@ -36,7 +36,7 @@ class Promoted extends React.Component {
     ];
     const promoProductsTwo = [
       { ...promotions[2] },
-      { ...promotions[24] },
+      { ...promotions[8] },
       { ...promotions[11] },
     ];
 
@@ -95,7 +95,7 @@ class Promoted extends React.Component {
                       display: 'none',
                     },
                   }}
-                  autoPlay={false}
+                  autoPlay={true}
                   interval='3000'
                   animation='fade'
                   navButtonsProps={{
@@ -160,76 +160,27 @@ class Promoted extends React.Component {
               <div className={styles.mainButton}>
                 <Button variant='white'>SHOP NOW</Button>
               </div>
-              <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
-                  <div key={prom.id} className={styles.imgWrapper}>
-                    <Fade>
-                      <img src={prom.image} alt={123} />
-                    </Fade>
+              <div className={styles.buttonsWrapper}>
+                <div className='row'>
+                  <div className={`col-6 ${styles.button}`}>
+                    <Button
+                      variant='long'
+                      onClick={e =>
+                        e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
+                      }
+                    >
+                      {'<'}
+                    </Button>
                   </div>
-                ))}
-                <div className={styles.shadowWrapper}></div>
-                <div className={styles.shadowTitle}>
-                  INDOOR <span>FURNITURE</span>
-                  <div className={styles.shadowSubtitle}>
-                    SAVE UP TO 50% OF ALL FURNITURE
-                  </div>
-                </div>
-                <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                  {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
-                    <div key={prom.id} className={styles.imgWrapper}>
-                      <img src={prom.image} alt={123} />
-                    </div>
-                  ))}
-                  <div className={styles.shadowWrapper}></div>
-                  <div className={styles.shadowTitle}>
-                    INDOOR <span>FURNITURE</span>
-                    <div className={styles.shadowSubtitle}>
-                      SAVE UP TO 50% OF ALL FURNITURE
-                    </div>
-                  </div>
-                  <div className={`col-8 ${styles.promotionWrapperRight}`}>
-                    {promoProductsTwo
-                      .slice(activePageBig, activePageBig + 1)
-                      .map(prom => (
-                        <div key={prom.id} className={styles.imgWrapper}>
-                          <img src={prom.image} alt={123} />
-                        </div>
-                      ))}
-                    <div className={styles.shadowWrapper}></div>
-                    <div className={styles.shadowTitle}>
-                      INDOOR <span>FURNITURE</span>
-                      <div className={styles.shadowSubtitle}>
-                        SAVE UP TO 50% OF ALL FURNITURE
-                      </div>
-                    </div>
-                    <div className={styles.mainButton}>
-                      <Button variant='white'>SHOP NOW</Button>
-                    </div>
-                    <div className={styles.buttonsWrapper}>
-                      <div className='row'>
-                        <div className={`col-6 ${styles.button}`}>
-                          <Button
-                            variant='long'
-                            onClick={e =>
-                              e.preventDefault() & this.handlePageChangeSliderBG(leftPage)
-                            }
-                          >
-                            {'<'}
-                          </Button>
-                        </div>
-                        <div className={`col-6 ${styles.button}`}>
-                          <Button
-                            variant='long'
-                            onClick={e =>
-                              e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
-                            }
-                          >
-                            {'>'}
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
+                  <div className={`col-6 ${styles.button}`}>
+                    <Button
+                      variant='long'
+                      onClick={e =>
+                        e.preventDefault() & this.handlePageChangeSliderBG(rightPage)
+                      }
+                    >
+                      {'>'}
+                    </Button>
                   </div>
                 </div>
               </div>
