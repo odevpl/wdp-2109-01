@@ -1,18 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  height: 150px;
-  margin: 0 200px 120px 320px;
-  position: relative;
-
-  :global(.container) > :global(.row) {
-    margin-bottom: 20px;
-  }
-
-  .brands {
-    padding: 20px 0;
-    width: 100%;
-    // position: absolute;
-    // margin-right: 200px;
-  }
+  width: 100%;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  padding: 3rem 0;
 }
