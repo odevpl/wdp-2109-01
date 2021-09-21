@@ -66,7 +66,11 @@ class NewFurniture extends React.Component {
                     {categories.map(item => (
                       <li key={item.id}>
                         <button
-                          className={item.id === activeCategory ? styles.active : ''}
+                          className={
+                            item.id === activeCategory
+                              ? styles.active
+                              : '' + styles.buttonMenu
+                          }
                           onClick={() => this.handleCategoryChange(item.id)}
                         >
                           {item.name}
