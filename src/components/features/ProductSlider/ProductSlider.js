@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductSlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../common/Button/Button';
 import {
-  faStar,
   faEye,
   faShoppingCart,
   faExchangeAlt,
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import ProductSliderBox from '../../common/ProductSliderBox/ProductSliderBox';
 import chair from '../../common/images/imagesGallery/chair.jpg';
 import ProductRating from '../ProductRating/ProductRatingContainer';

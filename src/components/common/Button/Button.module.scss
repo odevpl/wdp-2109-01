@@ -29,8 +29,11 @@
 >>>>>>> 259ae63 (Add component Gallery problems with photos)
 =======
 
+<<<<<<< HEAD
 >>>>>>> 3b5a042 (Add slider functionality)
 
+=======
+>>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
 .carousel {
   @extend .main;
   height: 100px;
@@ -66,6 +69,7 @@
   padding: 5px 10px;
   font-weight: 400;
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -73,6 +77,8 @@
 .outline, .favourite, .compare, .quantity, .trash {
 =======
 >>>>>>> 3b5a042 (Add slider functionality)
+=======
+>>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
 .medium {
   @extend .main;
   font-size: 13px;
@@ -81,6 +87,7 @@
   font-weight: 500;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .outline, .favoritue, .favourite, .compare, .quantity, .trash {
 
 =======
@@ -88,6 +95,9 @@
 .outline, .favoritue {
 >>>>>>> 56c7d6a (Add slider functionality)
 >>>>>>> 3b5a042 (Add slider functionality)
+=======
+.outline, .favourite, .favoritue, .compare, .quantity, .trash {
+>>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -105,15 +115,15 @@
   }
 }
 
-<<<<<<< HEAD
-.favourite, .compare {
+.favourite, .compare, .favoritue {
   background-color: $button-fav-background;
   color: $button-fav-color;
 
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
-=======
+  }
+}
 .favoritue {
   background-color: $color-white;
   color: $color-tigersEye;
@@ -150,7 +160,6 @@
     color: $color-white;
     text-decoration: none;
     border-top: 3px solid $color-tigersEye;
->>>>>>> 1f68d30 (Add component Gallery problems with photos)
   }
 }
 .favoritue {
@@ -233,6 +242,7 @@
     color: $color-tigersEye;
   }
 }
+<<<<<<< HEAD
 
 .login {
   @extend .small;
@@ -249,3 +259,5 @@
     font-size: 11px;
   }
 }
+=======
+>>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
