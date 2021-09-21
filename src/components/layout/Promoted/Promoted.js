@@ -86,57 +86,9 @@ class Promoted extends React.Component {
                 {/* <div className={`${styles.dots}`}>
                     <ul>{dots}</ul>
                   </div> */}
-                {/* <div className="Carousel-indicators-2">
-                    <button className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3
-                      MuiIconButton-sizeSmall" tabIndex="0" type="button" aria-label="carousel indicator 1" style={{ color: '#e1e1e1' }}>
-                      <span className="MuiIconButton-label">
-                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4"
-                          focusable="false" viewBox="0 0 24 24" aria-hidden="true" style={{
-                            fontSize: 20,
-                          }}>
-                          <circle cx="12" cy="12" r="8"></circle>
-                        </svg>
-                      </span>
-                      <span className="MuiTouchRipple-root">
-                      </span>
-                    </button>
-                    <button className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3  Carousel-active-5  MuiIconButton-sizeSmall"
-                      tabIndex="0" type="button" aria-label="carousel indicator 2" style={{
-                        color: '#D58E32',
-                        fontSize: 18,
-                      }}>
-                      <span className="MuiIconButton-label">
-                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4"
-                          focusable="false" viewBox="0 0 24 24" aria-hidden="true" style={{
-                            fontSize: 20,
-                          }}>
-                          <circle cx="12" cy="12" r="8">
-                          </circle>
-                        </svg>
-                      </span>
-                      <span
-                        className="MuiTouchRipple-root">
-                      </span>
-                    </button>
-                    <button
-                      className="MuiButtonBase-root MuiIconButton-root Carousel-indicator-3  MuiIconButton-sizeSmall"
-                      tabIndex="0" type="button" aria-label="carousel indicator 3" style={{ color: '#e1e1e1' }}>
-                      <span className="MuiIconButton-label">
-                        <svg className="MuiSvgIcon-root Carousel-indicatorIcon-4" focusable="false" viewBox="0 0 24 24"
-                          aria-hidden="true" style={{
-                            fontSize: 20,
-                          }}>
-                          <circle cx="12" cy="12" r="8">
-                          </circle>
-                        </svg>
-                      </span>
-                      <span className="MuiTouchRipple-root">
-                      </span>
-                    </button>
-                  </div> */}
                 {/* </div> */}
-                {/* <ThemeProvider theme={theme}> */}
                 <Carousel
+                  classes={{ indicatorIcon: 'MyCustomButton' }}
                   sx={{
                     color: 'red',
                     '& .Carousel-indicatorIcon-4': {
@@ -153,12 +105,16 @@ class Promoted extends React.Component {
                     },
                   }}
                   activeIndicatorIconButtonProps={{
+                    className: 'gites',
                     style: {
                       color: '#D58E32',
-                      fontSize: 20,
+                      fontSize: '20px',
                     },
                   }}
                   indicatorIconButtonProps={{
+                    '& .hover': {
+                      color: '#D58E32',
+                    },
                     indicatorIcon: {
                       fontSize: '20px',
                     },
@@ -184,27 +140,8 @@ class Promoted extends React.Component {
                     <PromotedProductBox key={prom.id} {...prom} />
                   ))}
                 </Carousel>
-                {/* </ThemeProvider> */}
-                {/* </div> */}
               </div>
-
-              {/* </div> */}
-
-              {/* {promoProducts
-                  .slice(activePageSmall, activePageSmall + 1)
-                  .map(prom => (
-
-                    <div key={prom.id}>
-                      <Fade>
-                        <PromotedProductBox {...prom} />
-                      </Fade>
-                    </div>
-
-                  ))} */}
-
-              {/* </Swipeable> */}
             </div>
-
             <div className={`col-8 ${styles.promotionWrapperRight}`}>
               {promoProductsTwo.slice(activePageBig, activePageBig + 1).map(prom => (
                 <div key={prom.id} className={styles.imgWrapper}>
