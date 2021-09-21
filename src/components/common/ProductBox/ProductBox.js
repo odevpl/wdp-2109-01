@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -62,7 +62,9 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <h5>
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h5>
         <div className={styles.stars}>
           <ProductRating id={id} stars={stars} isStarred={isStarred} />
         </div>
