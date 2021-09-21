@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +21,6 @@ const ProductBox = ({
   description,
   favourite,
   addToFavourite,
-  isStarred,
   compare,
   addToCompare,
   numberOfProductsToCompare,
@@ -48,20 +46,19 @@ const ProductBox = ({
   };
 
   return (
-    <Link to={{ pathname: `/product/${id}`, state: { id } }}>
-      <div className={styles.root}>
-        <div className={styles.photo}>
-          <img src={image} alt={name} />
-          {promo && <div className={styles.sale}>{promo}</div>}
-          <div className={styles.buttons}>
-            <Button variant={'small'} onClick={event => handlePopup(event)}>
-              QUICK VIEW
-            </Button>
-            <Button variant='small'>
-              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-            </Button>
-          </div>
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <img src={image} alt={name} />
+        {promo && <div className={styles.sale}>{promo}</div>}
+        <div className={styles.buttons}>
+          <Button variant={'small'} onClick={event => handlePopup(event)}>
+            QUICK VIEW
+          </Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
         </div>
+      </div>
       {showPopup ? (
         <ProductPopup
           id={id}
@@ -117,7 +114,6 @@ const ProductBox = ({
         </div>
       </div>
     </div>
-  </Link>
   );
 };
 ProductBox.propTypes = {
@@ -136,7 +132,6 @@ ProductBox.propTypes = {
   numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
   stars: PropTypes.number,
-  isStarred: PropTypes.bool,
 };
 
 export default ProductBox;
