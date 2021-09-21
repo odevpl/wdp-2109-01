@@ -57,7 +57,7 @@ export default function reducer(statePart = [], action = {}) {
     case ADD_TO_COMPARE: {
       const id = action.payload;
       return statePart.map(product =>
-        product.id == id && product.compare == false
+        product.id === id && product.compare === false
           ? { ...product, compare: !product.compare }
           : { ...product }
       );
@@ -65,7 +65,7 @@ export default function reducer(statePart = [], action = {}) {
     case REMOVE_FROM_COMPARE: {
       const id = action.payload;
       return statePart.map(product =>
-        product.id == id ? { ...product, compare: false } : { ...product }
+        product.id === id ? { ...product, compare: false } : { ...product }
       );
     }
     default:
