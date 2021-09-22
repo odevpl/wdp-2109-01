@@ -47,7 +47,7 @@ const Brands = ({ brands }) => {
             <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
           </Button>{' '}
           {brands.slice(activePage * brand, (activePage + 1) * brand).map(item => (
-            <Grid item key={item.id}>
+            <Grid key={item.id}>
               <BrandsBox {...item} />
             </Grid>
           ))}
