@@ -1,88 +1,308 @@
 import React from 'react';
 import styles from './BlogArchive.module.scss';
-import { post_1 } from './../../common/images/ImagesBlog/post_1.jpg';
-import { post_2 } from './../../common/images/ImagesBlog/post_2.jpg';
-import { post_3 } from './../../common/images/ImagesBlog/post_3.jpg';
-import { post_4 } from './../../common/images/ImagesBlog/post_4.jpg';
-import { post_5 } from './../../common/images/ImagesBlog/post_5.jpg';
+import post_1 from './../../common/images/ImagesBlog/post_1.jpg';
+import post_2 from './../../common/images/ImagesBlog/post_2.jpg';
+import post_3 from './../../common/images/ImagesBlog/post_3.jpg';
+import post_4 from './../../common/images/ImagesBlog/post_4.jpg';
+import post_5 from './../../common/images/ImagesBlog/post_5.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faFolder, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from '@material-ui/core';
 
 const BlogArchive = () => (
   <div className={styles.root}>
     <div className={styles.container}>
-      <h3>ARCHIVES</h3>
-      <div className={`col-9 no-gutters justify-content-between  ${styles.article}`}>
-        <div className={styles.post}>
-          <h4>
-            Post 1 <span>Witamy na nowej stronie sklepu</span>
-          </h4>
-          <img src={post_1} />
-          <div>
-            <p></p>
+      <h2>Archives</h2>
+      <div className='row'>
+        <div className={`col-9 no-gutters justify-content-between  ${styles.article}`}>
+          <div className={styles.post}>
+            <h3>
+              Post 1 <span>Witamy na nowej stronie sklepu</span>
+            </h3>
+            <img src={post_1} />
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
+                suscipit est, a vulputate est. Mauris condimentum, velit rutrum
+                condimentum mollis, est augue commodo magna, at egestas orci magna
+                viverra ligula. Nam hendrerit quam ut tellus ullamcorper, interdum
+                rutrum nulla feugiat. Maecenas sit amet maximus velit. Aenean lobortis
+                mauris felis, sed iaculis risus aliquet nec. Duis eget vulputate felis,
+                ut elementum risus.
+              </p>
+            </div>
+            <div className={`row ${styles.postFooter}`}>
+              <div className='row col-11 justify-content-left'>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <span>admin</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 15, 16</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </div>
+              <div className='row col-1 justify-content-right'>
+                <Link>
+                  <button>
+                    <h6>Read more...</h6>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className={styles.post}>
+            <h3>
+              {' '}
+              Post 2<span>Poszukaj inspiracji dla swojego wnętrza</span>
+            </h3>
+            <img src={post_2} />
+            <div>
+              <p>
+                Integer et sollicitudin augue. Fusce ut felis quis nunc pellentesque
+                auctor. Nam scelerisque nec diam et molestie. Cras eu odio sit amet
+                justo ultricies porta ut id libero. Nunc et auctor tellus, ut porttitor
+                nisi. Donec eu felis in leo sodales feugiat rutrum at dui. Donec ut
+                tristique velit. Praesent a fermentum quam. Cras vitae quam quis augue
+                efficitur feugiat in sed risus. Morbi mollis cursus pulvinar. In lacinia
+                dictum ante eu bibendum.
+              </p>
+            </div>
+            <div className={`row ${styles.postFooter}`}>
+              <div className='row col-11 justify-content-left'>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <span>admin</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 15, 16</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </div>
+              <div className='row col-1 justify-content-right'>
+                <Link>
+                  <button>
+                    <h6>Read more...</h6>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className={styles.post}>
+            <h3>
+              Post 3<span>Porady naszych specjalistów - cz.1 SALON</span>
+            </h3>
+            <img src={post_3} />
+            <div>
+              <p>
+                Fusce tempor lobortis urna, sed facilisis odio. Suspendisse convallis
+                massa quis odio placerat, sit amet ultrices justo mollis. Nam interdum
+                massa a mauris auctor, at convallis tortor ultricies. Morbi nunc nunc,
+                finibus sit amet purus sit amet, pellentesque pellentesque urna. Etiam
+                porta lectus urna, eu ullamcorper tortor interdum sed. Aenean magna
+                diam, suscipit non lectus iaculis, placerat dictum dolor. Curabitur
+                auctor in est eu accumsan.
+              </p>
+            </div>
+            <div className={`row ${styles.postFooter}`}>
+              <div className='row col-11 justify-content-left'>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <span>admin</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 15, 16</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </div>
+              <div className='row col-1 justify-content-right'>
+                <Link>
+                  <button>
+                    <h6>Read more...</h6>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className={styles.post}>
+            <h3>
+              Post 4<span>Nasze nowości na Targach Meble Polska</span>
+            </h3>
+            <img src={post_4} />
+            <div>
+              <p>
+                Praesent sed elit auctor, pharetra sem eu, hendrerit mauris.
+                Pellentesque sed pretium dui, id tristique urna. Sed id malesuada diam.
+                Aenean dictum justo nec orci ultrices hendrerit. Nulla ullamcorper
+                tellus augue. Sed iaculis elit enim, at sagittis lacus faucibus non.
+                Integer lacinia imperdiet odio quis lobortis. Sed ornare, nunc nec
+                laoreet ornare, mi nunc tristique ipsum, vel eleifend purus purus non
+                magna. Sed porta sit amet massa euismod condimentum
+              </p>
+            </div>
+            <div className={`row ${styles.postFooter}`}>
+              <div className='row col-11 justify-content-left'>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <span>admin</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 15, 16</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </div>
+              <div className='row col-1 justify-content-right'>
+                <Link>
+                  <button>
+                    <h6>Read more...</h6>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className={styles.post}>
+            <h3>
+              Post 5<span>Stwórz swój mikrokosmos</span>
+            </h3>
+            <img src={post_5} />
+            <div>
+              <p>
+                Vestibulum sed scelerisque elit. Donec non blandit ante. Vivamus
+                tristique turpis in ligula fringilla molestie. Donec quis diam at sem
+                molestie commodo cursus sit amet lacus. Etiam pretium velit orci, ut
+                tristique elit euismod sed. Maecenas iaculis suscipit orci, non
+                pellentesque nisl eleifend ut. Nunc vitae mauris vel quam pulvinar
+                pellentesque vel non nisi. Ut sed ipsum elit. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus.
+              </p>
+            </div>
+            <div className={`row ${styles.postFooter}`}>
+              <div className='row col-11 justify-content-left'>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <span>admin</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 15, 16</span>
+                  </button>
+                </Link>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </div>
+              <div className='row col-1 justify-content-right'>
+                <Link>
+                  <button>
+                    <h6>Read more...</h6>
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={styles.post}>
-          <h4>
-            Post 2<span>Poszukaj inspiracji dla swojego wnętrza</span>
-          </h4>
-          <img src={post_2} />
-          <div>
-            <p></p>
+
+        <div className={`col-3 no-gutters justify-content-between ${styles.menuBlog}`}>
+          <div className={styles.search}>
+            <div>
+              <input type='text' placeholder='Search...' />
+            </div>
           </div>
-        </div>
-        <div className={styles.post}>
-          <h4>
-            Post 3<span>Porady naszych specjalistów cz.1 SALON</span>
-          </h4>
-          <img src={post_3} />
-          <div>
-            <p></p>
+          <div className={styles.recentPosts}>
+            <h3>Recent Posts</h3>
+            <ul>
+              <Link>
+                <li>Post 5</li>
+              </Link>
+              <Link>
+                <li>Post 3</li>
+              </Link>
+              <Link>
+                <li>Post 2</li>
+              </Link>
+              <Link>
+                <li>Post 1</li>
+              </Link>
+            </ul>
           </div>
-        </div>
-        <div className={styles.post}>
-          <h4>
-            Post 4<span>Nasze nowości na Targach Meble Polska</span>
-          </h4>
-          <img src={post_4} />
-          <div>
-            <p></p>
+          <div className={styles.comments}>
+            <h3>Recent Comments</h3>
           </div>
-        </div>
-        <div className={styles.post}>
-          <h4>
-            Post 5<span>Stwórz swój mikrokosmos</span>
-          </h4>
-          <img src={post_5} />
-          <div>
-            <p></p>
+          <div className={styles.archives}>
+            <h3>Archives</h3>
+            <ul>
+              <li>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                    <span>June 2015</span>
+                  </button>
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-      <div className={`col-3 no-gutters justify-content-between ${styles.menuBlog}`}>
-        <div className={styles.search}>
-          <h5>Recent Posts</h5>
-          <input type='text' placeholder='Search...'></input>
-        </div>
-        <div className={styles.recentPosts}>
-          <ul>
-            <li>Post 5</li>
-            <li>Post 3</li>
-            <li>Post 2</li>
-            <li>Post 1</li>
-          </ul>
-        </div>
-        <div className={styles.comments}>
-          <h5>Recent Comments</h5>
-        </div>
-        <div className={styles.archives}>
-          <h5>Archives</h5>
-          June 2015
-        </div>
-        <div className={styles.categories}>
-          <h5>Categories</h5>
-          Just usual
-        </div>
-        <div className={styles.meta}>
-          <h5>Meta</h5>
+          <div className={styles.categories}>
+            <h3>Categories</h3>
+            <ul>
+              <li>
+                <Link>
+                  <button>
+                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                    <span>Just usual</span>
+                  </button>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.meta}>
+            <h3>Meta</h3>
+          </div>
         </div>
       </div>
     </div>
