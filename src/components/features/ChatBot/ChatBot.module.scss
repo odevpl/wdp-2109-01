@@ -1,0 +1,109 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  width: 215px;
+  margin-left: 23px;
+  position: fixed;
+  top: 61%;
+  z-index: 99;
+
+  .hide {
+    visibility: hidden;
+  }
+
+  .show {
+    visibility: visible;
+  }
+
+  .button {
+    width: 100%;
+    background-color: $chatBot-button-background;
+    color: $chatBot-button-color;
+    border: none;
+    border-radius: 5px;
+    line-height: 42px;
+  }
+
+  .button:hover {
+    background-color: $chatBot-button--hover;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .window {
+    border: 3px solid $chatBot-window;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .background {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      background-color: $chatBot-window-background;
+
+      .icon {
+        margin-bottom: 13px;
+        margin-left: 5px;
+        color: $chatBot-window-icon;
+      }
+    }
+    .message {
+      height: 20px;
+      width: 140px;
+      border-radius: 3%;
+      background-color: $chatBot-window-message;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 15px;
+      margin-bottom: 10px;
+
+      p {
+        margin: 0;
+        font-size: 11px;
+        color: white;
+      }
+    }
+  }
+
+  .chat {
+    form {
+      display: flex;
+    }
+
+    .iconBox {
+      width: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $chatBot-iconBox-background;
+      border: 2px solid $chatBot-iconBox-border;
+      cursor: pointer;
+      border-left: none;
+    //  border-radius: 5px;
+    }
+
+    .iconBox:hover {
+      background-color: $chatBot-iconBox--hover;
+      border: 1px solid $chatBot-iconBox--hover;
+      //border-radius: 5px;
+    }
+
+    textarea {
+      width: 80%;
+      resize: none;
+      font-size: 11px;
+      border: 2px solid $chatBot-texarea;
+      //border-radius: 5px;
+    }
+
+    textarea:focus {
+      background-color: $chatBot-texarea--focus;
+    }
+  }
+}
