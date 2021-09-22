@@ -9,8 +9,9 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
 const Brands = ({ brands }) => {
-  const [brand] = useState(6);
+  let [brand] = useState(6);
   const [activePage, setActivePage] = useState(0);
+  const sizePage = useState(window.innerWidth);
 
   const handleClickPrevious = event => {
     event.preventDefault();
@@ -24,52 +25,43 @@ const Brands = ({ brands }) => {
     setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage + 1);
   };
 
+  if (sizePage >= 768) {
+    return (brand = 2);
+  } else if (sizePage >= 992) {
+    return (brand = 4);
+  } else if (sizePage >= 1200) {
+    return (brand = 6);
+  }
+
   return (
     <div className={styles.root}>
-      <div className={styles.wrapper}>
-        <div className='container'>
-          <Container className={styles.container}>
-            <Grid container spacing={1} className={styles.grid}>
-              {/* <div className='row no-gutters justify-content-center'> */}
-              {/* <div className={`col-1`}> */}
-              <Grid item xs={1} md={1} lg={1}>
-                <Button
-                  className={styles.button}
-                  variant='bigCarousel'
-                  onClick={handleClickPrevious}
-                >
-                  <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-                </Button>
-                {/* </div> */}
-              </Grid>
-              {/* <div className='col-10'> */}
-              <Grid container lg={10} direction='row'>
-                {brands
-                  .slice(activePage * brand, (activePage + 1) * brand)
-                  .map(item => (
-                    <Grid item key={item.id}>
-                      <BrandsBox {...item} />
-                    </Grid>
-                  ))}
-              </Grid>
-              {/* </div> */}
-
-              {/* <div className={`col-1`}> */}
-              <Grid item xs={1} md={1} lg={1}>
-                <Button
-                  className={styles.button}
-                  variant='bigCarousel'
-                  onClick={handleClickNext}
-                >
-                  <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-                </Button>
-                {/* </div> */}
-              </Grid>
-              {/* </div> */}
+      {/* <div className={styles.wrapper}> */}
+      {/* <div className='container'> */}
+      <Container className={styles.container}>
+        <Grid container spacing={1} className={styles.grid}>
+          <Button
+            className={styles.button}
+            variant='bigCarousel'
+            onClick={handleClickPrevious}
+          >
+            <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+          </Button>{' '}
+          {brands.slice(activePage * brand, (activePage + 1) * brand).map(item => (
+            <Grid item key={item.id}>
+              <BrandsBox {...item} />
             </Grid>
-          </Container>
-        </div>
-      </div>
+          ))}
+          <Button
+            className={styles.button}
+            variant='bigCarousel'
+            onClick={handleClickNext}
+          >
+            <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+          </Button>
+        </Grid>
+      </Container>
+      {/* </div> */}
+      {/* </div> */}
     </div>
   );
 };
