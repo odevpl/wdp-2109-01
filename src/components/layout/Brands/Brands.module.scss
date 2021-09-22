@@ -2,12 +2,20 @@
 
 .root {
   width: 100%;
+  margin: 3rem 0 4rem 0;
   margin-left: 25px;
-  padding: 3rem 0 4rem 0;
-
-  .sliderWrapper {
-    padding: 2rem 0;
-    border-top: 1px solid $brands-sectionOutline;
-    border-bottom: 1px solid $brands-sectionOutline;
+  padding: 5rem 0 3rem 0;
+  border-top: 1px solid $brands-sectionOutline;
+  border-bottom: 1px solid $brands-sectionOutline;
+  .container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+  }
+  .grid {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
   }
 }
