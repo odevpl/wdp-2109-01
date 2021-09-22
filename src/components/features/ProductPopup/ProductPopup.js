@@ -15,13 +15,13 @@ const ProductPopup = props => (
               <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
             </Button>
           </div>
-          <div className='row'>
-            <div className='col-5'>
+          <div className={styles.popup_row}>
+            <div className={styles.popup_box}>
               <div className={styles.photo}>
                 <img src={props.image} alt={props.name} />
               </div>
             </div>
-            <div className='col-6'>
+            <div className={styles.popup_box}>
               <div>
                 <span>Name:</span> {props.name}
               </div>

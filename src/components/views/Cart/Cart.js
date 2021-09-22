@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ products }) => (
+const Cart = ({ products, removeProduct, removeProducts }) => (
   <div className={styles.root}>
     <Container className={styles.container} maxWidth='lg'>
       <h5>Your cart</h5>
@@ -45,7 +45,13 @@ const Cart = ({ products }) => (
               </td>
               <td>${product.price}</td>
               <td>
-                <Button variant='trash'>
+                <Button
+                  variant='trash'
+                  onClick={event => {
+                    event.preventDefault();
+                    return removeProduct(product.name);
+                  }}
+                >
                   <FontAwesomeIcon icon={faTrashAlt}>Remove</FontAwesomeIcon>
                 </Button>
               </td>
@@ -56,7 +62,15 @@ const Cart = ({ products }) => (
       <div className={styles.cartSummary}>Total: $90</div>
       <div className={styles.checkout}>
         <NavLink exact to={'/'} activeClassName='active'>
-          <Button variant='small'>PROCEED TO CHECKOUT</Button>
+          <Button
+            variant='small'
+            onClick={event => {
+              event.preventDefault();
+              return removeProducts();
+            }}
+          >
+            PROCEED TO CHECKOUT
+          </Button>
         </NavLink>
       </div>
     </Container>
@@ -65,6 +79,8 @@ const Cart = ({ products }) => (
 
 Cart.propTypes = {
   products: PropTypes.array,
+  removeProduct: PropTypes.func,
+  removeProducts: PropTypes.func,
 };
 
 export default Cart;

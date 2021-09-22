@@ -13,7 +13,7 @@ const ProductSearch = ({ categories }) => {
         <FontAwesomeIcon className={styles.icon} icon={faListUl} />
         <div>
           <ul>
-            Select a category
+            Select <span className={styles.span}>a category</span>
             {categories.map(item => (
               <li key={item.id}>{item.name}</li>
             ))}

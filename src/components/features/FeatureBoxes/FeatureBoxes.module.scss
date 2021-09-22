@@ -1,7 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: 5rem 0;
+  padding: 5.8rem 0;
 
   &:hover {
     a {
@@ -13,4 +13,10 @@
 .container {
    margin: 0 auto;
    width: 100%;
+ }
+
+ @media (max-width: 998px) {
+   .root {
+     padding: 7.1rem 0;
+   }
  }
