@@ -21,6 +21,15 @@
     color: $color-jet;
   }
 }
+
+.carousel {
+  @extend .main;
+  height: 100px;
+  width: 30px;
+  justify-content: center;
+  padding: 28px 10px;
+}
+
 .small {
   @extend .main;
   font-size: 13px;
@@ -29,7 +38,15 @@
   font-weight: 400;
 }
 
-.outline, .favourite, .compare, .quantity, .trash {
+.medium {
+  @extend .main;
+  font-size: 13px;
+  line-height: 26px;
+  padding: 8px 30px;
+  font-weight: 500;
+}
+.outline, .favoritue, .favourite, .compare, .quantity, .trash {
+
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -54,6 +71,44 @@
   &:not(.noHover):hover {
     background-color: $button-background-color;
     color: $button-background-color--hov;
+  }
+}
+.favoritue {
+  background-color: $color-white;
+  color: $color-tigersEye;
+
+  &:not(.noHover):hover {
+    background-color: $color-tigersEye;
+    color: $color-jet;
+  }
+}
+
+.greenButton {
+  background-color: green;
+  color: $color-white;
+  width: 150px;
+  height: 40px;
+}
+
+.category {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: inherit;
+  color: $color-jet;
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 3px solid;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+
+  &:not(.noHover):hover {
+    color: $color-tigersEye !important;
+    background-color: $color-PhilippineSilver;
+    color: $color-white;
+    text-decoration: none;
+    border-top: 3px solid $color-tigersEye;
   }
 }
 
