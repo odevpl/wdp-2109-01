@@ -12,6 +12,7 @@ import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Register from './components/views/Register/Register';
 import Cart from './components/views/Cart/CartContainer';
+import BlogArchive from './components/layout/BlogArchive/BlogArchive';
 import Login from './components/views/Login/Login';
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
           <Route exact path={'/register'} component={Register} />
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/cart'} component={Cart} />
+          <Route exact path={'/blog'} component={BlogArchive} />
         </Switch>
       </MainLayoutContainer>
     </BrowserRouter>
