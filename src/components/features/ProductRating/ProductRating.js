@@ -14,7 +14,7 @@ const ProductRating = ({ id, stars, isStarred, setStars }) => {
       {[1, 2, 3, 4, 5].map(i => (
         <span
           key={i}
-          onClick={() => setStars({ id, i })}
+          onClick={() => setStars({ id, i, isStarred })}
           onMouseOver={() => {
             setHover(i);
             setIsHovered(true);
