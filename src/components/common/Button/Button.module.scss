@@ -30,6 +30,12 @@
   padding: 28px 10px;
 }
 
+.bigCarousel {
+  @extend .main, .carousel;
+  align-items: center;
+  padding: 35px 10px;
+}
+
 .small {
   @extend .main;
   font-size: 13px;

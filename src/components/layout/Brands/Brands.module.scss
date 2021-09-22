@@ -2,11 +2,17 @@
 
 .root {
   height: 150px;
+  margin: 0 200px 120px 320px;
+  position: relative;
 
-  .photoBrands{
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
-  padding: 30px 0;
-  margin-top: 10px;
+  :global(.container) > :global(.row) {
+    margin-bottom: 20px;
+  }
+
+  .brands {
+    padding: 20px 0;
+    width: 100%;
+    // position: absolute;
+    // margin-right: 200px;
   }
 }

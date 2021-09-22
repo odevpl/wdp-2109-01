@@ -33,6 +33,7 @@
       display: block;
       height: 35px;
       font-size: 14px;
+      z-index: 1; /* fix list hiding under next component */
 
       li {
         display: none;

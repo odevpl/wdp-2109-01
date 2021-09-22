@@ -24,28 +24,28 @@ const Brands = ({ brands }) => {
 
   return (
     <div className={styles.root}>
-      <div className='container'>
-        <div className={'row no-gutters justify-content-between' + styles.brands}>
-          <div className='col-1'>
+      <div className='container col-12 justify-content-between'>
+        <div className={'row no-gutters justify-content-between ' + styles.brands}>
+          <div className='row no-gutters justify-content-between col-1'>
             <Button
               className={styles.button}
-              variant='carousel'
+              variant='bigCarousel'
               onClick={handleClickPrevious}
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </Button>
           </div>
-          <div className={'col-10' + styles.photoBrands}>
+          <div className='row no-gutters justify-content-between col-10 '>
             {brands.slice(activePage * 6, (activePage + 1) * 6).map(item => (
               <div key={item.id} className='col-2'>
                 <BrandsBox {...item} />
               </div>
             ))}
           </div>
-          <div className='col-1'>
+          <div className='row no-gutters justify-content-between col-1'>
             <Button
               className={styles.button}
-              variant='carousel'
+              variant='bigCarousel'
               onClick={handleClickNext}
             >
               <FontAwesomeIcon icon={faChevronRight} />
