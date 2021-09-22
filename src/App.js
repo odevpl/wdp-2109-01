@@ -12,6 +12,7 @@ import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Register from './components/views/Register/Register';
 import Cart from './components/views/Cart/CartContainer';
+import Login from './components/views/Login/Login';
 
 const App = () => (
   <Provider store={store}>
@@ -22,6 +23,7 @@ const App = () => (
           <Route exact path={'/shop/:categoryId'} component={ProductList} />
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/register'} component={Register} />
+          <Route exact path={'/login'} component={Login} />
           <Route exact path={'/cart'} component={Cart} />
         </Switch>
       </MainLayoutContainer>

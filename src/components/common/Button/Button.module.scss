@@ -153,3 +153,19 @@
     color: $color-tigersEye;
   }
 }
+
+.login {
+  @extend .small;
+  font-size: 14px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  background-color: $color-tigersEye;
+  &:not(.noHover):hover{
+   opacity: 0.8;
+  }
+}
+@media(max-width: 575px){
+  .login{
+    font-size: 11px;
+  }
+}
