@@ -24,6 +24,7 @@ const ProductBox = ({
   compare,
   addToCompare,
   numberOfProductsToCompare,
+  addToCart,
 }) => {
   const [showPopup, togglePopup] = useState(false);
 
@@ -45,6 +46,15 @@ const ProductBox = ({
     else return false;
   };
 
+  const handleAddToCart = (name, price, image) => {
+    const cartPayload = {
+      name: name,
+      price: price,
+      image: image,
+    };
+    addToCart(cartPayload);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -54,7 +64,13 @@ const ProductBox = ({
           <Button variant={'small'} onClick={event => handlePopup(event)}>
             QUICK VIEW
           </Button>
-          <Button variant='small'>
+          <Button
+            variant='small'
+            onClick={event => {
+              event.preventDefault();
+              return handleAddToCart(name, price, image);
+            }}
+          >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -132,6 +148,8 @@ ProductBox.propTypes = {
   numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
   stars: PropTypes.number,
+  isStarred: PropTypes.bool,
+  addToCart: PropTypes.func,
 };
 
 export default ProductBox;
