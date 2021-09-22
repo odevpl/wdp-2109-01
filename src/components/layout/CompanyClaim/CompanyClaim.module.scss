@@ -99,6 +99,9 @@
       }
     }
   }
+  .image {
+    width: 190px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -123,6 +126,9 @@
           font-size: 14px;
         }
       }
+    }
+    .image {
+      width: 160px;
     }
   }
 }

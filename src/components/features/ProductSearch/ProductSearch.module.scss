@@ -69,10 +69,26 @@
       }
     }
 
-    button {
-      border: 0;
-      background-color: transparent;
-      outline: none;
+
+  button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    width: 45px;
+    height: 44px;
     }
+    @media (max-width: 576px) {
+      button {
+        position: absolute;
+        right: 0;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@media (max-width: 998px) {
+  .span {
+    display: none;
   }
 }
