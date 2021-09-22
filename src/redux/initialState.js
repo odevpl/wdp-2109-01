@@ -47,7 +47,7 @@ const initialState = {
         'https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum pharetra metus, id tristique massa pulvinar ut.',
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -79,7 +79,7 @@ const initialState = {
         'https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
         'Aliquam suscipit, erat non dictum venenatis, metus ante molestie nunc, et vehicula dolor metus id nunc.',
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-4',
