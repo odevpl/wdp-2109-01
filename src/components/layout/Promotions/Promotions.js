@@ -1,13 +1,12 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './Promotions.module.scss';
-// import Grid from '@material-ui/core/Grid';
-// import Container from '@material-ui/core/Container';
 import bedroom_bed from '../../common/images/imagesGallery/bedroom_bed.jpg';
 
 const Promotions = () => (
   <section className={styles.root}>
     <div className='container'>
+      <span>Promotions</span>
       <div className={'row ${styles.wrapper}'}>
         <div className={'col-6 ${styles.leftWrapper}'}>
           <div className={styles.imageWrapper}>

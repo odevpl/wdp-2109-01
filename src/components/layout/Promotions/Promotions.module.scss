@@ -1,47 +1,15 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  background-color: bisque;
 
   .leftWrapper {
-    position: relative;
-    padding: 0;
-    height: 400px;
-    width: 700px;
-
-    .imageWrapper {
-      position: relative;
-      height: 350px;
-      width: 100%;
-      padding: 0;
-      object-fit: cover;
-      margin-top: 5px;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
+    background-color: burlywood;
+    img { height: 10%; width: 20%;}
   }
 
   .rightWrapper {
-    position: relative;
-    padding: 0;
-    height: 400px;
-    width: 700px;
-
-    .imageWrapper {
-      position: relative;
-      height: 150px;
-      width: 100%;
-      padding: 0;
-      object-fit: cover;
-      margin-top: 5px;
-      img {
-        height: 100%;
-        width: 100%;
-      }
-    }
+    background-color: cyan;
+    img { height: 10%; width: 20%;}
   }
-
-
 }
