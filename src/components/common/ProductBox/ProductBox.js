@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -22,10 +21,10 @@ const ProductBox = ({
   description,
   favourite,
   addToFavourite,
-  isStarred,
   compare,
   addToCompare,
   numberOfProductsToCompare,
+  addToCart,
 }) => {
   const [showPopup, togglePopup] = useState(false);
 
@@ -33,6 +32,29 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
+
+  const checkStars = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) {
+      return (stars = retrievedStorage.stars);
+    } else return stars;
+  };
+
+  const checkStarred = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) return true;
+    else return false;
+  };
+
+  const handleAddToCart = (name, price, image) => {
+    const cartPayload = {
+      name: name,
+      price: price,
+      image: image,
+    };
+    addToCart(cartPayload);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -42,7 +64,13 @@ const ProductBox = ({
           <Button variant={'small'} onClick={event => handlePopup(event)}>
             QUICK VIEW
           </Button>
-          <Button variant='small'>
+          <Button
+            variant='small'
+            onClick={event => {
+              event.preventDefault();
+              return handleAddToCart(name, price, image);
+            }}
+          >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -64,7 +92,7 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={stars} isStarred={isStarred} />
+          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -121,6 +149,7 @@ ProductBox.propTypes = {
   image: PropTypes.string,
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
+  addToCart: PropTypes.func,
 };
 
 export default ProductBox;

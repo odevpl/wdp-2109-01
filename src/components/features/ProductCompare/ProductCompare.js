@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 
-const ProductCompare = ({ products, removeFromCompare }) => {
+const ProductCompare = ({ products, removeFromCompare, removeAllFromCompare }) => {
   return products.length > 0 ? (
     <div className={styles.root}>
       <div className='container'>
@@ -40,6 +40,17 @@ const ProductCompare = ({ products, removeFromCompare }) => {
           </div>
         </div>
       </div>
+      <div className={styles.closeAll}>
+        <Button
+          variant='close'
+          onClick={event => {
+            event.preventDefault();
+            return removeAllFromCompare();
+          }}
+        >
+          <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+        </Button>
+      </div>
     </div>
   ) : (
     ''
@@ -49,6 +60,7 @@ const ProductCompare = ({ products, removeFromCompare }) => {
 ProductCompare.propTypes = {
   products: PropTypes.array,
   removeFromCompare: PropTypes.func,
+  removeAllFromCompare: PropTypes.func,
 };
 
 export default ProductCompare;
