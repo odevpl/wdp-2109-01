@@ -17,12 +17,12 @@ const Homepage = () => (
     <Promoted />
     <Deals />
     <NewFurniture tileNumber={8} />
-    <Gallery />
-    <LatestBlog />
     <Brands />
     <Feedback />
     <ProductCompare />
     <ChatBot />
+    <Gallery />
+    <LatestBlog />
   </div>
 );
 
