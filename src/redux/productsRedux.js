@@ -34,9 +34,17 @@ export default function reducer(statePart = [], action = {}) {
     case SET_STARS: {
       const newStatePart = statePart.map(product => {
         if (product.id === action.payload.id) {
-          product.stars = action.payload.i;
-          product.isStarred = true;
-          return product;
+          if (product.stars === action.payload.i && product.isStarred) {
+            localStorage.removeItem(product.id);
+            // number below as example only: once other storage available (customer's reviews?), should take number from there
+            product.stars = 2;
+            return product;
+          } else {
+            product.stars = action.payload.i;
+            product.isStarred = true;
+            localStorage.setItem(product.id, JSON.stringify(product));
+            return product;
+          }
         } else {
           return product;
         }

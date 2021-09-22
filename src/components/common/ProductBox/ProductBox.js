@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +21,6 @@ const ProductBox = ({
   description,
   favourite,
   addToFavourite,
-  isStarred,
   compare,
   addToCompare,
   numberOfProductsToCompare,
@@ -33,6 +31,20 @@ const ProductBox = ({
     event.preventDefault();
     return togglePopup(!showPopup);
   };
+
+  const checkStars = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) {
+      return (stars = retrievedStorage.stars);
+    } else return stars;
+  };
+
+  const checkStarred = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+    if (retrievedStorage !== null) return true;
+    else return false;
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -64,7 +76,7 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={stars} isStarred={isStarred} />
+          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -120,7 +132,6 @@ ProductBox.propTypes = {
   numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
   stars: PropTypes.number,
-  isStarred: PropTypes.bool,
 };
 
 export default ProductBox;
