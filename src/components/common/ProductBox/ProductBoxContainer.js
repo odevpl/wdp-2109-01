@@ -6,6 +6,7 @@ import {
   addToCompare,
   getProductsToCompare,
 } from '../../../redux/productsRedux.js';
+import { addProduct } from '../../../redux/cartRedux.js';
 
 const mapStateToProps = state => ({
   products: getAll(state),
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch /* props */) => {
   return {
     addToFavourite: id => dispatch(addToFavourite(id)),
     addToCompare: id => dispatch(addToCompare(id)),
+    addToCart: cartPayload => dispatch(addProduct(cartPayload)),
   };
 };
 

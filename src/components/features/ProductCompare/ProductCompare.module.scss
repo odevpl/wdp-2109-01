@@ -5,6 +5,7 @@
   margin: 5% auto;
   border-top: 3px solid $color-tigersEye;
   border-bottom: 3px solid $color-tigersEye;
+  position: relative,
   
   :global(.container) > :global(.row) {
 	margin-bottom: 20px;
@@ -35,16 +36,52 @@
     position: absolute;
     transform: translate(-50%, -50%);
 	top: 12%;
-    left: 92%;
+    left: 98%;
   }
   
   h5 {
-   margin-top: 10px;
+   margin-top: 40px;
    color: $color-tigersEye;
    font-size: 16px;
    line-height: 24px;
    letter-spacing: 1px;
    text-align: center;
+ }
+ 
+ .closeAll{
+    position: absolute;
+    transform: translate(-50%, -50%);
+	top: 20px;
+    left: 96%;
+ }
+ 
+ @media(min-width: 992px){
+   .closeAll{
+     left: 98%;
+   }
+   .actions{
+     left: 92%;
+   }
+ }
+ @media(min-width: 768px){
+   .actions{
+     left: 94%;
+   }
+ }
+  @media(min-width: 576px){
+   .actions{
+     left: 92%;
+   }
+ }
+  @media(max-width: 575px){
+    .actions{
+     left: 94%;
+   }
+ }
+ @media(max-width: 280px){
+    .actions{
+     left: 92%;
+   }
  }
 }
 

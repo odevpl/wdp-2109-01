@@ -25,6 +25,7 @@ import { faHeart, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import ProductRating from './../../features/ProductRating/ProductRatingContainer';
 import Button from './../../common/Button/Button';
 import { Link } from 'react-router-dom';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 
 class ProductPage extends React.Component {
   state = {
@@ -46,6 +47,7 @@ class ProductPage extends React.Component {
     return (
       <div className={styles.root}>
         <Container className={styles.container}>
+          <NewFurniture tileNumber={4} />
           {product.map(item => (
             <div key={item.id}>
               <Grid container spacing={2}>
