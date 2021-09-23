@@ -17,23 +17,11 @@ const Homepage = () => (
     <Deals />
     <NewFurniture tileNumber={8} />
     <Gallery />
-    <LatestBlog />
     <Brands />
     <Feedback />
     <ProductCompare />
     <ChatBot />
-<<<<<<< HEAD
-=======
-    <Gallery />
-<<<<<<< HEAD
-    <LatestBlog />
-<<<<<<< HEAD
->>>>>>> 5337061 (Add slider functionality)
 
-=======
->>>>>>> 3b5a042 (Add slider functionality)
-=======
->>>>>>> 9d349f5 (Add small slider correct)
   </div>
 );
 

@@ -22,46 +22,21 @@
     color: $color-jet;
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 259ae63 (Add component Gallery problems with photos)
-=======
 
-<<<<<<< HEAD
->>>>>>> 3b5a042 (Add slider functionality)
-
-=======
->>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
 .carousel {
   @extend .main;
   height: 100px;
   width: 30px;
   justify-content: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
   padding: 28px 10px;
 }
 
-<<<<<<< HEAD
 .bigCarousel {
   @extend .main, .carousel;
   align-items: center;
   padding: 42px 10px;
 }
 
-=======
-  padding: 35px 10px;
-=======
-  padding: 28px 10px;
->>>>>>> 4d6cb5b (Add styles for Gallery)
-}
-
->>>>>>> 1f68d30 (Add component Gallery problems with photos)
->>>>>>> 259ae63 (Add component Gallery problems with photos)
-=======
->>>>>>> 3b5a042 (Add slider functionality)
 .small {
   @extend .main;
   font-size: 13px;
@@ -69,16 +44,7 @@
   padding: 5px 10px;
   font-weight: 400;
 }
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.outline, .favourite, .compare, .quantity, .trash {
-=======
->>>>>>> 3b5a042 (Add slider functionality)
-=======
->>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
 .medium {
   @extend .main;
   font-size: 13px;
@@ -86,18 +52,8 @@
   padding: 8px 30px;
   font-weight: 500;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.outline, .favoritue, .favourite, .compare, .quantity, .trash {
 
-=======
-
-.outline, .favoritue {
->>>>>>> 56c7d6a (Add slider functionality)
->>>>>>> 3b5a042 (Add slider functionality)
-=======
 .outline, .favourite, .favoritue, .compare, .quantity, .trash {
->>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -112,25 +68,6 @@
   &:not(.noHover):hover {
     background-color: $button-outline-color;
     color: $button-text-color;
-  }
-}
-
-.favourite, .compare, .favoritue {
-  background-color: $button-fav-background;
-  color: $button-fav-color;
-
-  &:not(.noHover):hover {
-    background-color: $button-background-color;
-    color: $button-background-color--hov;
-  }
-}
-.favoritue {
-  background-color: $color-white;
-  color: $color-tigersEye;
-
-  &:not(.noHover):hover {
-    background-color: $color-tigersEye;
-    color: $color-jet;
   }
 }
 
@@ -242,7 +179,6 @@
     color: $color-tigersEye;
   }
 }
-<<<<<<< HEAD
 
 .login {
   @extend .small;
@@ -259,5 +195,3 @@
     font-size: 11px;
   }
 }
-=======
->>>>>>> 144ad20 (Add Gallery functionality WDP210901-28)
