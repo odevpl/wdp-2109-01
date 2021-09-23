@@ -49,9 +49,8 @@ const ProductBox = ({
     const retrievedStorage = JSON.parse(localStorage.getItem('favs'));
     if (retrievedStorage !== null) {
       retrievedStorage.filter(item => {
-        if (item.id === id) return (favourite = true);
-        else if (item.id !== id) return false;
-        else return false;
+        if (item.id === id) favourite = item.favourite;
+        return favourite;
       });
     }
     return favourite;

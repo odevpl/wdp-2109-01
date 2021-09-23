@@ -1,5 +1,22 @@
 /* selectors */
-export const getAll = ({ products }) => products;
+export const getAll = ({ products }) => {
+  let receivedFavs = JSON.parse(localStorage.getItem('favs'));
+  if (receivedFavs != null) {
+    products.map(product => {
+      receivedFavs.map(item => {
+        if (item.id === product.id) {
+          product.favourite = item.favourite;
+          return product;
+        }
+        return product;
+      });
+      return product;
+    });
+  }
+  // placeholder for checking stars as storage is going to be called differently
+  return products;
+};
+
 export const getCount = ({ products }) => products.length;
 
 export const getNew = ({ products }) =>
