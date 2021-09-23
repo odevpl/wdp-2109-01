@@ -1,6 +1,8 @@
 /* selectors */
 export const getAll = ({ products }) => {
   let receivedFavs = JSON.parse(localStorage.getItem('favs'));
+  let receivedStars = JSON.parse(localStorage.getItem('stars'));
+
   if (receivedFavs != null) {
     products.map(product => {
       receivedFavs.map(item => {
@@ -13,7 +15,20 @@ export const getAll = ({ products }) => {
       return product;
     });
   }
-  // placeholder for checking stars as storage is going to be called differently
+
+  if (receivedStars != null) {
+    products.map(product => {
+      receivedStars.map(item => {
+        if (item.id === product.id) {
+          product.stars = item.stars;
+          product.isStarred = item.isStarred;
+          return product;
+        }
+        return product;
+      });
+      return product;
+    });
+  }
   return products;
 };
 
@@ -49,22 +64,47 @@ export const removeFromCompare = payload => ({ payload, type: REMOVE_FROM_COMPAR
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case SET_STARS: {
+      let received = JSON.parse(localStorage.getItem('stars'));
+
       const newStatePart = statePart.map(product => {
         if (product.id === action.payload.id) {
-          if (product.stars === action.payload.i && product.isStarred) {
-            localStorage.removeItem(product.id);
+          if (product.stars === action.payload.i) {
             // number below as example only: once other storage available (customer's reviews?), should take number from there
             product.stars = 2;
+            product.isStarred = false;
+
+            if (received != null && received.length > 1) {
+              let send = received.filter(item => {
+                return item.id !== product.id;
+              });
+              localStorage.setItem('stars', JSON.stringify(send));
+            } else if (received != null && received.length <= 1) {
+              localStorage.removeItem('stars');
+            } else if (received === null) {
+              product.isStarred = true;
+              received = [];
+              received.push(product);
+              localStorage.setItem('stars', JSON.stringify(received));
+            }
             return product;
-          } else {
+          } else if (product.stars !== action.payload.i) {
             product.stars = action.payload.i;
             product.isStarred = true;
-            localStorage.setItem(product.id, JSON.stringify(product));
+            if (received != null) {
+              let send = received.filter(item => {
+                return item.id !== product.id;
+              });
+              send.push(product);
+              localStorage.setItem('stars', JSON.stringify(send));
+            } else if (received === null) {
+              received = [];
+              received.push(product);
+              localStorage.setItem('stars', JSON.stringify(received));
+            }
             return product;
           }
-        } else {
-          return product;
         }
+        return product;
       });
       return newStatePart;
     }

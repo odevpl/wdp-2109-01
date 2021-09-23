@@ -23,6 +23,7 @@ const ProductBox = ({
   addToFavourite,
   compare,
   addToCompare,
+  isStarred,
   numberOfProductsToCompare,
 }) => {
   const [showPopup, togglePopup] = useState(false);
@@ -32,17 +33,29 @@ const ProductBox = ({
     return togglePopup(!showPopup);
   };
 
-  const checkStars = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+  const checkStars = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
     if (retrievedStorage !== null) {
-      return (stars = retrievedStorage.stars);
-    } else return stars;
+      retrievedStorage.filter(item => {
+        if (item.id === id) {
+          stars = item.stars;
+          return stars;
+        }
+        return stars;
+      });
+    }
+    return stars;
   };
 
-  const checkStarred = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
-    if (retrievedStorage !== null) return true;
-    else return false;
+  const checkStarred = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) isStarred = item.isStarred;
+        return isStarred;
+      });
+    }
+    return isStarred;
   };
 
   const checkFavs = id => {
@@ -87,7 +100,7 @@ const ProductBox = ({
       <div className={styles.content}>
         <h5>{name}</h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
+          <ProductRating id={id} stars={checkStars(id)} isStarred={checkStarred(id)} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -143,6 +156,7 @@ ProductBox.propTypes = {
   numberOfProductsToCompare: PropTypes.number,
   image: PropTypes.string,
   stars: PropTypes.number,
+  isStarred: PropTypes.bool,
 };
 
 export default ProductBox;
