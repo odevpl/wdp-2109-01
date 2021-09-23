@@ -15,12 +15,12 @@ const Homepage = () => (
     <FeatureBoxes />
     <Promoted />
     <NewFurniture tileNumber={8} />
+    <Gallery />
+    <LatestBlog />
     <Brands />
     <Feedback />
     <ProductCompare />
     <ChatBot />
-    <Gallery />
-    <LatestBlog />
   </div>
 );
 
