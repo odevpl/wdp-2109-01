@@ -8,6 +8,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({
   id,
@@ -58,7 +59,9 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img src={image} alt={name} />
+        <Link to={`/product/${name}`}>
+          <img src={image} alt={name} />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant={'small'} onClick={event => handlePopup(event)}>
@@ -90,7 +93,9 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={`/product/${name}`}>
+          <h5>{name}</h5>
+        </Link>
         <div className={styles.stars}>
           <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
