@@ -1,7 +1,6 @@
 @import "../../../styles/settings.scss";
 
 .root {
-
   .promotionWrapperLeft {
     position: relative;
     margin: 0;
@@ -21,6 +20,11 @@
 
     .myCustomButton {
       font-size: 20px !important;
+      & :focus {
+        color: $footer-socials-icons--hover !important;
+        animation: $hover-animationType $actionDuration !important;
+        cursor: pointer !important;
+      }
     }
 
     .title {
