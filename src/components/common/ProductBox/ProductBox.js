@@ -45,6 +45,18 @@ const ProductBox = ({
     else return false;
   };
 
+  const checkFavs = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('favs'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) return (favourite = true);
+        else if (item.id !== id) return false;
+        else return false;
+      });
+    }
+    return favourite;
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -83,7 +95,7 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            variant={favourite ? 'favourite' : 'outline'}
+            variant={checkFavs(id) ? 'favourite' : 'outline'}
             onClick={event => {
               event.preventDefault();
               return addToFavourite(id);

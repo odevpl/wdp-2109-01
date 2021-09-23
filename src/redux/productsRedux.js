@@ -53,11 +53,37 @@ export default function reducer(statePart = [], action = {}) {
     }
     case ADD_TO_FAVOURITE: {
       const id = action.payload;
-      return statePart.map(product =>
-        product.id === id
-          ? { ...product, favourite: !product.favourite }
-          : { ...product }
-      );
+      let received = JSON.parse(localStorage.getItem('favs'));
+
+      const newStatePart = statePart.map(product => {
+        if (product.id === id) {
+          if (!product.favourite) {
+            product.favourite = true;
+
+            if (received != null) {
+              received.push(product);
+              localStorage.setItem('favs', JSON.stringify(received));
+            } else if (received === null) {
+              received = [];
+              received.push(product);
+              localStorage.setItem('favs', JSON.stringify(received));
+            }
+          } else if (product.favourite) {
+            product.favourite = false;
+
+            if (received.length > 1) {
+              let send = received.filter(item => {
+                return item.id !== product.id;
+              });
+              localStorage.setItem('favs', JSON.stringify(send));
+            } else if (received.length <= 1) {
+              localStorage.removeItem('favs');
+            }
+          }
+        }
+        return product;
+      });
+      return newStatePart;
     }
     case ADD_TO_COMPARE: {
       const id = action.payload;
