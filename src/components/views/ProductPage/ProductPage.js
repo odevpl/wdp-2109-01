@@ -157,7 +157,7 @@ class ProductPage extends React.Component {
                         type='text'
                         id='quantity'
                         name='quantity'
-                        value={item.quantity}
+                        defaultValue={item.quantity}
                         className={styles.quantityInput}
                       />
                       <Button variant='quantity' className={styles.icon}>
@@ -258,6 +258,19 @@ class ProductPage extends React.Component {
 
 ProductPage.propTypes = {
   products: PropTypes.array,
+  item: PropTypes.objectOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      image: PropTypes.string,
+      oldPrice: PropTypes.number,
+      price: PropTypes.number,
+      stars: PropTypes.number,
+      quantity: PropTypes.number,
+      description: PropTypes.string,
+      category: PropTypes.string,
+    })
+  ),
   id: PropTypes.string,
   match: PropTypes.any,
 };
