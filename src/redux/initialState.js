@@ -48,7 +48,7 @@ const initialState = {
         'https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum pharetra metus, id tristique massa pulvinar ut.',
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -82,7 +82,7 @@ const initialState = {
         'https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
         'Aliquam suscipit, erat non dictum venenatis, metus ante molestie nunc, et vehicula dolor metus id nunc.',
-      compare: true,
+      compare: false,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -440,6 +440,58 @@ const initialState = {
       compare: false,
       description:
         'Vestibulum laoreet faucibus commodo. Pellentesque accumsan mi id lectus efficitur, nec dignissim neque tincidunt. ',
+    },
+  ],
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'brand 1',
+      image: 'https://i.imgur.com/ZuY7GNH.jpg',
+    },
+    {
+      id: 'brand-2',
+      name: 'brand 2',
+      image: 'https://i.imgur.com/1MobFGZ.jpg',
+    },
+    {
+      id: 'brand-3',
+      name: 'brand 3',
+      image: 'https://i.imgur.com/cOyb9mk.jpg',
+    },
+    {
+      id: 'brand-4',
+      name: 'brand 4',
+      image: 'https://i.imgur.com/1P2Y8zb.jpg',
+    },
+    {
+      id: 'brand-5',
+      name: 'brand 5',
+      image: 'https://i.imgur.com/spQ9tQf.jpg',
+    },
+    {
+      id: 'brand-6',
+      name: 'brand 6',
+      image: 'https://i.imgur.com/ZuY7GNH.jpg',
+    },
+    {
+      id: 'brand-7',
+      name: 'brand 7',
+      image: 'https://i.imgur.com/1MobFGZ.jpg',
+    },
+    {
+      id: 'brand-8',
+      name: 'brand 8',
+      image: 'https://i.imgur.com/cOyb9mk.jpg',
+    },
+    {
+      id: 'brand-9',
+      name: 'brand 9',
+      image: 'https://i.imgur.com/1P2Y8zb.jpg',
+    },
+    {
+      id: 'brand-10',
+      name: 'brand 10',
+      image: 'https://i.imgur.com/spQ9tQf.jpg',
     },
   ],
   cart: {

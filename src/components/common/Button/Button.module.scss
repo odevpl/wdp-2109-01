@@ -30,6 +30,13 @@
   padding: 28px 10px;
 }
 
+.bigCarousel {
+  @extend .main, .carousel;
+  align-items: center;
+  padding: 35px 10px;
+  line-height: 120px;
+}
+
 .small {
   @extend .main;
   font-size: 13px;
@@ -151,5 +158,21 @@
    &:not(.noHover):hover {
     background-color: $color-white;
     color: $color-tigersEye;
+  }
+}
+
+.login {
+  @extend .small;
+  font-size: 14px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  background-color: $color-tigersEye;
+  &:not(.noHover):hover{
+   opacity: 0.8;
+  }
+}
+@media(max-width: 575px){
+  .login{
+    font-size: 11px;
   }
 }

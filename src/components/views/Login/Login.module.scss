@@ -1,0 +1,78 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 5rem 0; 
+  height: 100vh;
+  &:hover {
+  a {
+    text-decoration: none;
+   }
+ }
+ .container{
+  display: flex;
+  justify-content: center;
+ }
+ .formContainer{ 
+   border-top: 5px solid $color-tigersEye;
+   width: 540px;
+   border-radius: 5px;
+   box-shadow: 1px 1px 2px grey;
+ }
+ form {
+  padding: 40px;
+  font-size: 14px;
+ }
+ .formBox {
+    margin-bottom: 15px;
+ }
+
+ .formBox label {
+    display: inline-block;
+    margin-bottom: 5px;
+	font-weight: 500;
+	letter-spacing: 1px;
+ }
+
+ .formBox input {
+    width: 100%;
+    padding: 8px;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+ }
+ .formBox input:focus{
+   outline-style: none;
+   border: 1px solid $color-tigersEye;
+ }
+ .buttons {
+    display: flex;
+    justify-content: center;
+	margin-top: 30px;
+ }
+ @media(max-width: 420px){
+   form{
+     font-size: 11px; 
+	 padding: 20px;
+   }
+   .formBox{
+    margin-bottom: 8px;
+   }
+   .formBox input{
+     padding: 4px;
+   }
+ }
+ @media(max-width: 575px){
+   .formContainer{
+     width: 440px;
+   }
+   form{
+     font-size: 12px; 
+	 padding: 30px;
+   }
+   .formBox{
+    margin-bottom: 12px;
+   }
+   .formBox input{
+     padding: 6px;
+   }
+ }
+}

@@ -2,8 +2,8 @@
 
 .popupContainer {
 	position: relative;
-	margin-top: 5%;
-	margin-bottom: 5%;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	font-size: 14px;
 	span{
 	  font-weight: bold;
@@ -20,22 +20,43 @@
   margin: auto;
   background-color: rgba(0,0,0, 0.5);
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup_inner {
   position: absolute;
-  left: 20%;
-  right: 20%;
-  top: 25%;
-  bottom: 25%;
-  margin: auto;
   background: $color-white;
   box-shadow: 2px 2px 5px $color-CharlestonGreen;
   z-index: 1001;
+  margin: auto;
+}
+.popup_row{
+ display: flex;
+ margin-right: -15px;
+ margin-left: -15px;
+}
+.popup_box{
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.photo {
-    height: 200px;
+.popup_box:first-of-type{
+  padding-left: 20px;
+}
+
+.popup_box:last-of-type{
+  width: 250px;
+  padding-right: 35px;
+}
+
+.photo { 
+    height: 220px;
 }
 
 img {
@@ -47,31 +68,59 @@ img {
 .close{
   position: absolute;
   transform: translate(-50%, -50%);
-  top: -1%;
-  left: 98%;
+  top: 5px;
+  left: 99%;
 }
 
-@media(max-width: 576px){
-  .popup_inner {
-    left: 5%;
-    right: 5%;
-    top: 25%;
-    bottom: 25%;
-  }
-  .popupContainer {
-    font-size: 12px;
-  }
-}
 
-@media(max-width: 768px){
-  .popup_inner {
-    left: 10%;
-    right: 10%;
-    top: 25%;
-    bottom: 25%;
-  }
+@media(max-width: 800px){
   .popupContainer {
     font-size: 13px;
   }
+  .popup_row{
+   width: 450px;
+  }
+ .popup_box:last-of-type{
+   width: 50%; 
+ }
+ .popup_box:first-of-type{
+   width:50%;
+ }
+ .popup_box{
+   padding-top: 15px;
+   padding-bottom: 10px;
+ }
+ .photo {
+    height: 200px;
+ }
+}
 
+@media(max-width: 576px){
+ .popup_row{
+   width: 100%;
+   flex-direction: column;
+  }
+  .popup_inner{
+    margin-right: 25px;
+	margin-left: 25px;
+  }
+  .popupContainer {
+    font-size: 12px; 
+  }
+  .popup_box{
+   padding-left: 30px;
+   padding-right: 0;
+   padding-top: 25px;
+   width: 100%;
+  }
+  .popup_box:first-of-type{
+   width: 100%;
+ }
+ .popup_box:last-of-type{
+   width: 100%;
+   padding-top: 10px;
+ }
+ .photo {
+    height: 180px;
+ }
 }

@@ -54,12 +54,19 @@ export const ADD_TO_FAVOURITE = createActionName('ADD_TO_FAVOURITE');
 export const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
 
 export const REMOVE_FROM_COMPARE = createActionName('REMOVE_FROM_COMPARE');
+
+export const REMOVE_ALL_FROM_COMPARE = createActionName('REMOVE_ALL_FROM_COMPARE');
 /* action creators */
 export const addToFavourite = payload => ({ payload, type: ADD_TO_FAVOURITE });
 
 export const addToCompare = payload => ({ payload, type: ADD_TO_COMPARE });
 
 export const removeFromCompare = payload => ({ payload, type: REMOVE_FROM_COMPARE });
+
+export const removeAllFromCompare = payload => ({
+  payload,
+  type: REMOVE_ALL_FROM_COMPARE,
+});
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -154,6 +161,11 @@ export default function reducer(statePart = [], action = {}) {
       const id = action.payload;
       return statePart.map(product =>
         product.id === id ? { ...product, compare: false } : { ...product }
+      );
+    }
+    case REMOVE_ALL_FROM_COMPARE: {
+      return statePart.map(product =>
+        product.compare === true ? { ...product, compare: false } : { ...product }
       );
     }
     default:
