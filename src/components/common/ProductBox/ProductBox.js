@@ -4,7 +4,7 @@ import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
@@ -90,7 +90,9 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <h5>
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h5>
         <div className={styles.stars}>
           <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
