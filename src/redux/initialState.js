@@ -36,7 +36,7 @@ const initialState = {
     {
       id: 'aenean-ru-bristique-1',
       name: 'Aenean Ru Bristique 1',
-      category: 'bed',
+      category: 'chair',
       price: 30,
       stars: 2,
       isStarred: false,
