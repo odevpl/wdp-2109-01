@@ -26,6 +26,7 @@ const ProductBox = ({
   addToCompare,
   numberOfProductsToCompare,
   addToCart,
+  quantity,
 }) => {
   const [showPopup, togglePopup] = useState(false);
 
@@ -47,11 +48,13 @@ const ProductBox = ({
     else return false;
   };
 
-  const handleAddToCart = (name, price, image) => {
+  const handleAddToCart = (name, price, image, quantity, id) => {
     const cartPayload = {
       name: name,
       price: price,
       image: image,
+      quantity: quantity,
+      productId: id,
     };
     addToCart(cartPayload);
   };
@@ -71,7 +74,7 @@ const ProductBox = ({
             variant='small'
             onClick={event => {
               event.preventDefault();
-              return handleAddToCart(name, price, image);
+              return handleAddToCart(name, price, image, quantity, id);
             }}
           >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -155,6 +158,11 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
   addToCart: PropTypes.func,
+  quantity: PropTypes.number,
+};
+
+ProductBox.defaultProps = {
+  quantity: 1,
 };
 
 export default ProductBox;

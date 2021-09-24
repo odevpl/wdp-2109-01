@@ -21,12 +21,16 @@ const PromotedProductBox = ({
   image,
   oldPrice,
   addToCart,
+  id,
+  quantity,
 }) => {
-  const handleAddToCart = (name, price, image) => {
+  const handleAddToCart = (name, price, image, quantity, id) => {
     const cartPayload = {
       name: name,
       price: price,
       image: image,
+      quantity: quantity,
+      productId: id,
     };
     addToCart(cartPayload);
   };
@@ -66,7 +70,7 @@ const PromotedProductBox = ({
             variant='small'
             onClick={event => {
               event.preventDefault();
-              return handleAddToCart(name, price, image);
+              return handleAddToCart(name, price, image, quantity, id);
             }}
           >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -117,12 +121,18 @@ const PromotedProductBox = ({
 PromotedProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
+  id: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,
   addToCart: PropTypes.func,
+  quantity: PropTypes.number,
+};
+
+PromotedProductBox.defaultProps = {
+  quantity: 1,
 };
 
 export default PromotedProductBox;
