@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearchContainer';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 import styles from './MenuBar.module.scss';
 import { Link } from 'react-router-dom';
 
 const MenuBar = ({ children }) => {
-  const [view, setview] = useState(false);
+  const [view] = useState(false);
 
   return (
     <div className={styles.root}>
@@ -46,9 +43,6 @@ const MenuBar = ({ children }) => {
               </li>
             </ul>
           </div>
-          <a href='#' className={styles.dropdown} onClick={() => setview(!view)}>
-            <FontAwesomeIcon icon={faBars} />
-          </a>
         </div>
       </div>
     </div>
