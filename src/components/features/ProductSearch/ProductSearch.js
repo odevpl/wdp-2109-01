@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './ProductSearch.module.scss';
+import { Link } from 'react-router-dom';
 
 const ProductSearch = ({ categories }) => {
   return (
@@ -23,9 +24,11 @@ const ProductSearch = ({ categories }) => {
       </div>
       <div className={styles.searchField}>
         <input placeholder='Search products...' type='text' />
-        <button>
-          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-        </button>
+        <Link exact to={'/search'}>
+          <button>
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </button>
+        </Link>
       </div>
     </form>
   );
