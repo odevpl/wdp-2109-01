@@ -54,6 +54,7 @@ ProductPopup.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   closePopup: PropTypes.func,
+  id: PropTypes.string,
 };
 
 export default ProductPopup;

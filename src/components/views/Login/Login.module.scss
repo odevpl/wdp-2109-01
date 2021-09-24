@@ -1,8 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  padding: 5rem 0; 
-  height: 100vh;
+  padding: 5rem 0;
+  height: 600px;
+  margin-bottom: 0;
   &:hover {
   a {
     text-decoration: none;
@@ -12,7 +13,7 @@
   display: flex;
   justify-content: center;
  }
- .formContainer{ 
+ .formContainer{
    border-top: 5px solid $color-tigersEye;
    width: 540px;
    border-radius: 5px;
@@ -43,14 +44,94 @@
    outline-style: none;
    border: 1px solid $color-tigersEye;
  }
- .buttons {
-    display: flex;
-    justify-content: center;
+
+ .switchCheckbox {
+  display: flex;
+  flex-direction: row;
+  padding-left: 350px;
+  width: 100%;
+  margin-top: -15px;
+  h6 {
+    position: absolute;
+    padding-top: 0;
+    padding-left: 15px;
+    font-size: 15px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    top: 2.5;
+    width: 35px;
+    height: 18px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $button-text-color;
+    border: 1px solid $featureBox-border-color;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: $menuBar-boxShadow;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: $featureBox-border-color;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+
+  .slider.round {
+    border-radius: 17px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
 	margin-top: 30px;
- }
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  span {
+    color: $color-alert;
+    font-size: 16px;
+    margin-bottom: 13px;
+    margin-top: -38px;
+  }
+}
+
+
+
+
  @media(max-width: 420px){
    form{
-     font-size: 11px; 
+     font-size: 11px;
 	 padding: 20px;
    }
    .formBox{
@@ -65,7 +146,7 @@
      width: 440px;
    }
    form{
-     font-size: 12px; 
+     font-size: 12px;
 	 padding: 30px;
    }
    .formBox{
