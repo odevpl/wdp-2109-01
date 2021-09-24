@@ -49,10 +49,10 @@ class Promoted extends React.Component {
     return (
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
-          <div className='container-lg'>
-            <div className={'row'}>
+          <div className='container'>
+            <div className='row'>
               <div
-                className={`col-lg-4 d-none d-lg-block ${styles.promotionWrapperLeft}`}
+                className={`d-none d-md-block col-12 col-lg-4 ${styles.promotionWrapperLeft}`}
               >
                 <div className={styles.panelBar}>
                   <div className='row justify-content-between'>

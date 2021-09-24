@@ -80,15 +80,15 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * tileNumber, (activePage + 1) * tileNumber)
-              .map(item => (
-                <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * tileNumber, (activePage + 1) * tileNumber)
+                .map(item => (
+                  <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </Swipeable>

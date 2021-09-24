@@ -6,7 +6,7 @@
   .promotionWrapperLeft {
     position: relative;
     margin: 0;
-    padding-left: 0;
+    padding-left: 15px;
     padding-bottom: 0;
     height: 505px;
   }
@@ -26,42 +26,43 @@
     }
 
     .dots {
-        position: relative;
-        text-align: end;
-        margin-right: 15px;
+      position: relative;
+      text-align: end;
+      margin-right: 15px;
 
-        ul {
-          margin: 0;
-          padding-left: 15px;
-          list-style: none;
+      ul {
+        margin: 0;
+        padding-left: 15px;
+        list-style: none;
 
-          li {
-            display: inline-block;
-            margin-left: 0.5rem;
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
 
-            button {
-              width: 13px;
-              height: 13px;
-              border-radius: 6px;
-              background-color: $promoted-dotsInactive;
-              border: none;
-              font-size: 0;
+          button {
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $promoted-dotsInactive;
+            border: none;
+            font-size: 0;
 
-              &.active,
-              &:hover {
-                background-color: $color-tigersEye;
-                cursor: pointer;
-              }
+            &.active,
+            &:hover {
+              background-color: $color-tigersEye;
+              cursor: pointer;
             }
           }
         }
       }
     }
+  }
 
   .promotionWrapperRight {
     position: relative;
     padding: 0;
     max-height: 502px;
+    padding-right: 15px;
 
     .imgWrapper {
       height: 100%;
@@ -76,10 +77,10 @@
     }
 
     .shadowWrapper {
-      position: absolute;
+      position: relative;
       height: 200px;
       width: 100%;
-      top: 100px;
+      bottom: 25rem;
       opacity: 0.5;
       z-index: 0;
       background-color: $promoted-shadowWrapper;
@@ -113,12 +114,12 @@
     }
 
     .buttonsWrapper {
-      position: absolute;
+      position: relative;
       text-align: center;
       padding: 0;
       margin: 0;
       width: 100%;
-      bottom: 0px;
+      bottom: 14.3rem;
       opacity: 0.5;
       z-index: 90;
       color: $promoted-buttonsWrapper;
