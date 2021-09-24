@@ -32,6 +32,9 @@ const PromotedProductBox = ({
 
   return (
     <div className={styles.root}>
+      <div className={`${styles.title}`}>
+        <h5>HOT DEALS</h5>
+      </div>
       <div className={styles.photo}>
         <img src={image} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
