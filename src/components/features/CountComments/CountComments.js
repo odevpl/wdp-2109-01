@@ -14,7 +14,7 @@ const CountComments = props => {
 };
 
 CountComments.propTypes = {
-  comments: PropTypes.array,
+  comments: PropTypes.node,
 };
 
 export default CountComments;
