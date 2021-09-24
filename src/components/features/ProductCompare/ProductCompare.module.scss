@@ -2,10 +2,15 @@
 
 .root {
   background-color: #ffffff;
-  margin: 5% auto;
+  margin-right: auto;
+  margin-left: auto;
   border-top: 3px solid $color-tigersEye;
   border-bottom: 3px solid $color-tigersEye;
-  position: relative,
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
   
   :global(.container) > :global(.row) {
 	margin-bottom: 20px;
@@ -116,6 +121,9 @@
    }
  }
   @media(max-width: 575px){
+    .photo{
+	  height: 100px;
+	}
     .actions{
      left: 94%;
    }
