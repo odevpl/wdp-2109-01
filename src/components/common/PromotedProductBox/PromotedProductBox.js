@@ -33,6 +33,9 @@ const PromotedProductBox = ({
 
   return (
     <div className={styles.root}>
+      <div className={`${styles.title}`}>
+        <h5>HOT DEALS</h5>
+      </div>
       <div className={styles.photo}>
         <Link to={`/product/${name}`}>
           <img src={image} alt={name} />

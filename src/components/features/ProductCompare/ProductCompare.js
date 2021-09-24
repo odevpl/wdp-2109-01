@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProductCompare.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
 const ProductCompare = ({ products, removeFromCompare, removeAllFromCompare }) => {
@@ -13,7 +14,6 @@ const ProductCompare = ({ products, removeFromCompare, removeAllFromCompare }) =
         <div className='row'>
           {products.map(product => (
             <div key={product.id} className='col-sm-6 col-lg-3'>
-              <h5>{product.name}</h5>
               <div className={styles.photo}>
                 <div className={styles.actions}>
                   <Button
@@ -30,6 +30,23 @@ const ProductCompare = ({ products, removeFromCompare, removeAllFromCompare }) =
                   </Button>
                 </div>
                 <img src={product.image} alt={product.name} />
+              </div>
+              <div className={styles.content_container}>
+                <h5>{product.name}</h5>
+                <div className={styles.line}></div>
+                <div className={styles.content}>
+                  <div className={styles.favourite}>
+                    {product.favourite ? (
+                      <FontAwesomeIcon icon={faHeart}>Favourite</FontAwesomeIcon>
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                  <div className={styles.oldPrice}>
+                    {product.oldPrice ? '$' + product.oldPrice : ''}
+                  </div>
+                  <div className={styles.price}>${product.price}</div>
+                </div>
               </div>
             </div>
           ))}

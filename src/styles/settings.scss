@@ -57,6 +57,9 @@ $productBox-longLine: $color-CharlestonGreen;
 $productBox-shortLine: $color-tigersEye;
 $productBox-oldPrice: $color-PhilippineSilver;
 
+// brands
+$brands-sectionOutline: $color-PhilippineSilver;
+
 // Promoted
 $promoted-panelBar: $color-jet;
 $promoted-titleBar: $color-white;
@@ -137,6 +140,14 @@ $topBar-text--hover: $color-tigersEye;
 $promoted-dotsInactive: $color-ChineseWhite;
 $promoted-dotsActive: $color-tigersEye;
 
+// product page
+$productPage-cart-background: $color-tigersEye;
+$productPage-cart-background-hover: $color-CharlestonGreen;
+$productPage-icon-background: $color-white;
+$productPage-icon-color: $color-black;
+$productPage-divider: $color-PhilippineSilver;
+$productPage-oldPrice: $color-PhilippineSilver;
+
 // chatBot
 $chatBot-button-background: $color-CharlestonGreen;
 $chatBot-button-color: $color-white;
@@ -150,7 +161,6 @@ $chatBot-iconBox-border: $color-tigersEye;
 $chatBot-iconBox--hover: $color-tigersEye;
 $chatBot-texarea: $color-tigersEye;
 $chatBot-texarea--focus: $color-ChineseWhite;
-
 
 // keyframes definitions - DO NOT EDIT
 
