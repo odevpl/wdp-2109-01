@@ -36,7 +36,7 @@ const LastPost = ({ id, date, comments, title, description, image }) => (
 LastPost.propTypes = {
   id: PropTypes.string.isRequired,
   date: PropTypes.string,
-  comments: PropTypes.string,
+  comments: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

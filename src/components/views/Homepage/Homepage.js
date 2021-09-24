@@ -6,6 +6,7 @@ import Brands from '../../layout/Brands/BrandsContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
 import ProductCompare from '../../features/ProductCompare/ProductCompareContainer';
 import Promoted from '../../layout/Promoted/Promoted';
+import Deals from '../../layout/Deals/Deals';
 import ChatBot from '../../features/ChatBot/ChatBot';
 import Gallery from '../../layout/Gallery/GalleryContainer';
 import LatestBlog from '../../features/LatestBlog/LatestBlogContainer';
@@ -14,6 +15,7 @@ const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
     <Promoted />
+    <Deals />
     <NewFurniture tileNumber={8} />
     <Brands />
     <Feedback />
