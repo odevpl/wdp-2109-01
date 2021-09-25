@@ -29,7 +29,15 @@ const ProductList = () => (
         <div className='col-9'>
           <ShopFurniture tileNumber={12} />
         </div>
-        <div className='col-3'>Filters</div>
+        <div className='col-3'>
+          <div className={styles.byPrice}>
+            <h4>FILTER BY PRICE</h4>
+            <div className={`row ${styles.price}`}>
+              <button variant='small'>FILTER</button>
+              <div>$135 - $500</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div className='container'>
