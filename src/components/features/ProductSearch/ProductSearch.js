@@ -24,11 +24,11 @@ const ProductSearch = ({ categories }) => {
       </div>
       <div className={styles.searchField}>
         <input placeholder='Search products...' type='text' />
-        <Link to={'/search'}>
-          <button>
+        <button>
+          <Link to={'/search'}>
             <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-          </button>
-        </Link>
+          </Link>
+        </button>
       </div>
     </form>
   );
