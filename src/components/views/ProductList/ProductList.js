@@ -29,9 +29,6 @@ const ProductList = () => (
         <div className='col-9'>
           <ShopFurniture tileNumber={12} />
         </div>
-        <div className='col-3'>Filters</div>
-        <div className='col-9'>Product List</div>
-
         <div className='col-3'>
           <div className={styles.byColor}>
             <h4>FILTER BY COLOR</h4>
