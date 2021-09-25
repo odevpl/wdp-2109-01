@@ -30,6 +30,37 @@ const ProductList = () => (
           <ShopFurniture tileNumber={12} />
         </div>
         <div className='col-3'>Filters</div>
+        <div className='col-9'>Product List</div>
+
+        <div className='col-3'>
+          <div className={styles.byColor}>
+            <h4>FILTER BY COLOR</h4>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.red}></div>
+              <div className={styles.activeCategory}>Red</div>
+            </div>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.black}></div>
+              <div className={styles.category}>Black</div>
+            </div>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.yellow}></div>
+              <div className={styles.category}>Yellow</div>
+            </div>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.blue}></div>
+              <div className={styles.category}>Blue</div>
+            </div>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.pink}></div>
+              <div className={styles.category}>Pink</div>
+            </div>
+            <div className={`row ${styles.colorLine}`}>
+              <div className={styles.green}></div>
+              <div className={styles.category}>Green</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div className='container'>
