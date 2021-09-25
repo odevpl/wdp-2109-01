@@ -61,16 +61,11 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-<<<<<<< HEAD
-        <Link to={`/product/${name}`}>
-=======
         <Link to={{ pathname: `/product/${id}`, state: { id } }}>
->>>>>>> bd50817 (Fix bug in ProductBox)
           <img src={image} alt={name} />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-<<<<<<< HEAD
           <Button variant={'small'} onClick={event => handlePopup(event)}>
             QUICK VIEW
           </Button>
@@ -81,12 +76,6 @@ const ProductBox = ({
               return handleAddToCart(name, price, image, quantity, id);
             }}
           >
-=======
-          <Button variant='small' onClick={event => handlePopup(event)}>
-            QUICK VIEW
-          </Button>
-          <Button variant='small'>
->>>>>>> bd50817 (Fix bug in ProductBox)
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -106,19 +95,11 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-<<<<<<< HEAD
-        <Link to={`/product/${name}`}>
-          <h5>{name}</h5>
-        </Link>
-        <div className={styles.stars}>
-          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
-=======
         <h5>
           <Link to={`/product/${id}`}>{name}</Link>
         </h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={stars} isStarred={isStarred} />
->>>>>>> bd50817 (Fix bug in ProductBox)
+          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
       </div>
       <div className={styles.line}></div>

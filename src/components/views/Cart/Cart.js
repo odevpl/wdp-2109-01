@@ -7,7 +7,10 @@ import Container from '@material-ui/core/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ products }) => {
+const Cart = ({ products, removeProduct, removeProducts, updateQuantity }) => {
+  const delivery = 20;
+  let subtotal = 0;
+
   return (
     <div className={styles.root}>
       <Container className={styles.container} maxWidth='lg'>
@@ -18,6 +21,7 @@ const Cart = ({ products }) => {
               <th>Product</th>
               <th>Quantity</th>
               <th>Price</th>
+              <th>Total</th>
               <th>Remove</th>
             </tr>
           </thead>

@@ -18,15 +18,7 @@ const CompanyClaim = ({ cartCount }) => (
         </div>
         <div className={`col text-center ${styles.logo}`}>
           <span>
-<<<<<<< HEAD
-
-            <a href='/#' />
-
-            <img src='/images/logo.png' alt='Bazar' className={styles.image} />
-
-=======
             <img src='/images/logo.png' alt='Bazar' />
->>>>>>> 590ca38 (Fix links bugs)
           </span>
         </div>
         <div className={`col text-right ${styles.cart}`}>
