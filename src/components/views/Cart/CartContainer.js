@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Cart from './Cart';
 import {
   getAll,
+  addProduct,
   removeProduct,
   removeProducts,
   updateQuantity,
@@ -14,6 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
+    addProduct: id => dispatch(addProduct(id)),
     removeProduct: name => dispatch(removeProduct(name)),
     removeProducts: () => dispatch(removeProducts()),
     updateQuantity: (quantity, productId) =>

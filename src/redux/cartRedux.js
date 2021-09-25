@@ -26,10 +26,24 @@ export const updateQuantity = (quantity, productId) => ({
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_PRODUCT: {
-      return {
-        ...statePart,
-        products: [...statePart.products, action.payload],
-      };
+      const id = action.payload.productId;
+      console.log(id);
+      let findId = statePart.products.find(product => product.productId === id);
+      if (typeof findId !== 'undefined') {
+        return {
+          ...statePart,
+          products: statePart.products.map(product =>
+            product.productId === id
+              ? { ...product, quantity: product.quantity + 1 }
+              : { ...product }
+          ),
+        };
+      } else {
+        return {
+          ...statePart,
+          products: [...statePart.products, action.payload],
+        };
+      }
     }
     case REMOVE_PRODUCT: {
       return {
