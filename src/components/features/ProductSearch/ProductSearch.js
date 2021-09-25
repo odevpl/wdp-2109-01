@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const ProductSearch = ({ categories }) => {
   return (
     <form action='' className={styles.root}>
-      <div className={styles.productSearch}>
+      <div className={'row' + styles.productSearch}>
         <div className={styles.category}>
           <FontAwesomeIcon className={styles.icon} icon={faListUl} />
           <div>
