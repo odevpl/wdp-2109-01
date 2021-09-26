@@ -89,19 +89,21 @@ const ProductBox = ({
           <img src={image} alt={name} />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant={'small'} onClick={event => handlePopup(event)}>
-            QUICK VIEW
-          </Button>
-          <Button
-            variant='small'
-            onClick={event => {
-              event.preventDefault();
-              return handleAddToCart(name, price, image, quantity, id);
-            }}
-          >
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-          </Button>
+        <div className={styles.wrapperButton}>
+          <div className={styles.buttons}>
+            <Button variant={'small'} onClick={event => handlePopup(event)}>
+              QUICK VIEW
+            </Button>
+            <Button
+              variant='small'
+              onClick={event => {
+                event.preventDefault();
+                return handleAddToCart(name, price, image, quantity, id);
+              }}
+            >
+              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            </Button>
+          </div>
         </div>
       </div>
       {showPopup ? (
