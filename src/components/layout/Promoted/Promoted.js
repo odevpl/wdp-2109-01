@@ -7,6 +7,8 @@ import Fade from 'react-reveal/Fade';
 import Carousel from 'react-material-ui-carousel';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
+// import reducer from '../../../redux/productsRedux';
+
 class Promoted extends React.Component {
   state = {
     activePage: 1,
@@ -94,10 +96,8 @@ class Promoted extends React.Component {
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <section className={styles.root}>
           <div className='container'>
-            <div className='row'>
-              <div
-                className={`d-none d-md-block col-12 col-lg-4 ${styles.promotionWrapperLeft}`}
-              >
+            <div className={'row'}>
+              <div className={`col-4 ${styles.promotionWrapperLeft}`}>
                 <div className={styles.panelBar}>
                   <Carousel
                     classes={{ indicatorIcon: 'MyCustomButton' }}
