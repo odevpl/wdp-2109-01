@@ -35,13 +35,34 @@
       }
     }
   }
+}
 
-  .categoriesButtons {
+.categoriesButtons {
     text-align: center;
     margin: 0;
     padding: 0;
     width: 100%;
-  }
+}
+
+.buttonActive{
+  border-top: 3px solid $color-tigersEye;
+}
+
+.fadeIn {
+  animation: fadein 1s;
+  opacity: 1;
+}
+.fadeOut {
+  animation: fadeout 1s;
+  opacity: 0;
+}
+@keyframes fadein {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+@keyframes fadeout {
+  from {opacity: 1;}
+  to   {opacity: 0;}
 }
 
 .mainWrapper {
@@ -185,5 +206,4 @@
       text-decoration: line-through;
     }
   }
-
 }

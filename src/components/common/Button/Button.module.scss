@@ -14,6 +14,7 @@
     text-decoration: none;
   }
 }
+
 .close {
   color: $color-tigersEye;
   font-size: 18px;
@@ -51,8 +52,8 @@
   padding: 8px 30px;
   font-weight: 500;
 }
-.outline, .favoritue, .favourite, .compare, .quantity, .trash {
 
+.outline, .favourite, .favoritue, .compare, .quantity, .trash {
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-color;
@@ -70,13 +71,32 @@
   }
 }
 
-.favourite, .compare {
-  background-color: $button-fav-background;
-  color: $button-fav-color;
+.greenButton {
+  background-color: green;
+  color: $color-white;
+  width: 150px;
+  height: 40px;
+}
+
+.category {
+  display: block;
+  width: 100%;
+  margin: 0;
+  background-color: inherit;
+  color: $color-jet;
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 3px solid;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
 
   &:not(.noHover):hover {
-    background-color: $button-background-color;
-    color: $button-background-color--hov;
+    color: $color-tigersEye !important;
+    background-color: $color-PhilippineSilver;
+    color: $color-white;
+    text-decoration: none;
+    border-top: 3px solid $color-tigersEye;
   }
 }
 .favoritue {
