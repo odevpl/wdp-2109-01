@@ -16,23 +16,19 @@ const CompanyClaim = ({ cartCount }) => (
             222
           </p>
         </div>
-        <div className='col text-center'>
+        <div className={`col text-center ${styles.logo}`}>
           <span>
-
-            <a href='/#' />
-
-            <img src='/images/logo.png' alt='Bazar' className={styles.image} />
-
+            <img src='/images/logo.png' alt='Bazar' />
           </span>
         </div>
         <div className={`col text-right ${styles.cart}`}>
           <NavLink exact to={'/cart'} activeClassName='active'>
-            <a href='#' className={styles.cartBox}>
+            <button className={styles.cartBox}>
               <div className={styles.cartIcon}>
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
               <div className={styles.cartCounter}>{cartCount}</div>
-            </a>
+            </button>
           </NavLink>
           <div className={styles.phoneNumber}>
             <p>
