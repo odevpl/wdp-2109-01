@@ -32,7 +32,7 @@ const ProductSearch = ({ categories }) => {
           onChange={e => setSearchValue(e.target.value)}
         />
         <button>
-          <Link to={`/search/:${searchPhrase}`}>
+          <Link to={`/search/${searchPhrase}`}>
             <FontAwesomeIcon className={styles.icon} icon={faSearch} />
           </Link>
         </button>
