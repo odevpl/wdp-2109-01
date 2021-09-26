@@ -6,6 +6,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Brands from '../../layout/Brands/BrandsContainer';
 import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import ProductBanner from '../../common/images/productListBanner.png';
+import FilterByColor from '../../features/FilterByColor/FilterByColor';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -30,33 +31,7 @@ const ProductList = () => (
           <ShopFurniture tileNumber={12} />
         </div>
         <div className='col-3'>
-          <div className={styles.byColor}>
-            <h4>FILTER BY COLOR</h4>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.red}></div>
-              <div className={styles.activeCategory}>Red</div>
-            </div>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.black}></div>
-              <div className={styles.category}>Black</div>
-            </div>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.yellow}></div>
-              <div className={styles.category}>Yellow</div>
-            </div>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.blue}></div>
-              <div className={styles.category}>Blue</div>
-            </div>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.pink}></div>
-              <div className={styles.category}>Pink</div>
-            </div>
-            <div className={`row ${styles.colorLine}`}>
-              <div className={styles.green}></div>
-              <div className={styles.category}>Green</div>
-            </div>
-          </div>
+          <FilterByColor />
         </div>
       </div>
     </div>
