@@ -11,6 +11,16 @@ const Deals = () => (
       <div className={'row ${styles.wrapper}'}>
         <div className={`col-6 ${styles.wrapperLarge}`}>
           <img src={Large} className={styles.imgLarge} alt='Large' />
+          <div className={styles.greyBox}>
+            <div className={styles.priceTitle}>
+              GUEST ROOM
+              <br />
+              <span>SOFA</span>
+              <br />
+              <p>-20%</p>
+            </div>
+            <div className={styles.priceSubtitle}>Bedroom bed</div>
+          </div>
         </div>
 
         <div className={`col-6 ${styles.wrapperLarge}`}>
