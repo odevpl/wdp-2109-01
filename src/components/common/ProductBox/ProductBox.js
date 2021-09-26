@@ -23,6 +23,7 @@ const ProductBox = ({
   addToFavourite,
   compare,
   addToCompare,
+  isStarred,
   numberOfProductsToCompare,
   addToCart,
   quantity,
@@ -34,17 +35,40 @@ const ProductBox = ({
     return togglePopup(!showPopup);
   };
 
-  const checkStars = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+  const checkStars = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
     if (retrievedStorage !== null) {
-      return (stars = retrievedStorage.stars);
-    } else return stars;
+      retrievedStorage.filter(item => {
+        if (item.id === id) {
+          stars = item.stars;
+          return stars;
+        }
+        return stars;
+      });
+    }
+    return stars;
   };
 
-  const checkStarred = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
-    if (retrievedStorage !== null) return true;
-    else return false;
+  const checkStarred = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) isStarred = item.isStarred;
+        return isStarred;
+      });
+    }
+    return isStarred;
+  };
+
+  const checkFavs = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('favs'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) favourite = item.favourite;
+        return favourite;
+      });
+    }
+    return favourite;
   };
 
   const handleAddToCart = (name, price, image, quantity, id) => {
@@ -99,14 +123,14 @@ const ProductBox = ({
           <Link to={`/product/${id}`}>{name}</Link>
         </h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
+          <ProductRating id={id} stars={checkStars(id)} isStarred={checkStarred(id)} />
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            variant={favourite ? 'favourite' : 'outline'}
+            variant={checkFavs(id) ? 'favourite' : 'outline'}
             onClick={event => {
               event.preventDefault();
               return addToFavourite(id);
