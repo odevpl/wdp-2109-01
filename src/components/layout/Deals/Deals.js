@@ -19,7 +19,6 @@ const Deals = () => (
               <br />
               <p>-20%</p>
             </div>
-            <div className={styles.priceSubtitle}>Bedroom bed</div>
           </div>
         </div>
 
