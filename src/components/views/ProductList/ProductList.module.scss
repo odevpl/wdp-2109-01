@@ -15,6 +15,13 @@
     font-size: 16px;
     padding: 15px 0 0 10px;
     word-spacing: 10px;
+
+    span {
+      color: $productList-bannerMenu-activeLocation;
+      font-weight: 600;
+    }
+  }
+
   .byPrice {
     width: 400px;
     h4 {
@@ -73,14 +80,6 @@
       margin-left: 150px;
       border: 2px solid $featureBox-border-color;
       padding: 5px 10px;
-
-
-}
-
-
-    span {
-      color: $productList-bannerMenu-activeLocation;
-      font-weight: 600;
     }
   }
 }
