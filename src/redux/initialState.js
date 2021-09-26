@@ -55,8 +55,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 40,
-      stars: 2,
+
       quantity: 1,
+      stars: 5,
+      isStarred: true,
       promo: 'sale',
       newFurniture: true,
       favourite: true,
@@ -72,11 +74,16 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: null,
-      stars: 2,
+
       quantity: 1,
+      stars: 5,
+      isStarred: true,
       promo: 'sale',
       newFurniture: true,
+
       favourite: false,
+
+      topSeller: true,
       image:
         'https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
@@ -94,6 +101,9 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favourite: true,
+      favoritue: true,
+
+      topSeller: true,
       image:
         'https://images.pexels.com/photos/7018400/pexels-photo-7018400.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       compare: false,
@@ -111,6 +121,8 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favourite: false,
+      favoritue: false,
+      topSeller: true,
       image:
         'https://images.pexels.com/photos/2440471/pexels-photo-2440471.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       compare: false,
@@ -225,8 +237,9 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 18,
-      stars: 2,
+
       quantity: 1,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       favourite: true,
@@ -247,6 +260,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favourite: true,
+      topSeller: true,
       image:
         'https://images.pexels.com/photos/6947272/pexels-photo-6947272.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       compare: false,
@@ -259,8 +273,8 @@ const initialState = {
       category: 'bed',
       price: 30,
       oldPrice: 25,
-      stars: 2,
       quantity: 1,
+      stars: 5,
       promo: 'sale',
       newFurniture: true,
       favourite: true,
@@ -281,6 +295,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favourite: true,
+      topSeller: true,
       image:
         'https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       compare: false,
@@ -561,98 +576,6 @@ const initialState = {
       },
     ],
   },
-  posts: [
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/6438762/pexels-photo-6438762.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/9565782/pexels-photo-9565782.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/6510974/pexels-photo-6510974.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/6301170/pexels-photo-6301170.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/6890399/pexels-photo-6890399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/7195742/pexels-photo-7195742.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/7195598/pexels-photo-7195598.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    },
-    {
-      id: 'Products that fight static',
-      date: '15 JAN 2021',
-      comments: '11 comments',
-      title: 'Products that fight static',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image:
-        'https://images.pexels.com/photos/7195574/pexels-photo-7195574.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    },
-  ],
 };
 
 export default initialState;

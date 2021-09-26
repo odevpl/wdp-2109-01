@@ -61,7 +61,7 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <Link to={`/product/${name}`}>
+        <Link to={{ pathname: `/product/${id}`, state: { id } }}>
           <img src={image} alt={name} />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
@@ -95,9 +95,9 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-        <Link to={`/product/${name}`}>
-          <h5>{name}</h5>
-        </Link>
+        <h5>
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h5>
         <div className={styles.stars}>
           <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
         </div>
