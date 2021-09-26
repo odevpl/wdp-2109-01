@@ -574,6 +574,68 @@ const initialState = {
   cart: {
     products: [],
   },
+  posts: [
+    {
+      id: 'Products that fight static',
+      date: '1 JAN 2021',
+      comments: '1 comment',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/6438762/pexels-photo-6438762.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'Products that fight static',
+      date: '2 JAN 2021',
+      comments: '11 comments',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/9565782/pexels-photo-9565782.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    },
+    {
+      id: 'Products that fight static',
+      date: '3 JAN 2021',
+      comments: '3 comments',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/6510974/pexels-photo-6510974.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'Products that fight static',
+      date: '4 JAN 2021',
+      comments: '4 comments',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'Products that fight static',
+      date: '5 JAN 2021',
+      comments: '5 comments',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/6301170/pexels-photo-6301170.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+    {
+      id: 'Products that fight static',
+      date: '6 JAN 2021',
+      comments: '6 comments',
+      title: 'Products that fight static',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      image:
+        'https://images.pexels.com/photos/6890399/pexels-photo-6890399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    },
+  ],
 };
 
 export default initialState;
