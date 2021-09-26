@@ -6,6 +6,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Brands from '../../layout/Brands/BrandsContainer';
 import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import ProductBanner from '../../common/images/productListBanner.png';
+import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -30,19 +31,7 @@ const ProductList = () => (
           <ShopFurniture tileNumber={12} />
         </div>
         <div className='col-3'>
-          <div className={styles.byPrice}>
-            <h4>FILTER BY PRICE</h4>
-            <div className={`row ${styles.range}`}>
-              <div className={styles.circle}></div>
-              <div className={styles.line}></div>
-              <div className={styles.circleMiddle}></div>
-              <div className={styles.lineTransparent}></div>
-            </div>
-            <div className={`row ${styles.price}`}>
-              <button className={styles.filter}>FILTER</button>
-              <div className={styles.prices}>$135 - $500</div>
-            </div>
-          </div>
+          <FilterByPrice />
         </div>
       </div>
     </div>
