@@ -58,7 +58,7 @@
                 content: "";
                 position: absolute;
                 bottom: -4px;
-                left: 0;
+                left: 0px;
                 width: 100%;
                 border-bottom: 4px solid $newFuriniture-activeUnderline;
               }
@@ -71,10 +71,10 @@
     .dots {
       position: absolute;
       right: 0;
-      top: 0;
+      top: 12px;
 
       ul {
-        margin: 0;
+        margin: 0px;
         padding: 0 0 0 1rem;
         list-style: none;
         background-color: $newFuriniture-dotsBackground;
@@ -103,5 +103,58 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .panelBar {
+      margin-bottom: 100px;
+    }
+
+    .heading {
+      padding-top: 30px;
+      width: 100%;
+    }
+
+    .h2 {
+      transform: translateX(-20px);
+    }
+
+    .menu {
+      text-align: center;
+      position: absolute;
+      transform: translateY(50px);
+      margin-bottom: -10px;
+    }
+
+    .dots {
+      text-align: right;
+      transform: translateY(30px);
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .menu {
+      ul {
+        li {
+          button {
+            margin: 0 -8px;
+          }
+        }
+      }
+  }
+}
+@media (max-width: 320px) {
+  .menu {
+      ul {
+        li {
+          button {
+            margin: 0 -12px;
+          }
+        }
+      }
   }
 }

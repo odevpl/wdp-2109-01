@@ -1,0 +1,60 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row) > * {
+      border-bottom: 4px solid $newFuriniture-mainUnderline;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $newFuriniture-sectionUnderline;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $newFuriniture-sectionUnderline;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .panelBar {
+      margin-bottom: 100px;
+    }
+
+    .heading {
+      padding-top: 30px;
+      width: 100%;
+    }
+
+    .h2 {
+      transform: translateX(-20px);
+    }
+
+  }
+}
+

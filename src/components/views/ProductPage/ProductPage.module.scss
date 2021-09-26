@@ -2,4 +2,78 @@
 
 .root {
   padding: $base-padding 0;
+  margin: 20px;
+
+  .container {
+    margin: 0 auto;
+    width: 100%;
+
+    .break {
+      border-bottom: 1px solid $productPage-divider;
+    }
+
+    .cart {
+      background-color: $productPage-cart-background;
+      border: 1px solid $productPage-icon-color;
+      margin-right: 3px;
+      &:hover {
+        background-color: $productPage-cart-background-hover;
+      }
+    }
+
+    .quantityInput {
+      width: 50px;
+      text-align: center;
+      padding: 0 10px;
+      height: 34px;
+    }
+
+    .quantityText {
+      margin: auto 0;
+    }
+
+    .oldPrice {
+      text-decoration: line-through $productPage-oldPrice;
+      color: $productPage-oldPrice;
+      margin-right: 10px;
+    }
+
+    .price, .oldPrice {
+      font-size: larger;
+    }
+
+    .icon {
+      background-color: $productPage-icon-background;
+      border: 1px solid $productPage-icon-color;
+      color: $productPage-icon-color;
+      margin-right: 3px;
+      &:hover {
+        background-color: $productPage-cart-background;
+        color: $productPage-icon-background;
+      }
+    }
+
+    .socialMedia {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          display: inline-block;
+          margin-left: 1rem;
+
+          button {
+            color: $footer-socials-icons;
+            background-color: transparent;
+            border: none;
+            svg:hover {
+              color: $footer-socials-icons--hover;
+              animation: $hover-animationType $actionDuration;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }

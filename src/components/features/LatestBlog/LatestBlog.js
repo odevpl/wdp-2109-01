@@ -67,7 +67,7 @@ LatestBlog.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       date: PropTypes.string,
-      comments: PropTypes.string,
+      comments: PropTypes.node,
       title: PropTypes.string,
       description: PropTypes.string,
       image: PropTypes.string,

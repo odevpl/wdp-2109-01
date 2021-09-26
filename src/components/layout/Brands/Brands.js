@@ -10,16 +10,16 @@ const Brands = ({ brands }) => {
   const [brand] = useState(6);
   const [activePage, setActivePage] = useState(0);
 
+  const handleClickNext = event => {
+    event.preventDefault();
+
+    setActivePage(activePage === brands.length / brand - 1 ? 0 : activePage + 1);
+  };
+
   const handleClickPrevious = event => {
     event.preventDefault();
 
     setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage - 1);
-  };
-
-  const handleClickNext = event => {
-    event.preventDefault();
-
-    setActivePage(activePage === 0 ? brands.length / brand - 1 : activePage + 1);
   };
 
   return (
