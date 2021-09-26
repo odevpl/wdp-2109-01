@@ -8,15 +8,12 @@
     font-weight: 700;
   }
 
-  .article {
-    border: 3px solid red;
-  }
-
   .post {
 
     h3 {
       font-weight: 500;
       padding-bottom: 15px;
+      
       span {
         padding-left: 30px;
         font-size: 35px;
@@ -82,8 +79,8 @@
       width: 100%;
       border-bottom: 3px solid $featureBox-border-color;
       padding-bottom: 5px;
-      margin-top: 60px;
-      margin-right: 70px;
+      margin-top: 50px;
+      padding-right: 70px;
     }
 
     ul {
@@ -118,11 +115,29 @@
 
 @media (max-width: 767px) {
   .root {
-    .postFooter {      
-      button {
-        margin-right: 15px;
+    h2 { 
+      margin: 15px;
+    }
+
+    .post { 
+      h3  {
+        font-size: 20px;
+        span {
+          font-size: 16px;
+        }
+      }
+
+      p {
+      font-size: 12px;
       }
     }
+
+    .postFooter {      
+      button {
+        font-size: 10px;
+      }
+    }
+
     .recentPosts {
       li {
         font-size: 12px;
@@ -132,6 +147,7 @@
     .menuBlog {
       button, h3 {
         font-size: 16px;
+        margin-top: 10px;
       }
     }
   }
@@ -143,9 +159,13 @@
       display: none;
     }
 
-    .recentPosts {
+    .recentPosts, .archives, .categories {
       li {
         font-size: 10px;
+        display: none;
+      }
+      &:hover li {
+        display: block;
       }
     }
 
