@@ -9,6 +9,7 @@ import Promoted from '../../layout/Promoted/PromotedContainer';
 import Deals from '../../layout/Deals/Deals';
 import ChatBot from '../../features/ChatBot/ChatBot';
 import Gallery from '../../layout/Gallery/GalleryContainer';
+import LatestBlog from '../../features/LatestBlog/LatestBlog';
 
 const Homepage = () => (
   <div className={styles.root}>
