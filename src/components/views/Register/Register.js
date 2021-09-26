@@ -94,6 +94,14 @@ const Register = () => {
     }
   };
 
+  const [values, setValues] = React.useState({
+    showPassword: false,
+  });
+
+  const handleCLickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.container}>
@@ -136,7 +144,7 @@ const Register = () => {
               <input
                 className={styles.formBox}
                 name='password'
-                type='password'
+                type={values.showPassword ? 'text' : 'password'}
                 placeholder='Hasło *'
                 id='password'
                 minLength='3'
@@ -147,7 +155,7 @@ const Register = () => {
               <input
                 className={styles.formBox}
                 name='confirm_password'
-                type='password'
+                type={values.showPassword ? 'text' : 'password'}
                 placeholder='Powtórz hasło *'
                 id='confirm_password'
                 minLength='3'
@@ -155,17 +163,15 @@ const Register = () => {
               <p className={styles.alert} id='info'></p>
             </div>
           </div>
-
           <div className={`row ${styles.switchCheckbox}`}>
             <label className={styles.switch}>
-              <input type='checkbox' />
+              <input type='checkbox' onClick={handleCLickShowPassword} />
               <span className={`${styles.slider} ${styles.round}`}></span>
             </label>
             <label>
               <h5>Pokaż hasło</h5>
             </label>
           </div>
-
           <div className={styles.checkboxes}>
             <div className={styles.darkBox}>
               <label className={styles.checkbox}>
@@ -186,7 +192,6 @@ const Register = () => {
               </label>
             </div>
           </div>
-
           <div className='row no-gutters justify-content-between'>
             <Link to='/'>
               <button type='button' className={styles.backButton}>
