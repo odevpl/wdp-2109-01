@@ -29,6 +29,7 @@ const App = () => (
           <Route exact path={'/cart'} component={Cart} />
           <Route exact path={'/blog'} component={BlogArchive} />
           <Route exact path={'/search'} component={Search} />
+          <Route exact path={'/search/:searchPhrase'} component={Search} />
         </Switch>
       </MainLayoutContainer>
     </BrowserRouter>
