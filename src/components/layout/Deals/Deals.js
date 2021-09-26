@@ -32,6 +32,4 @@ Deals.propTypes = {
   Large: PropTypes.node,
 };
 
-// Deals.defaultProps = {};
-
 export default Deals;
