@@ -3,6 +3,11 @@
 .root {
   padding: 3rem 0;
 
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .wrapperLarge {
     position: relative;
     padding: 0;
