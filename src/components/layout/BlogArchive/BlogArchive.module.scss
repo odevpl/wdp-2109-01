@@ -1,18 +1,19 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  margin-top: 50px;
+  padding-bottom: 50px;
 
   h2 {
-    margin: 50px 170px;
+    margin: 50px 0;
     font-weight: 700;
   }
 
   .article {
-    padding-left: 450px;
+    border: 3px solid red;
   }
 
   .post {
+
     h3 {
       font-weight: 500;
       padding-bottom: 15px;
@@ -22,37 +23,41 @@
         font-weight: 700;
       }
     }
+    
     img {
-      height: 400px;
-      width: 900px;
+      height: 100%;
+      width: 100%;
       object-fit: cover;
     }
+   
     p {
       font-size: 20px;
       padding: 20px 0;
-      width: 900px;
+      width: 100%;
     }
   }
 
-  .postFooter {
+  .postFooter { 
     border-top: 2px solid $featureBox-border-color;
     border-bottom: 2px solid $featureBox-border-color;
     padding: 10px;
-    width: 900px;
+    width: 100%;
     margin-left: 0;
     margin-bottom: 35px;
+
     button {
-      width: 150px;
-      margin-right: 15px;
-      margin-left: -25px;
+      width: 100%;
+      text-align: left;
       padding-left: 0;
       background-color: $button-text-color;
       border: hidden;
+
       span {
         padding-left: 10px;
         color: $featureBox-border-color;
         font-weight: 600;
       }
+
       h6 {
         color: $featureBox-border-color;
         font-weight: 600;
@@ -61,11 +66,10 @@
   }
 
   .menuBlog {
-    margin-left: -120px;
-    margin-top: 5px;
+
     .search {
       div > input {
-        min-width: 400px;
+        width: 100%;
         float: left;
         padding: 10px;
         margin-bottom: 60px;
@@ -73,17 +77,23 @@
         border-radius: 3px;
       }
     }
+
     h3 {
+      width: 100%;
       border-bottom: 3px solid $featureBox-border-color;
       padding-bottom: 5px;
       margin-top: 60px;
       margin-right: 70px;
     }
+
     ul {
+      width: 100%;
       list-style-type: none;
       padding-left: 0;
       margin-right: 70px;
+      
       li {
+      width: 100%;
       border-bottom: 2px solid $featureBox-border-color;
       padding: 10px 0;
       color: $menuBar-boxShadow;
@@ -91,17 +101,59 @@
       text-decoration: none;
       }
     }
+    
     button {
-      width: 150px;
-      margin-right: 15px;
-      margin-left: -25px;
-      padding-left: 0;
+      width: 100%;
+      text-align: left;
       background-color: $button-text-color;
       border: hidden;
       text-decoration: none;
+     
       span {
         padding-left: 10px;
       }
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    .postFooter {      
+      button {
+        margin-right: 15px;
+      }
+    }
+    .recentPosts {
+      li {
+        font-size: 12px;
+      }
+    }
+
+    .menuBlog {
+      button, h3 {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    .search {
+      display: none;
+    }
+
+    .recentPosts {
+      li {
+        font-size: 10px;
+      }
+    }
+
+    .menuBlog {
+      button, h3 {
+        font-size: 12px;
+      }
+    }
+
   }
 }

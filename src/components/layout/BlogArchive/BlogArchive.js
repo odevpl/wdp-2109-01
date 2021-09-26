@@ -11,10 +11,12 @@ import { Link } from '@material-ui/core';
 
 const BlogArchive = () => (
   <div className={styles.root}>
-    <div className={styles.container}>
-      <h2>Archives</h2>
+    <div className='container'>
+      <div className='col-12'>
+        <h2>Archives</h2>
+      </div>
       <div className='row'>
-        <div className={`col-9 no-gutters justify-content-between  ${styles.article}`}>
+        <div className={`col-10 col-sm-9 ${styles.article}`}>
           <div className={styles.post}>
             <h3>
               Post 1 <span>Witamy na nowej stronie sklepu</span>
@@ -31,34 +33,32 @@ const BlogArchive = () => (
                 ut elementum risus.
               </p>
             </div>
-            <div className={`row ${styles.postFooter}`}>
-              <div className='row col-11 justify-content-left'>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
-                    <span>admin</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
-                    <span>June 15, 16</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
-                    <span>Just usual</span>
-                  </button>
-                </Link>
-              </div>
-              <div className='row col-1 justify-content-right'>
-                <Link>
-                  <button>
-                    <h6>Read more...</h6>
-                  </button>
-                </Link>
-              </div>
+            <div
+              className={`d-flex justify-content-between align-items-center ${styles.postFooter}`}
+            >
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                  <span>admin</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                  <span>June 15, 16</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                  <span>Just usual</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <span>Read more...</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles.post}>
@@ -78,34 +78,32 @@ const BlogArchive = () => (
                 dictum ante eu bibendum.
               </p>
             </div>
-            <div className={`row ${styles.postFooter}`}>
-              <div className='row col-11 justify-content-left'>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
-                    <span>admin</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
-                    <span>June 15, 16</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
-                    <span>Just usual</span>
-                  </button>
-                </Link>
-              </div>
-              <div className='row col-1 justify-content-right'>
-                <Link>
-                  <button>
-                    <h6>Read more...</h6>
-                  </button>
-                </Link>
-              </div>
+            <div
+              className={`d-flex justify-content-between align-items-center ${styles.postFooter}`}
+            >
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                  <span>admin</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                  <span>June 15, 16</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                  <span>Just usual</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <span>Read more...</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles.post}>
@@ -124,34 +122,32 @@ const BlogArchive = () => (
                 auctor in est eu accumsan.
               </p>
             </div>
-            <div className={`row ${styles.postFooter}`}>
-              <div className='row col-11 justify-content-left'>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
-                    <span>admin</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
-                    <span>June 15, 16</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
-                    <span>Just usual</span>
-                  </button>
-                </Link>
-              </div>
-              <div className='row col-1 justify-content-right'>
-                <Link>
-                  <button>
-                    <h6>Read more...</h6>
-                  </button>
-                </Link>
-              </div>
+            <div
+              className={`d-flex justify-content-between align-items-center ${styles.postFooter}`}
+            >
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                  <span>admin</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                  <span>June 15, 16</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                  <span>Just usual</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <span>Read more...</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles.post}>
@@ -170,34 +166,32 @@ const BlogArchive = () => (
                 magna. Sed porta sit amet massa euismod condimentum
               </p>
             </div>
-            <div className={`row ${styles.postFooter}`}>
-              <div className='row col-11 justify-content-left'>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
-                    <span>admin</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
-                    <span>June 15, 16</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
-                    <span>Just usual</span>
-                  </button>
-                </Link>
-              </div>
-              <div className='row col-1 justify-content-right'>
-                <Link>
-                  <button>
-                    <h6>Read more...</h6>
-                  </button>
-                </Link>
-              </div>
+            <div
+              className={`d-flex justify-content-between align-items-center ${styles.postFooter}`}
+            >
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                  <span>admin</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                  <span>June 15, 16</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                  <span>Just usual</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <span>Read more...</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles.post}>
@@ -216,39 +210,37 @@ const BlogArchive = () => (
                 fames ac ante ipsum primis in faucibus.
               </p>
             </div>
-            <div className={`row ${styles.postFooter}`}>
-              <div className='row col-11 justify-content-left'>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
-                    <span>admin</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
-                    <span>June 15, 16</span>
-                  </button>
-                </Link>
-                <Link>
-                  <button>
-                    <FontAwesomeIcon className={styles.icon} icon={faFolder} />
-                    <span>Just usual</span>
-                  </button>
-                </Link>
-              </div>
-              <div className='row col-1 justify-content-right'>
-                <Link>
-                  <button>
-                    <h6>Read more...</h6>
-                  </button>
-                </Link>
-              </div>
+            <div
+              className={`d-flex justify-content-between align-items-center ${styles.postFooter}`}
+            >
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                  <span>admin</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
+                  <span>June 15, 16</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faFolder} />
+                  <span>Just usual</span>
+                </button>
+              </Link>
+              <Link>
+                <button>
+                  <span>Read more...</span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className={`col-3 no-gutters justify-content-between ${styles.menuBlog}`}>
+        <div className={`col-2 col-sm-3 ${styles.menuBlog}`}>
           <div className={styles.search}>
             <div>
               <input type='text' placeholder='Search...' />
@@ -279,7 +271,7 @@ const BlogArchive = () => (
             <ul>
               <li>
                 <Link>
-                  <button>
+                  <button className={`d-flex justify-content-start align-items-center`}>
                     <FontAwesomeIcon className={styles.icon} icon={faCalendar} />
                     <span>June 2015</span>
                   </button>
@@ -292,7 +284,7 @@ const BlogArchive = () => (
             <ul>
               <li>
                 <Link>
-                  <button>
+                  <button className={`d-flex justify-content-start align-items-center`}>
                     <FontAwesomeIcon className={styles.icon} icon={faFolder} />
                     <span>Just usual</span>
                   </button>
