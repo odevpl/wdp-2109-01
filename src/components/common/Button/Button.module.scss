@@ -34,8 +34,10 @@
 .bigCarousel {
   @extend .main, .carousel;
   align-items: center;
-  padding: 42px 10px;
+  padding: 35px 10px;
+  line-height: 120px;
 }
+
 
 .small {
   @extend .main;

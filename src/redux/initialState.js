@@ -507,6 +507,46 @@ const initialState = {
       name: 'brand 10',
       image: 'https://i.imgur.com/spQ9tQf.jpg',
     },
+    {
+      id: 'brand-11',
+      name: 'brand 11',
+      image: 'https://i.imgur.com/ZuY7GNH.jpg',
+    },
+    {
+      id: 'brand-12',
+      name: 'brand 12',
+      image: 'https://i.imgur.com/1MobFGZ.jpg',
+    },
+    {
+      id: 'brand-13',
+      name: 'brand 13',
+      image: 'https://i.imgur.com/1P2Y8zb.jpg',
+    },
+    {
+      id: 'brand-14',
+      name: 'brand 14',
+      image: 'https://i.imgur.com/spQ9tQf.jpg',
+    },
+    {
+      id: 'brand-15',
+      name: 'brand 15',
+      image: 'https://i.imgur.com/ZuY7GNH.jpg',
+    },
+    {
+      id: 'brand-16',
+      name: 'brand 16',
+      image: 'https://i.imgur.com/1MobFGZ.jpg',
+    },
+    {
+      id: 'brand-17',
+      name: 'brand 17',
+      image: 'https://i.imgur.com/cOyb9mk.jpg',
+    },
+    {
+      id: 'brand-18',
+      name: 'brand 18',
+      image: 'https://i.imgur.com/1MobFGZ.jpg',
+    },
   ],
   cart: {
     products: [
