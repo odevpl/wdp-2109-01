@@ -32,9 +32,15 @@ const ProductList = () => (
         <div className='col-3'>
           <div className={styles.byPrice}>
             <h4>FILTER BY PRICE</h4>
+            <div className={`row ${styles.range}`}>
+              <div className={styles.circle}></div>
+              <div className={styles.line}></div>
+              <div className={styles.circleMiddle}></div>
+              <div className={styles.lineTransparent}></div>
+            </div>
             <div className={`row ${styles.price}`}>
-              <button variant='small'>FILTER</button>
-              <div>$135 - $500</div>
+              <button className={styles.filter}>FILTER</button>
+              <div className={styles.prices}>$135 - $500</div>
             </div>
           </div>
         </div>
