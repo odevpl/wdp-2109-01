@@ -54,7 +54,7 @@
     width: 550px;
     align-items: center;
 
-    .priceSubtitle {
+    .priceTitleTwo {
       position: absolute;
       margin-left: 160px;
       font-size: 55px;
@@ -72,6 +72,35 @@
         letter-spacing: 3px;
         font-size: 18px;
         font-weight: 600;
+      }
+
+      p {
+        font-size: 30px;
+        color: $color-tigersEye;
+      }
+    }
+
+    .priceTitleThree {
+      position: absolute;
+      margin-left: 270px;
+      top: 90px;
+      font-size: 55px;
+      color: $color-tigersEye;
+      font-weight: 600;
+      text-align: right;
+      h4 {
+        margin-bottom: -3px;
+        font-weight: 200;
+        span {
+          padding-right: 9px;
+          font-weight: 800;
+        }
+      }
+      h5 {
+        margin-top: 5px;
+        color: black;
+        font-size: 16px;
+        font-weight: 500;
       }
 
       p {
