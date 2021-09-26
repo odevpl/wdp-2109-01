@@ -572,32 +572,7 @@ const initialState = {
     },
   ],
   cart: {
-    products: [
-      {
-        productId: 'aenean-ru-bristique-24',
-        quantity: 1,
-        name: 'Aenean Ru Bristique 24',
-        price: 30,
-        image:
-          'https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      },
-      {
-        productId: 'aenean-ru-bristique-19',
-        quantity: 1,
-        name: 'Aenean Ru Bristique 19',
-        price: 30,
-        image:
-          'https://images.pexels.com/photos/1374125/pexels-photo-1374125.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      },
-      {
-        productId: 'aenean-ru-bristique-2',
-        quantity: 2,
-        name: 'Aenean Ru Bristique 2',
-        price: 30,
-        image:
-          'https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      },
-    ],
+    products: [],
   },
 };
 
