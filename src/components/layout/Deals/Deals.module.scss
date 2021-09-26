@@ -1,4 +1,4 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
 .root {
   padding: 3rem 0;
@@ -46,18 +46,6 @@
         font-weight: 800;
       }
     }
-
-    .priceSubtitle {
-      position: absolute;
-      margin-left: 60px;
-
-      margin-top: -490px;
-      font-size: 55px;
-
-      color: $color-tigersEye;
-      font-weight: 600;
-    }
-
   }
 
   .wrapperSmall {
@@ -65,6 +53,32 @@
     height: 190px;
     width: 550px;
     align-items: center;
+
+    .priceSubtitle {
+      position: absolute;
+      margin-left: 160px;
+      font-size: 55px;
+      color: black;
+      font-weight: 600;
+      h4 {
+        margin-bottom: -3px;
+        font-weight: 200;
+        span {
+          padding-right: 9px;
+          font-weight: 800;
+        }
+      }
+      h5 {
+        letter-spacing: 3px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 30px;
+        color: $color-tigersEye;
+      }
+    }
 
     img {
       height: 100%;

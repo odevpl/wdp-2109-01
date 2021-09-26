@@ -19,13 +19,19 @@ const Deals = () => (
               <br />
               <p>-20%</p>
             </div>
-            <div className={styles.priceSubtitle}>Bedroom bed</div>
           </div>
         </div>
 
         <div className={`col-6 ${styles.wrapperLarge}`}>
           <div className={`row pb-4 ${styles.wrapperSmall}`}>
             <img src={Chair} className={styles.imgChair} alt='Bed' />
+            <div className={styles.priceSubtitle}>
+              <h4>
+                <span>OFFICE</span>CHAIR
+              </h4>
+              <h5>COLLECTION</h5>
+              <p>$200.00</p>
+            </div>
           </div>
           <div className={`row ${styles.wrapperSmall}`}>
             <img src={Bed} className={styles.imgBed} alt='Chair' />
