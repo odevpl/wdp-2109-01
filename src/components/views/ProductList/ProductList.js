@@ -6,8 +6,6 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Brands from '../../layout/Brands/BrandsContainer';
 import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import ProductBanner from '../../common/images/productListBanner.png';
-import Brands from '../../layout/Brands/BrandsContainer';
-import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 
 const ProductList = () => (
