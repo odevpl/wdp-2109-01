@@ -79,12 +79,13 @@ const Cart = ({ products, removeProduct, removeProducts, updateQuantity }) => {
                 </tr>
               );
             })}
-            ;
           </tbody>
         </table>
         <div className={styles.cartSummary}>Subtotal: ${subtotal}</div>
         <div className={styles.cartSummary}>Delivery: ${delivery}</div>
-        <div className={styles.cartSummary}>Total: ${subtotal + delivery}</div>
+        <div className={styles.cartSummary}>
+          Total: ${subtotal > 0 ? subtotal + delivery : 0}
+        </div>
         <div className={styles.checkout}>
           <NavLink exact to={'/'} activeClassName='active'>
             <Button

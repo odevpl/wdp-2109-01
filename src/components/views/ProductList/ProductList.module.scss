@@ -2,13 +2,23 @@
 
 .root {
   padding: $base-padding 0;
-  padding: 5rem 0;
+  padding: 0 0 5rem 0;
   font-size: 24px;
 
   .row {
     padding: 12px;
   }
 
+  .bannerMenu {
+    position: relative;
+    background-color: $productList-bannerMenu-background;
+    font-size: 16px;
+    padding: 15px 0 0 10px;
+    word-spacing: 10px;
+
+    span {
+      color: $productList-bannerMenu-activeLocation;
+      font-weight: 600;
+    }
+  }
 }
-
-
