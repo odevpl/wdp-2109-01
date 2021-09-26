@@ -1,0 +1,66 @@
+@import "../../../styles/settings.scss";
+
+.root {
+
+  .byCategories {
+    width: 400px;
+    margin-left: 30px;
+    h4 {
+      border-bottom: 2px solid $featureBox-border-color;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .activeCategory {
+      color: $button-background-color--hov;
+      font-size: 20px;
+      }
+    .buttonActive {
+      padding-right: 15px;
+      padding-left: 47px;
+      font-size: 15px;
+      padding-top: 4px;
+      padding-bottom: 20px;
+    }
+    .circleActive {
+      background-color: $button-background-color--hov;
+      color: $button-text-color;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      font-size: 14px;
+      padding-top: 5px;
+      padding-left: 10px;
+      margin-left: 202px;
+    }
+    .button {
+      padding-right: 15px;
+      margin: 20px 0;
+      color: black;
+      font-size: 15px;
+      padding-top: 4px;
+    }
+    .circle {
+      background-color: $button-background-color;
+      color: $button-text-color;
+      border-radius: 50%;
+      margin-left: 260px;
+      height: 30px;
+      width: 30px;
+      font-size: 14px;
+      padding-top: 5px;
+      padding-left: 10px;
+      margin-top: 22px;
+    }
+    h6 {
+      width: 80px;
+    }
+    .category {
+      color: black;
+      padding-top: 20px;
+
+      h6 {
+        font-size: 20px;
+      }
+      }
+   }
+}
