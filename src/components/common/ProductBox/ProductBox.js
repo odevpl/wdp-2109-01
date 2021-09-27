@@ -7,7 +7,6 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
-import AlertPopup from '../../features/AlertPopup/AlertPopup';
 import { Link } from 'react-router-dom';
 
 const ProductBox = ({
@@ -30,20 +29,14 @@ const ProductBox = ({
   quantity,
 }) => {
   const [showPopup, togglePopup] = useState(false);
-  const [showAlertPopup, toggleAlertPopup] = useState(false);
 
   const handlePopup = event => {
     event.preventDefault();
     return togglePopup(!showPopup);
   };
 
-  const handleAlertPopup = event => {
-    event.preventDefault();
-    return toggleAlertPopup(!showAlertPopup);
-  };
-
-  const checkStars = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
+  const checkStars = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
     if (retrievedStorage !== null) {
       retrievedStorage.filter(item => {
         if (item.id === id) {
@@ -96,21 +89,19 @@ const ProductBox = ({
           <img src={image} alt={name} />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.wrapperButton}>
-          <div className={styles.buttons}>
-            <Button variant={'small'} onClick={event => handlePopup(event)}>
-              QUICK VIEW
-            </Button>
-            <Button
-              variant='small'
-              onClick={event => {
-                event.preventDefault();
-                return handleAddToCart(name, price, image, quantity, id);
-              }}
-            >
-              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-            </Button>
-          </div>
+        <div className={styles.buttons}>
+          <Button variant={'small'} onClick={event => handlePopup(event)}>
+            QUICK VIEW
+          </Button>
+          <Button
+            variant='small'
+            onClick={event => {
+              event.preventDefault();
+              return handleAddToCart(name, price, image, quantity, id);
+            }}
+          >
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
         </div>
       </div>
       {showPopup ? (
@@ -152,7 +143,7 @@ const ProductBox = ({
             onClick={event => {
               if (numberOfProductsToCompare >= 4) {
                 event.preventDefault();
-                handleAlertPopup(event);
+                alert('You can only add four products to compare!');
               } else {
                 event.preventDefault();
                 return addToCompare(id);
@@ -161,7 +152,6 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
-          {showAlertPopup ? <AlertPopup closePopup={handleAlertPopup} /> : ''}
         </div>
         <div className={styles.price}>
           <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
