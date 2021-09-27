@@ -8,7 +8,9 @@
     justify-content: center;
   }
 
-  .wrapperLarge {
+  .wrapperLeft {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 0;
     height: 400px;
@@ -18,6 +20,8 @@
       position: absolute;
       top: 20px;
       left: 20px;
+      right: 75px;
+      bottom: 20px;
       background-color: rgba(156, 156, 156, 0.7);
       opacity: 1;
       height: 85%;
@@ -43,6 +47,37 @@
       width: 100%;
       font-weight: 700;
       font-size: 35px;
+      padding-left: 15px;
+      top: 150px;
+      color: white;
+      span {
+        font-size: 50px;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .wrapperRight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    height: 400px;
+    width: 700px;
+
+    .imgLarge {
+      height: 95%;
+      width: 90%;
+      object-fit: cover;
+    }
+
+    .priceTitle {
+      position: absolute;
+      height: 70px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 25px;
       padding-left: 15px;
       top: 150px;
       color: white;
@@ -124,4 +159,25 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 955px) {
+  .root .wrapperLeft {
+    justify-content: center;
+    .greyBox {
+      left: 58px;
+    }
+  }
+}
+
+@media screen and (max-width: 686px) {
+  .root .wrapperLeft .greyBox {
+      left: 43px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+  .root .wrapperLeft .greyBox {
+      left: 29px;
+    }
 }

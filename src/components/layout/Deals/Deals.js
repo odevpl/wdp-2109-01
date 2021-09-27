@@ -10,7 +10,7 @@ const Deals = () => (
   <section className={styles.root}>
     <div className='container'>
       <Grid container className={styles.container}>
-        <Grid item xs={12} md={6} lg={6} className={styles.wrapperLarge}>
+        <Grid item xs={12} md={6} lg={6} className={styles.wrapperLeft}>
           <img src={Large} className={styles.imgLarge} alt='Large' />
           <div className={styles.greyBox}>
             <div className={styles.priceTitle}>
@@ -23,7 +23,7 @@ const Deals = () => (
           </div>
         </Grid>
 
-        <Grid item xs={12} md={6} lg={6} className={styles.wrapperLarge}>
+        <Grid item xs={12} md={6} lg={6} className={styles.wrapperRight}>
           <div className={`row pb-4 ${styles.wrapperSmall}`}>
             <img src={Chair} className={styles.imgChair} alt='Bed' />
             <div className={styles.priceTitleTwo}>
