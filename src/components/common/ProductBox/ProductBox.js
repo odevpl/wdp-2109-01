@@ -4,11 +4,11 @@ import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
 import AlertPopup from '../../features/AlertPopup/AlertPopup';
+import { Link } from 'react-router-dom';
 
 const ProductBox = ({
   id,
@@ -24,8 +24,10 @@ const ProductBox = ({
   addToFavourite,
   compare,
   addToCompare,
+  isStarred,
   numberOfProductsToCompare,
   addToCart,
+  quantity,
 }) => {
   const [showPopup, togglePopup] = useState(false);
   const [showAlertPopup, toggleAlertPopup] = useState(false);
@@ -43,21 +45,46 @@ const ProductBox = ({
   const checkStars = () => {
     const retrievedStorage = JSON.parse(localStorage.getItem(id));
     if (retrievedStorage !== null) {
-      return (stars = retrievedStorage.stars);
-    } else return stars;
+      retrievedStorage.filter(item => {
+        if (item.id === id) {
+          stars = item.stars;
+          return stars;
+        }
+        return stars;
+      });
+    }
+    return stars;
   };
 
-  const checkStarred = () => {
-    const retrievedStorage = JSON.parse(localStorage.getItem(id));
-    if (retrievedStorage !== null) return true;
-    else return false;
+  const checkStarred = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) isStarred = item.isStarred;
+        return isStarred;
+      });
+    }
+    return isStarred;
   };
 
-  const handleAddToCart = (name, price, image) => {
+  const checkFavs = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('favs'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) favourite = item.favourite;
+        return favourite;
+      });
+    }
+    return favourite;
+  };
+
+  const handleAddToCart = (name, price, image, quantity, id) => {
     const cartPayload = {
       name: name,
       price: price,
       image: image,
+      quantity: quantity,
+      productId: id,
     };
     addToCart(cartPayload);
   };
@@ -65,7 +92,9 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <img src={image} alt={name} />
+        <Link to={{ pathname: `/product/${id}`, state: { id } }}>
+          <img src={image} alt={name} />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant={'small'} onClick={event => handlePopup(event)}>
@@ -75,7 +104,7 @@ const ProductBox = ({
             variant='small'
             onClick={event => {
               event.preventDefault();
-              return handleAddToCart(name, price, image);
+              return handleAddToCart(name, price, image, quantity, id);
             }}
           >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -97,16 +126,18 @@ const ProductBox = ({
         ''
       )}
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <h5>
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h5>
         <div className={styles.stars}>
-          <ProductRating id={id} stars={checkStars()} isStarred={checkStarred()} />
+          <ProductRating id={id} stars={checkStars(id)} isStarred={checkStarred(id)} />
         </div>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            variant={favourite ? 'favourite' : 'outline'}
+            variant={checkFavs(id) ? 'favourite' : 'outline'}
             onClick={event => {
               event.preventDefault();
               return addToFavourite(id);
@@ -141,7 +172,7 @@ const ProductBox = ({
   );
 };
 ProductBox.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
@@ -158,6 +189,11 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isStarred: PropTypes.bool,
   addToCart: PropTypes.func,
+  quantity: PropTypes.number,
+};
+
+ProductBox.defaultProps = {
+  quantity: 1,
 };
 
 export default ProductBox;

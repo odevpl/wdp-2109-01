@@ -19,7 +19,9 @@ const LastPost = ({ id, date, comments, title, description, image }) => (
           </p>
         </div>
         <div className='col-6'>
-          <CountComments comments={comments} />
+          <p>
+            <CountComments comments={comments} />
+          </p>
         </div>
       </div>
       <h4>
@@ -36,7 +38,7 @@ const LastPost = ({ id, date, comments, title, description, image }) => (
 LastPost.propTypes = {
   id: PropTypes.string.isRequired,
   date: PropTypes.string,
-  comments: PropTypes.string,
+  comments: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

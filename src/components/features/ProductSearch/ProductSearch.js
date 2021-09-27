@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './ProductSearch.module.scss';
+import { Link } from 'react-router-dom';
 
 const ProductSearch = ({ categories }) => {
+  const [searchValue, setSearchValue] = useState('');
+  const searchPhrase = searchValue.replace(/\s/g, '_');
+
   return (
     <form action='' className={styles.root}>
       <div className={styles.category}>
@@ -22,9 +26,15 @@ const ProductSearch = ({ categories }) => {
         <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
       </div>
       <div className={styles.searchField}>
-        <input placeholder='Search products...' type='text' />
+        <input
+          placeholder='Search...'
+          type='text'
+          onChange={e => setSearchValue(e.target.value)}
+        />
         <button>
-          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          <Link to={`/search/${searchPhrase}`}>
+            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+          </Link>
         </button>
       </div>
     </form>

@@ -106,8 +106,8 @@ const ProductSlider = ({ products }) => {
               <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
             </Button>
           </div>
-          <div className='col-10'>
-            <div className='row justify-content-between'>
+          <div className={`col-10 ${styles.justify}`}>
+            <div className={`row ${styles.slider}`}>
               {products
                 .slice(activePage * product, (activePage + 1) * product)
                 .map(item => (

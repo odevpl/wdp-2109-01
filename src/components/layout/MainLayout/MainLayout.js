@@ -34,7 +34,7 @@ const MainLayout = ({ deviceFromContainer, children, changeDevice }) => {
     window.addEventListener('resize', checkSize);
 
     checkSizeForCurrentDevice();
-    if (deviceFromContainer != currDevice) {
+    if (deviceFromContainer !== currDevice) {
       changeDevice(checkDevice());
       return () => {
         window.removeEventListener('resize', checkSize);

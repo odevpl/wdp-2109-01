@@ -2,11 +2,15 @@
 
 .root {
 
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .leftWrapper {
     position: relative;
     padding: 0;
-    height: 800px;
-    width: 700px;
+    // height: 800px;
+    // width: 700px;
 
     img {
       height: 100%;
@@ -18,9 +22,8 @@
   .rightWrapper {
     position: relative;
     padding: 0;
-    height: 600px;
-    width: 700px;
-
+    // height: 600px;
+    // width: 700px;
   }
 
   .imageWrapper {
@@ -33,6 +36,7 @@
     img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -41,8 +45,9 @@
     height: 70px;
     width: 100%;
     font-weight: 700;
-    margin-left: 60px;
-    margin-top: -540px;
+    top: 130px;
+    // margin-left: 60px;
+    // margin-top: -540px;
     font-size: 25px;
     padding: 0;
     span {
@@ -50,33 +55,55 @@
       font-size: 50px;
       font-weight: 600;
       padding-left: 15px;
+
+    margin-top: -580px;
+
+
+
+      font-weight: 600;
+      padding-left: 15px;
+
     }
   }
 
   .priceSubtitle {
     position: absolute;
-    margin-left: 60px;
-    margin-top: -490px;
+    // margin-left: 60px;
+    // margin-top: -490px;
+    padding-left: 20px;
+    top: 200px;
+    width: 100%;
     font-size: 55px;
+
     color: $color-tigersEye;
     font-weight: 600;
   }
 
   .greenButton {
     position: absolute;
+
     padding: 12px 0 0 35px;
     width: 180px;
     height: 50px;
     margin-top: -410px;
+
     margin-left: 60px;
     background-color: green;
     font-weight: 600;
     font-size: 20px;
 
+
     :hover {
       color: $color-tigersEye;
       text-decoration: none;
     }
+
+  }
+}
+
+@media (max-width: 750px) {
+  .rightGrid{
+    display: none;
   }
 }
 

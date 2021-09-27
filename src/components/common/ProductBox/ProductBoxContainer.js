@@ -13,8 +13,8 @@ const mapStateToProps = state => ({
   numberOfProductsToCompare: getProductsToCompare(state).length,
 });
 
-const mapDispatchToProps = (dispatch /* props */) => {
-  //const { id } = props;
+const mapDispatchToProps = (dispatch, props) => {
+  // const { id } = props;
   return {
     addToFavourite: id => dispatch(addToFavourite(id)),
     addToCompare: id => dispatch(addToCompare(id)),

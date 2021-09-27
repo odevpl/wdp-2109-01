@@ -16,6 +16,7 @@ $color-tigersEye: #D58E32;
 $color-CharlestonGreen: #2a2a2a;
 $color-jet: #363636;
 $color-PhilippineSilver: #b6b6b6;
+$color-LavenderBlush: #fcf3f8;
 $color-ChineseWhite: #e1e1e1;
 $color-bestWhite: #fffdfa;
 $color-white: #fff;
@@ -25,6 +26,8 @@ $primary: #d58e32;
 $text-color: #2a2a2a;
 
 $form-border-color: #292929;
+
+$color-alert: red;
 
 // GLOBAL NAMES
 
@@ -57,11 +60,16 @@ $productBox-longLine: $color-CharlestonGreen;
 $productBox-shortLine: $color-tigersEye;
 $productBox-oldPrice: $color-PhilippineSilver;
 
+// brands
+$brands-sectionOutline: $color-PhilippineSilver;
+
 // Promoted
 $promoted-panelBar: $color-jet;
 $promoted-titleBar: $color-white;
 $promoted-dot: $color-ChineseWhite;
 $promoted-activeDot: $color-tigersEye;
+$promoted-dotsInactive: $color-ChineseWhite;
+$promoted-dotsActive: $color-tigersEye;
 $promoted-shadowWrapper: $color-jet;
 $promoted-shadowTitle: $color-white;
 $promoted-shadowSubtitle: $color-white;
@@ -86,6 +94,9 @@ $promotedProductBox-shortLine: $color-tigersEye;
 $promotedProductBox-oldPricetext: $color-CharlestonGreen;
 $promotedProductBox-backgroundHover: $color-tigersEye;
 
+// deals
+$deals-imgBed-background: $color-LavenderBlush;
+
 // new furniture
 $newFuriniture-mainUnderline: $color-ChineseWhite;
 $newFuriniture-sectionUnderline: $color-tigersEye;
@@ -94,9 +105,6 @@ $newFuriniture-activeUnderline: $color-tigersEye;
 $newFuriniture-dotsBackground: $color-white;
 $newFuriniture-dotsInactive: $color-ChineseWhite;
 $newFuriniture-dotsActive: $color-tigersEye;
-
-// brands
-$brands-sectionOutline: $color-PhilippineSilver;
 
 // product search
 $productSearch-form-main: $color-CharlestonGreen;
@@ -133,9 +141,13 @@ $topBar-background: $color-CharlestonGreen;
 $topBar-text: $color-ChineseWhite;
 $topBar-text--hover: $color-tigersEye;
 
-// promoted
-$promoted-dotsInactive: $color-ChineseWhite;
-$promoted-dotsActive: $color-tigersEye;
+// product page
+$productPage-cart-background: $color-tigersEye;
+$productPage-cart-background-hover: $color-CharlestonGreen;
+$productPage-icon-background: $color-white;
+$productPage-icon-color: $color-black;
+$productPage-divider: $color-PhilippineSilver;
+$productPage-oldPrice: $color-PhilippineSilver;
 
 // chatBot
 $chatBot-button-background: $color-CharlestonGreen;
@@ -151,6 +163,23 @@ $chatBot-iconBox--hover: $color-tigersEye;
 $chatBot-texarea: $color-tigersEye;
 $chatBot-texarea--focus: $color-ChineseWhite;
 
+// lastPost
+$lastPost-body-background: $color-white;
+$lastPost-title: $color-black;
+$lastPost-title-hover: $color-tigersEye;
+
+// latestBlog
+$latestBlog-panelBar-border: $color-ChineseWhite;
+$latestBlog-title: $color-tigersEye;
+$latestBlog-title-underline: $color-tigersEye;
+$latestBlog-dotsBackground: $color-white;
+$latestBlog-dotsInactive: $color-ChineseWhite;
+$latestBlog-dotsActive: $color-tigersEye;
+
+
+// product list page (shop)
+$productList-bannerMenu-background: $color-PhilippineSilver;
+$productList-bannerMenu-activeLocation: $color-tigersEye;
 
 // keyframes definitions - DO NOT EDIT
 

@@ -2,18 +2,26 @@
 
 .root {
   background-color: #ffffff;
-  margin: 5% auto;
+  margin-right: auto;
+  margin-left: auto;
   border-top: 3px solid $color-tigersEye;
   border-bottom: 3px solid $color-tigersEye;
-  position: relative,
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
   
   :global(.container) > :global(.row) {
 	margin-bottom: 20px;
   }
   
-  .photo {
+  .photo { 
+    margin-top: 40px;
     position: relative;
     height: 150px;
+	border-left: 1px solid $color-ChineseWhite;;
+	border-right: 1px solid $color-ChineseWhite;;
   }
   .photo:hover{
     opacity: 0.9;
@@ -39,8 +47,10 @@
     left: 98%;
   }
   
-  h5 {
-   margin-top: 40px;
+  h5 { 
+   padding-top: 10px;
+   margin-bottom: 0;
+   padding-bottom: 0.5rem;
    color: $color-tigersEye;
    font-size: 16px;
    line-height: 24px;
@@ -54,7 +64,44 @@
 	top: 20px;
     left: 96%;
  }
- 
+ .content_container{
+   border: 1px solid $color-ChineseWhite;;
+   border-top: none;
+ }
+ .content{ 
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;;
+ }
+ .favourite{ 
+   flex-grow: 3;
+   color: $color-tigersEye;
+ }
+ .oldPrice, .price {
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 5px;
+ }
+ .oldPrice{
+  	color: $productBox-oldPrice;
+	text-decoration: line-through $color-CharlestonGreen;
+	font-weight: 400;
+ }
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $productBox-longLine;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $productBox-shortLine;
+      transform: translateX(-50%);
+    }
+  }
  @media(min-width: 992px){
    .closeAll{
      left: 98%;
@@ -74,6 +121,9 @@
    }
  }
   @media(max-width: 575px){
+    .photo{
+	  height: 100px;
+	}
     .actions{
      left: 94%;
    }

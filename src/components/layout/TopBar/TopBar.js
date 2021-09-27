@@ -39,10 +39,12 @@ const TopBar = () => (
               </NavLink>
             </li>
             <li>
-              <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} />
-                <Link to='/register'>Register</Link>
-              </a>
+              <button type='button'>
+                <Link to='/register'>
+                  <FontAwesomeIcon className={styles.icon} icon={faLock} />
+                  Register
+                </Link>
+              </button>
             </li>
 
             <li>

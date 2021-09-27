@@ -4,17 +4,14 @@
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-
-    :global(.row) > * {
-      border-bottom: 4px solid $color-ChineseWhite;
-    }
+    border-bottom: 4px solid $latestBlog-panelBar-border;
   }
 
   .heading {
     position: relative;
 
     h3 {
-      color: $color-tigersEye;
+      color: $latestBlog-title;
       text-transform: uppercase;
       font-size: 20px;
       line-height: 38px;
@@ -28,7 +25,7 @@
       bottom: -4px;
       left: 0;
       width: 45px;
-      border-bottom: 4px solid $color-tigersEye;
+      border-bottom: 4px solid $latestBlog-title-underline;
     }
   }
 
@@ -38,31 +35,31 @@
     top: 7px;
 
     ul {
-      margin: 0;
+      margin: 0px;
       padding: 0 0 0 1rem;
       list-style: none;
-      background-color: $color-white;
+      background-color: $latestBlog-dotsBackground;
       transform: translateY(15px);
-    }
 
-    ul li {
-      display: inline-block;
-      margin-left: 0.5rem;
+      li {
+        display: inline-block;
+        margin-left: 0.5rem;
 
-      button {
-        display: block;
-        width: 13px;
-        height: 13px;
-        border-radius: 6px;
-        background-color: $color-ChineseWhite;
-        font-size: 0;
-        opacity: 2;
-        border: none;
-        outline: none;
+        button {
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-radius: 6px;
+          background-color: $latestBlog-dotsInactive;
+          border: none;
+          color: $latestBlog-dotsInactive;
+          font-size: 0;
 
-        &.active,
-        &:hover {
-          background-color: $color-tigersEye;
+          &.active,
+          &:hover {
+            background-color: $latestBlog-dotsActive;
+            cursor: pointer;
+          }
         }
       }
     }

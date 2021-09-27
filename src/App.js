@@ -9,11 +9,12 @@ import './styles/global.scss';
 import MainLayoutContainer from './components/layout/MainLayout/MainLayoutContainer';
 import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
-import ProductPage from './components/views/ProductPage/ProductPage';
+import ProductPage from './components/views/ProductPage/ProductPageContainer';
 import Register from './components/views/Register/Register';
 import Cart from './components/views/Cart/CartContainer';
 import BlogArchive from './components/layout/BlogArchive/BlogArchive';
 import Login from './components/views/Login/Login';
+import Search from './components/views/Search/SearchContainer';
 
 const App = () => (
   <Provider store={store}>
@@ -27,6 +28,8 @@ const App = () => (
           <Route exact path={'/login'} component={Login} />
           <Route exact path={'/cart'} component={Cart} />
           <Route exact path={'/blog'} component={BlogArchive} />
+          <Route exact path={'/search'} component={Search} />
+          <Route exact path={'/search/:searchPhrase'} component={Search} />
         </Switch>
       </MainLayoutContainer>
     </BrowserRouter>

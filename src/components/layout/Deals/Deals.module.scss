@@ -1,0 +1,122 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 3rem 0;
+
+  .wrapperLarge {
+    position: relative;
+    padding: 0;
+    height: 400px;
+    width: 700px;
+
+    .greyBox {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(156, 156, 156, 0.7);
+      opacity: 1;
+      height: 85%;
+      width: 83%;
+
+      p {
+        font-size: 30px;
+        padding-left: 15px;
+        border: solid;
+        width: 120px;
+      }
+    }
+
+    .imgLarge {
+      height: 95%;
+      width: 90%;
+      object-fit: cover;
+    }
+
+    .priceTitle {
+      position: absolute;
+      height: 70px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 35px;
+      padding-left: 15px;
+      top: 150px;
+      color: white;
+      span {
+        font-size: 50px;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .wrapperSmall {
+    position: relative;
+    height: 190px;
+    width: 550px;
+    align-items: center;
+
+    .priceTitleTwo {
+      position: absolute;
+      margin-left: 160px;
+      font-size: 55px;
+      color: black;
+      font-weight: 600;
+      h4 {
+        margin-bottom: -3px;
+        font-weight: 200;
+        span {
+          padding-right: 9px;
+          font-weight: 800;
+        }
+      }
+      h5 {
+        letter-spacing: 3px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 30px;
+        color: $color-tigersEye;
+      }
+    }
+
+    .priceTitleThree {
+      position: absolute;
+      margin-left: 270px;
+      top: 90px;
+      font-size: 55px;
+      color: $color-tigersEye;
+      font-weight: 600;
+      text-align: right;
+      h4 {
+        margin-bottom: -3px;
+        font-weight: 200;
+        span {
+          padding-right: 9px;
+          font-weight: 800;
+        }
+      }
+      h5 {
+        margin-top: 5px;
+        color: black;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 30px;
+        color: $color-tigersEye;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 550px;
+      object-fit: cover;
+
+      .imgBed {
+        background-color: $deals-imgBed-background;
+      }
+    }
+  }
+}
