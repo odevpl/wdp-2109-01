@@ -28,10 +28,17 @@
       padding: 30px 15px 5px 15px;
     }
 
+    .wrapperButton {
+      position: absolute;
+      top: 266px;
+      width: 100%;
+    }
+
     .buttons {
       display: flex;
       justify-content: space-between;
-      visibility: visable;
+      visibility: hidden;
+      width: 100%;
     }
 
     img {
