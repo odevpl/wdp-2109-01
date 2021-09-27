@@ -84,7 +84,7 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className={`row + ${styles.grid}`}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
                 <Fade>
