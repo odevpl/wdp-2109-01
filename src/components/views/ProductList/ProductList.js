@@ -6,6 +6,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Brands from '../../layout/Brands/BrandsContainer';
 import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import ProductBanner from '../../common/images/productListBanner.png';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -29,7 +30,9 @@ const ProductList = () => (
         <div className='col-9'>
           <ShopFurniture tileNumber={12} />
         </div>
-        <div className='col-3'>Filters</div>
+        <div className='col-3'>
+          <FilterByCategories />
+        </div>
       </div>
     </div>
     <div className='container'>
