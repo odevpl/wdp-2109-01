@@ -47,7 +47,6 @@ class ProductPage extends React.Component {
     return (
       <div className={styles.root}>
         <Container className={styles.container}>
-          <NewFurniture tileNumber={4} />
           {product.map(item => (
             <div key={item.id}>
               <Grid container spacing={2}>
@@ -252,6 +251,8 @@ class ProductPage extends React.Component {
               </Grid>
             </div>
           ))}
+
+          <NewFurniture tileNumber={4} />
         </Container>
       </div>
     );
