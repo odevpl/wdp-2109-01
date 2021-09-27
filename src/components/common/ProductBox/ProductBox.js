@@ -7,6 +7,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 import ProductPopup from '../../features/ProductPopup/ProductPopup';
+import AlertPopup from '../../features/AlertPopup/AlertPopup';
 import { Link } from 'react-router-dom';
 
 const ProductBox = ({
@@ -29,14 +30,20 @@ const ProductBox = ({
   quantity,
 }) => {
   const [showPopup, togglePopup] = useState(false);
+  const [showAlertPopup, toggleAlertPopup] = useState(false);
 
   const handlePopup = event => {
     event.preventDefault();
     return togglePopup(!showPopup);
   };
 
-  const checkStars = id => {
-    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+  const handleAlertPopup = event => {
+    event.preventDefault();
+    return toggleAlertPopup(!showAlertPopup);
+  };
+
+  const checkStars = () => {
+    const retrievedStorage = JSON.parse(localStorage.getItem(id));
     if (retrievedStorage !== null) {
       retrievedStorage.filter(item => {
         if (item.id === id) {
@@ -143,7 +150,7 @@ const ProductBox = ({
             onClick={event => {
               if (numberOfProductsToCompare >= 4) {
                 event.preventDefault();
-                alert('You can only add four products to compare!');
+                handleAlertPopup(event);
               } else {
                 event.preventDefault();
                 return addToCompare(id);
@@ -152,6 +159,7 @@ const ProductBox = ({
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
+          {showAlertPopup ? <AlertPopup closePopup={handleAlertPopup} /> : ''}
         </div>
         <div className={styles.price}>
           <div className={styles.oldPrice}>{oldPrice ? '$ ' + oldPrice : ''}</div>
