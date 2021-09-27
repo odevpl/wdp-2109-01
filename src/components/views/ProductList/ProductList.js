@@ -7,6 +7,7 @@ import Brands from '../../layout/Brands/BrandsContainer';
 import ShopFurniture from '../../features/ShopFurniture/ShopFurnitureContainer';
 import ProductBanner from '../../common/images/productListBanner.png';
 import FilterByColor from '../../features/FilterByColor/FilterByColor';
+import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -32,6 +33,7 @@ const ProductList = () => (
         </div>
         <div className='col-3'>
           <FilterByColor />
+          <FilterByCategories />
         </div>
       </div>
     </div>
