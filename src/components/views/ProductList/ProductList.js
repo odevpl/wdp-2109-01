@@ -9,6 +9,7 @@ import ProductBanner from '../../common/images/productListBanner.png';
 import FilterByPrice from '../../features/FilterByPrice/FilterByPrice';
 import FilterByColor from '../../features/FilterByColor/FilterByColor';
 import FilterByCategories from '../../features/FilterByCategories/FilterByCategories';
+import SizeFilter from '../../features/SizeFilter/SizeFilter';
 
 const ProductList = () => (
   <div className={styles.root}>
@@ -35,6 +36,7 @@ const ProductList = () => (
         <div className='col-3'>
           <FilterByPrice />
           <FilterByColor />
+          <SizeFilter />
           <FilterByCategories />
         </div>
       </div>
