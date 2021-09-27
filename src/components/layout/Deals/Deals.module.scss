@@ -91,7 +91,8 @@
   .wrapperSmall {
     position: relative;
     height: 190px;
-    width: 550px;
+    // width: 550px;
+    width: 100%;
     align-items: center;
 
     .priceTitleTwo {
@@ -122,7 +123,7 @@
 
     .priceTitleThree {
       position: absolute;
-      margin-left: 270px;
+      right: 20px;
       top: 90px;
       font-size: 55px;
       color: $color-tigersEye;
@@ -151,7 +152,7 @@
 
     img {
       height: 100%;
-      width: 550px;
+      // width: 550px;
       object-fit: cover;
 
       .imgBed {
@@ -161,23 +162,56 @@
   }
 }
 
-@media screen and (max-width: 955px) {
+@media screen and (max-width: 1198px) {
+  .root .wrapperSmall .priceTitleThree {
+    margin-left: 215px;
+  }
+}
+
+@media screen and (max-width: 959px) {
   .root .wrapperLeft {
     justify-content: center;
     .greyBox {
       left: 58px;
     }
   }
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 400px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 250px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 250px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 150px;
+  }
 }
 
 @media screen and (max-width: 686px) {
   .root .wrapperLeft .greyBox {
-      left: 43px;
-    }
+    left: 43px;
+  }
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 473px){
+  .root .wrapperRight .priceTitleTwo {
+    right: 130px;
+  }
 }
 
 @media screen and (max-width: 375px) {
   .root .wrapperLeft .greyBox {
-      left: 29px;
-    }
+    left: 29px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 70px;
+  }
 }
