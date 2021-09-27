@@ -1,6 +1,11 @@
 @import "../../../styles/settings.scss";
 
 .root {
+
+  .grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .panelBar {
     margin-bottom: 30px;
     position: relative;

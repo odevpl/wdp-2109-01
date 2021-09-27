@@ -26,9 +26,7 @@ const Brands = ({ brands }) => {
     <div className={styles.root}>
       <div className={styles.wrapper}>
         <div className='container'>
-          <div
-            className={'row no-gutters justify-content-between ' + styles.sliderWrapper}
-          >
+          <div className='row no-gutters justify-content-between'>
             <div className={`col-1`}>
               <Button
                 className={styles.button}
