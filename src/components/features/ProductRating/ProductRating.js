@@ -40,7 +40,7 @@ const ProductRating = ({ id, stars, isStarred, setStars }) => {
 };
 
 ProductRating.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.any.isRequired,
   stars: PropTypes.number.isRequired,
   isStarred: PropTypes.bool,
   setStars: PropTypes.func.isRequired,

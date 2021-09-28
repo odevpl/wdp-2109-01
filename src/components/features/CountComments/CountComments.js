@@ -6,10 +6,10 @@ import React from 'react';
 const CountComments = props => {
   const comments = props.comments;
   return (
-    <div>
+    <p>
       <FontAwesomeIcon icon={faComment}></FontAwesomeIcon> {comments.length}
       <span> comments</span>
-    </div>
+    </p>
   );
 };
 

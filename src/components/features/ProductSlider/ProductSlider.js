@@ -4,14 +4,13 @@ import styles from './ProductSlider.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../../common/Button/Button';
 import {
-  faStar,
   faEye,
   faShoppingCart,
   faExchangeAlt,
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import ProductSliderBox from '../../common/ProductSliderBox/ProductSliderBox';
 import chair from '../../common/images/imagesGallery/chair.jpg';
 import ProductRating from '../ProductRating/ProductRatingContainer';
@@ -33,17 +32,17 @@ const ProductSlider = ({ products }) => {
       </div>
 
       <div className='container'>
-        <div className={'row ${styles.categoriesButtons}'}>
-          <div className={'col-3 ${styles.categoryButton}'}>
+        <div className={`row ${styles.categoriesButtons}`}>
+          <div className={`col-3 ${styles.categoryButton}`}>
             <Button variant='category'>FEATURED</Button>
           </div>
-          <div className={'col-3 ${styles.categoryButton}'}>
+          <div className={`col-3 ${styles.categoryButton}`}>
             <Button variant='category'>TOP SELLER</Button>
           </div>
-          <div className={'col-3 ${styles.categoryButton}'}>
+          <div className={`col-3 ${styles.categoryButton}`}>
             <Button variant='category'>SALE OFF</Button>
           </div>
-          <div className={'col-3 ${styles.categoryButton}'}>
+          <div className={`col-3 ${styles.categoryButton}`}>
             <Button variant='category'>TOP RATED</Button>
           </div>
         </div>
@@ -51,7 +50,7 @@ const ProductSlider = ({ products }) => {
 
       <div className={styles.mainWrapper}>
         <div className={styles.imageWrapper}>
-          <img src={chair} />
+          <img src={chair} alt='img1' />
         </div>
 
         <div className={styles.smallMenuWrapper}>

@@ -21,7 +21,7 @@ const BlogArchive = () => (
             <h3>
               Post 1 <span>Witamy na nowej stronie sklepu</span>
             </h3>
-            <img src={post_1} />
+            <img src={post_1} alt='img1' />
             <div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
@@ -66,7 +66,7 @@ const BlogArchive = () => (
               {' '}
               Post 2<span>Poszukaj inspiracji dla swojego wnętrza</span>
             </h3>
-            <img src={post_2} />
+            <img src={post_2} alt='img2' />
             <div>
               <p>
                 Integer et sollicitudin augue. Fusce ut felis quis nunc pellentesque
@@ -110,7 +110,7 @@ const BlogArchive = () => (
             <h3>
               Post 3<span>Porady naszych specjalistów - cz.1 SALON</span>
             </h3>
-            <img src={post_3} />
+            <img src={post_3} alt='img3' />
             <div>
               <p>
                 Fusce tempor lobortis urna, sed facilisis odio. Suspendisse convallis
@@ -154,7 +154,7 @@ const BlogArchive = () => (
             <h3>
               Post 4<span>Nasze nowości na Targach Meble Polska</span>
             </h3>
-            <img src={post_4} />
+            <img src={post_4} alt='img4' />
             <div>
               <p>
                 Praesent sed elit auctor, pharetra sem eu, hendrerit mauris.
@@ -198,7 +198,7 @@ const BlogArchive = () => (
             <h3>
               Post 5<span>Stwórz swój mikrokosmos</span>
             </h3>
-            <img src={post_5} />
+            <img src={post_5} alt='img5' />
             <div>
               <p>
                 Vestibulum sed scelerisque elit. Donec non blandit ante. Vivamus

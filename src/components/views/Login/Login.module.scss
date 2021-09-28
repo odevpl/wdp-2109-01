@@ -4,11 +4,22 @@
   padding: 5rem 0;
   height: 600px;
   margin-bottom: 0;
-  &:hover {
-  a {
-    text-decoration: none;
-   }
- }
+
+  .password {
+    background-color: transparent;
+    border: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .login {
+    background-color: $color-tigersEye;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
  .container{
   display: flex;
   justify-content: center;

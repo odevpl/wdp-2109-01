@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import styles from './PromotedProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import ProductRating from '../../features/ProductRating/ProductRatingContainer';
 
 const PromotedProductBox = ({
   name,
@@ -23,6 +23,7 @@ const PromotedProductBox = ({
   addToCart,
   id,
   quantity,
+  isStarred,
 }) => {
   const handleAddToCart = (name, price, image, quantity, id) => {
     const cartPayload = {
@@ -33,6 +34,31 @@ const PromotedProductBox = ({
       productId: id,
     };
     addToCart(cartPayload);
+  };
+
+  const checkStars = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) {
+          stars = item.stars;
+          return stars;
+        }
+        return stars;
+      });
+    }
+    return stars;
+  };
+
+  const checkStarred = id => {
+    const retrievedStorage = JSON.parse(localStorage.getItem('stars'));
+    if (retrievedStorage !== null) {
+      retrievedStorage.filter(item => {
+        if (item.id === id) isStarred = item.isStarred;
+        return isStarred;
+      });
+    }
+    return isStarred;
   };
 
   return (
@@ -83,15 +109,7 @@ const PromotedProductBox = ({
           <h5>{name}</h5>
         </Link>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <button key={i}>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </button>
-          ))}
+          <ProductRating id={id} stars={checkStars(id)} isStarred={checkStarred(id)} />
         </div>
       </div>
       <div className={styles.line}></div>
@@ -129,6 +147,7 @@ PromotedProductBox.propTypes = {
   image: PropTypes.string,
   addToCart: PropTypes.func,
   quantity: PropTypes.number,
+  isStarred: PropTypes.bool,
 };
 
 PromotedProductBox.defaultProps = {
