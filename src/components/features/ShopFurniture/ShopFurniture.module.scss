@@ -1,6 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  .icon {
+    margin-right: 10px;
+  }
   .panelBar {
     margin-bottom: 30px;
     position: relative;
@@ -54,7 +57,5 @@
     .h2 {
       transform: translateX(-20px);
     }
-
   }
 }
-

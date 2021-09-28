@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ShopFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThLarge } from '@fortawesome/free-solid-svg-icons';
+import { faThList } from '@fortawesome/free-solid-svg-icons';
 
 class ShopFurniture extends React.Component {
   state = {
@@ -33,15 +36,33 @@ class ShopFurniture extends React.Component {
               </div>
 
               <div className={'col-4 ' + styles.heading}>
-                <p>Sort By:</p>
+                <p>
+                  Sort By:
+                  <select name='' id=''>
+                    <option value=''></option>
+                    <option value=''>Price: Lowest first</option>
+                    <option value=''>Price: Highest first</option>
+                    <option value=''>Name: A to Z</option>
+                    <option value=''>Name: Z to A</option>
+                  </select>
+                </p>
               </div>
 
               <div className={'col-2 ' + styles.heading}>
-                <p>Show</p>
+                <p>
+                  Show
+                  <select name='' id=''>
+                    <option value=''></option>
+                    <option value=''>6</option>
+                    <option value=''>12</option>
+                    <option value=''>24</option>
+                  </select>
+                </p>
               </div>
 
               <div className={'col-2 ' + styles.heading}>
-                <p>Switches</p>
+                <FontAwesomeIcon className={styles.icon} icon={faThLarge} />
+                <FontAwesomeIcon className={styles.icon} icon={faThList} />
               </div>
             </div>
           </div>
