@@ -166,6 +166,9 @@
   .root .wrapperRight .priceTitleTwo {
     right: 250px;
   }
+  .root .wrapperRight .wrapperSmall {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -186,15 +189,15 @@
   }
 }
 
-@media screen and (max-width: 473px){
-  .root .wrapperRight .priceTitleTwo {
-    right: 130px;
-  }
-}
+// @media screen and (max-width: 473px){
+//   .root .wrapperRight .priceTitleTwo {
+//     right: 130px;
+//   }
+// }
 
 @media screen and (max-width: 375px) {
   .root .wrapperLeft .greyBox {
-    left: 29px;
+    left: 28px;
   }
   .root .wrapperRight .priceTitleTwo {
     right: 70px;
