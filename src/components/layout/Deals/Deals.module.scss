@@ -3,7 +3,14 @@
 .root {
   padding: 3rem 0;
 
-  .wrapperLarge {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrapperLeft {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 0;
     height: 400px;
@@ -13,6 +20,8 @@
       position: absolute;
       top: 20px;
       left: 20px;
+      right: 75px;
+      bottom: 20px;
       background-color: rgba(156, 156, 156, 0.7);
       opacity: 1;
       height: 85%;
@@ -48,10 +57,27 @@
     }
   }
 
+  .wrapperRight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    height: 400px;
+    width: 700px;
+
+    .imgLarge {
+      height: 95%;
+      width: 90%;
+      object-fit: cover;
+    }
+  }
+
   .wrapperSmall {
     position: relative;
     height: 190px;
-    width: 550px;
+    // width: 550px;
+    width: 100%;
     align-items: center;
 
     .priceTitleTwo {
@@ -82,7 +108,7 @@
 
     .priceTitleThree {
       position: absolute;
-      margin-left: 270px;
+      right: 20px;
       top: 90px;
       font-size: 55px;
       color: $color-tigersEye;
@@ -111,12 +137,69 @@
 
     img {
       height: 100%;
-      width: 550px;
+      // width: 550px;
       object-fit: cover;
 
       .imgBed {
         background-color: $deals-imgBed-background;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1198px) {
+  .root .wrapperSmall .priceTitleThree {
+    margin-left: 215px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .root .wrapperLeft {
+    justify-content: center;
+    .greyBox {
+      left: 58px;
+    }
+  }
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 400px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 250px;
+  }
+  .root .wrapperRight .wrapperSmall {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 250px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 150px;
+  }
+}
+
+@media screen and (max-width: 686px) {
+  .root .wrapperLeft .greyBox {
+    left: 43px;
+  }
+  .root .wrapperRight .priceTitleThree {
+    margin-left: 250px;
+  }
+}
+
+// @media screen and (max-width: 473px){
+//   .root .wrapperRight .priceTitleTwo {
+//     right: 130px;
+//   }
+// }
+
+@media screen and (max-width: 375px) {
+  .root .wrapperLeft .greyBox {
+    left: 28px;
+  }
+  .root .wrapperRight .priceTitleTwo {
+    right: 70px;
   }
 }
