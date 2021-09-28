@@ -1,5 +1,15 @@
 /* selectors */
-export const getAll = ({ categories }) => categories;
+export const getAll = ({ products }) => {
+  let categories = [];
+  products.map(product => {
+    if (!categories.includes(product.category)) {
+      categories.push(product.category);
+    }
+    return categories;
+  });
+  return categories;
+};
+
 export const getCount = ({ categories }) => categories.length;
 
 /* reducer */
