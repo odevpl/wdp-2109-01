@@ -1,6 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import Button from '../../common/Button/Button';
 import { NavLink } from 'react-router-dom';
 import styles from './Login.module.scss';
 import Container from '@material-ui/core/Container';
@@ -31,13 +29,13 @@ const Login = () => {
         }
         alertWrapper.insertAdjacentHTML(
           'afterbegin',
-          "<span id='wrongAnswer'>Hasło jest błędne!</span>"
+          `<span id='wrongAnswer'>Hasło jest błędne!</span>`
         );
       }
     } else {
       alertWrapper.insertAdjacentHTML(
         'afterbegin',
-        "<span id='wrongAnswer'>E-mail jest błędny!</span>"
+        `<span id='wrongAnswer'>E-mail jest błędny!</span>`
       );
     }
   };
@@ -66,7 +64,8 @@ const Login = () => {
             </div>
             <div className='row'>
               <p>
-                Nie pamiętasz hasła? <a href='#'>Przypomnij hasło.</a>
+                Nie pamiętasz hasła?{' '}
+                <button className={styles.password}>Przypomnij hasło.</button>
               </p>
               <div className={`row ${styles.switchCheckbox}`}>
                 <label className={styles.switch}>
@@ -80,9 +79,9 @@ const Login = () => {
             </div>
             <div className={styles.buttons + ' alertWrapper'}>
               <NavLink exact to={'/'} activeClassName='active'>
-                <Button variant='login' onClick={handleLogIn}>
+                <button className={styles.login} variant='login' onClick={handleLogIn}>
                   Zaloguj się
-                </Button>
+                </button>
               </NavLink>
             </div>
           </form>

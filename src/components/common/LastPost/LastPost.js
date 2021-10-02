@@ -19,9 +19,9 @@ const LastPost = ({ id, date, comments, title, description, image }) => (
           </p>
         </div>
         <div className='col-6'>
-          <p>
+          <div>
             <CountComments comments={comments} />
-          </p>
+          </div>
         </div>
       </div>
       <h4>

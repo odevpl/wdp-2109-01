@@ -8,7 +8,7 @@ const SizeFilter = () => (
     <h5 className={styles.title}>Filter by size</h5>
     <div className={styles.sizeOptions}>
       <div className={styles.sizeOption}>
-        <input type='checkbox' id='size-s' checked />
+        <input type='checkbox' id='size-s' defaultChecked />
         <FontAwesomeIcon className={styles.check} icon={faCheck} />
         <label htmlFor='size-s'>
           <span></span>S<p className={styles.amount}>3</p>
