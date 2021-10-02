@@ -20,8 +20,16 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, tileNumber } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { tileNumber, filters, searchProducts, searchCategories } = this.props;
+    let { products, categories } = this.props;
+    let { activeCategory } = this.state;
+    const { activePage } = this.state;
+
+    if (filters) {
+      products = searchProducts;
+      categories = searchCategories;
+      activeCategory = categories[0];
+    }
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / tileNumber);
@@ -65,13 +73,14 @@ class NewFurniture extends React.Component {
                 <div className={'col ' + styles.menu}>
                   <ul>
                     {categories.map(item => (
-                      <li key={item.id}>
+                      //console.log('jakie sa kategorie po search? ', categories),
+                      <li key={item}>
                         <Fade>
                           <button
-                            className={item.id === activeCategory ? styles.active : ''}
-                            onClick={() => this.handleCategoryChange(item.id)}
+                            className={item === activeCategory ? styles.active : ''}
+                            onClick={() => this.handleCategoryChange(item)}
                           >
-                            {item.name}
+                            {item}
                           </button>
                         </Fade>
                       </li>
@@ -101,12 +110,7 @@ class NewFurniture extends React.Component {
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
+  categories: PropTypes.array,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -119,6 +123,9 @@ NewFurniture.propTypes = {
     })
   ),
   tileNumber: PropTypes.number,
+  filters: PropTypes.any,
+  searchProducts: PropTypes.any,
+  searchCategories: PropTypes.any,
 };
 
 NewFurniture.defaultProps = {

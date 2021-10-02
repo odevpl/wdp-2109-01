@@ -966,6 +966,9 @@ const initialState = {
         'https://images.pexels.com/photos/6890399/pexels-photo-6890399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     },
   ],
+  filters: {
+    searchPhrase: '',
+  },
 };
 
 export default initialState;

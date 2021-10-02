@@ -54,6 +54,7 @@
             position: relative;
             font-size: 18px;
             display: block;
+            text-transform: capitalize;
 
             &.active,
             &:hover {

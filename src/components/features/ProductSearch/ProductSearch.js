@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,9 +7,11 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 import { Link } from 'react-router-dom';
 
-const ProductSearch = ({ categories }) => {
-  const [searchValue, setSearchValue] = useState('');
-  const searchPhrase = searchValue.replace(/\s/g, '_');
+const ProductSearch = ({ categories, setSearchValue, filters }) => {
+  let searchPhrase = '';
+  if (filters) {
+    searchPhrase = filters.searchPhrase.replace(/\s/g, '_');
+  }
 
   return (
     <form action='' className={styles.root}>
@@ -19,7 +21,7 @@ const ProductSearch = ({ categories }) => {
           <ul>
             Select <span className={styles.span}>a category</span>
             {categories.map(item => (
-              <li key={item.id}>{item.name}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
@@ -43,12 +45,9 @@ const ProductSearch = ({ categories }) => {
 
 ProductSearch.propTypes = {
   children: PropTypes.node,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-    })
-  ),
+  categories: PropTypes.array,
+  setSearchValue: PropTypes.func,
+  filters: PropTypes.string,
 };
 
 ProductSearch.defaultProps = {

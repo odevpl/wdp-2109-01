@@ -8,16 +8,17 @@ import productsReducer from './productsRedux';
 import feedbacksReducer from './feedbacksRedux';
 import sizeReducer from './deviceRedux';
 import brandsReducer from './brandsRedux';
+import filtersReducer from './filtersRedux';
+
 // define reducers
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
-
   feedbacks: feedbacksReducer,
-
   size: sizeReducer,
   brands: brandsReducer,
+  filters: filtersReducer,
 };
 
 // add blank reducers for initial state properties without reducers
