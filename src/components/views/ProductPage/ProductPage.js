@@ -89,7 +89,8 @@ class ProductPage extends React.Component {
                     >
                       <ProductRating id={item.id} stars={item.stars} />
                       <p>
-                        (0 reviews) | <Link to='/'>Add your review</Link>
+                        (0 reviews) |{' '}
+                        <Link to={`/product/${item.id}/review`}>Add your review</Link>
                       </p>
                     </Box>
                   </Grid>
