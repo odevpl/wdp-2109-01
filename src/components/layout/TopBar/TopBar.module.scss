@@ -22,12 +22,50 @@
         color: $topBar-text;
         font-size: 13px;
         text-decoration: none;
+
         &:hover {
           color: $topBar-text--hover;
         }
       }
     }
   }
+
+  /* lang/currency options: 2nd tier */
+	ul ul {
+		display: none;
+		position: absolute;
+    top: 70%;
+    transform: translateX(-15%);
+		min-width: 100px;
+
+		li {
+			display: block;
+      padding-left: 15px;
+			text-align: center;
+      line-height: 2;
+
+			button, a {
+				background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline;
+        margin: 0;
+        padding: 0;
+        color: $topBar-text;
+        text-decoration: none;
+
+        &:hover {
+          color: $topBar-text--hover;
+        }
+			}
+		}
+	}
+
+	li:hover ul {
+		display: block;
+    background: $topBar-list-background-onHover;
+    z-index: 1;
+	}
 
   .topOptions ul li {
     margin-right: 1.5rem;

@@ -4,9 +4,10 @@ import initialState from './initialState';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
-
 import feedbacksReducer from './feedbacksRedux';
 import sizeReducer from './deviceRedux';
+import languageReducer from './languageRedux';
+import currencyReducer from './currencyRedux';
 import brandsReducer from './brandsRedux';
 import filtersReducer from './filtersRedux';
 
@@ -17,6 +18,8 @@ const reducers = {
   products: productsReducer,
   feedbacks: feedbacksReducer,
   size: sizeReducer,
+  language: languageReducer,
+  currency: currencyReducer,
   brands: brandsReducer,
   filters: filtersReducer,
 };
